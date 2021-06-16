@@ -233,7 +233,7 @@ Both the original airwindows project and this airfx project are licenced under t
 - [ ] TapeFat
 - [ ] Thunder
 - [ ] ToTape5
-- [ ] ToTape6
+- [x] ToTape6
 - [ ] ToVinyl4
 - [ ] ToneSlant
 - [ ] TransDesk
