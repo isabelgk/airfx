@@ -1,0 +1,52 @@
+#include "c74_min.h"
+
+using namespace c74::min;
+
+class %PROJECT : public object<%PROJECT>, public vector_operator<> {
+public:
+	MIN_DESCRIPTION {"%PROJECT"};
+	MIN_TAGS {"audio, effect"};
+	MIN_AUTHOR {"Isabel Kaspriskie"};
+
+	inlet<>  in1 {this, "(signal) Input 1"};
+	inlet<>  in2 {this, "(signal) Input 2"};
+	outlet<> out1 {this, "(signal) Left Output", "signal"};
+	outlet<> out2 {this, "(signal) Right Output", "signal"};
+    
+    
+    attribute<number, threadsafe::no, limit::clamp> A { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> B { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> C { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> D { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> E { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> F { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> G { this, "", 0.0, range {0.0, 1.0} };
+    attribute<number, threadsafe::no, limit::clamp> H { this, "", 0.0, range {0.0, 1.0} };
+
+
+    message<> dspsetup {this, "dspsetup",   
+        MIN_FUNCTION {
+            
+           return {};
+       }
+    };
+
+	void operator()(audio_bundle input, audio_bundle output) {
+		double* in1  = input.samples(0);
+		double* in2  = input.samples(1);
+		double* out1 = output.samples(0);
+		double* out2 = output.samples(1);
+        
+        // getSampleRate() -> samplerate();
+
+        long sampleFrames = input.frame_count();
+
+		
+		}
+	}
+
+private:
+
+};
+
+MIN_EXTERNAL(%PROJECT);
