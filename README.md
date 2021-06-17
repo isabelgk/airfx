@@ -28,7 +28,7 @@ Both the original airwindows project and this airfx project are licenced under t
 - [x] BassKit
 - [x] Baxandall
 - [x] Beam
-- [ ] Biquad
+- [x] Biquad
 - [ ] Biquad2
 - [ ] BiquadDouble
 - [ ] BiquadOneHalf
