@@ -20,3 +20,6 @@ max objectfile mc.ar.golem~ mc.wrapper~ ar.golem~ multichannel;
 max objectfile mc.ar.hombre~ mc.wrapper~ ar.hombre~ multichannel;
 max objectfile mc.ar.ironoxide5~ mc.wrapper~ ar.ironoxide5~ multichannel;
 max objectfile mc.ar.totape6~ mc.wrapper~ ar.totape6~ multichannel;
+max objectfile mc.ar.bitglitter~ mc.wrapper~ ar.bitglitter~ multichannel;
+max objectfile mc.ar.ensemble~ mc.wrapper~ ar.ensemble~ multichannel;
+max objectfile mc.ar.tovinyl4~ mc.wrapper~ ar.tovinyl4~ multichannel;
