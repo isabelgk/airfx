@@ -26,3 +26,4 @@ max objectfile mc.ar.tovinyl4~ mc.wrapper~ ar.tovinyl4~ multichannel;
 max objectfile mc.ar.pyewacket~ mc.wrapper~ ar.pyewacket~ multichannel;
 max objectfile mc.ar.mojo~ mc.wrapper~ ar.mojo~ multichannel;
 max objectfile mc.ar.chorus~ mc.wrapper~ ar.chorus~ multichannel;
+max objectfile mc.ar.tapedust~ mc.wrapper~ ar.tapedust~ multichannel;
