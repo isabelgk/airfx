@@ -93,14 +93,14 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "signal" ],
-									"patching_rect" : [ 21.5, 362.0, 42.0, 22.0 ],
-									"text" : "ar.air~"
+									"patching_rect" : [ 21.5, 362.0, 46.0, 22.0 ],
+									"text" : "ar.adt~"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
+									"attr" : "A Level",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Output Level",
+									"attr" : "B Level",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -124,7 +124,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "11K tap",
+									"attr" : "A Delay",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +136,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "filters Q",
+									"attr" : "Output",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -148,7 +148,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "22K tap",
+									"attr" : "Headrm",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -160,7 +160,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "15K tap",
+									"attr" : "B Delay",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -176,7 +176,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 298.0, 179.0, 150.0, 20.0 ]
+									"patching_rect" : [ 16.0, 115.0, 180.0, 20.0 ],
+									"text" : "ADT = \"artificial double tracking\""
 								}
 
 							}
@@ -252,7 +253,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 21.5, 141.0, 224.0, 96.0 ],
+									"patching_rect" : [ 21.5, 150.0, 224.0, 96.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -263,7 +264,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "ar.air~" ],
+									"jsarguments" : [ "ar.adt~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -345,16 +346,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 1 ],
-									"order" : 0,
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"order" : 1,
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -442,7 +434,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "ar.air~" ],
+									"jsarguments" : [ "ar.adt~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -473,7 +465,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/air-vst/"
+									"text" : ";\rmax launchbrowser https://www.airwindows.com/adt-vst/"
 								}
 
 							}
@@ -499,7 +491,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "ar.air~" ],
+					"jsarguments" : [ "ar.adt~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -565,7 +557,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ar.air~.mxo",
+				"name" : "ar.adt~.mxo",
 				"type" : "iLaX"
 			}
  ],

@@ -10,8 +10,8 @@ public:
 
 	inlet<> in1 {this, "(signal) Input1"};
 	inlet<> in2 {this, "(signal) Input2"};
-	outlet<> out1 {this, "(signal) Output1"};
-	outlet<> out2 {this, "(signal) Output2"};
+	outlet<> out1 {this, "(signal) Output1", "signal"};
+	outlet<> out2 {this, "(signal) Output2", "signal"};
 
 	attribute<number, threadsafe::no, limit::clamp> A {this, "Average", 0.0, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> B {this, "Dry/Wet", 1.0, range {0.0, 1.0} };

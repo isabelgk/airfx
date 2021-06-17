@@ -10,8 +10,8 @@ public:
 
 	inlet<> in1 {this, "(signal) Input1"};
 	inlet<> in2 {this, "(signal) Input2"};
-	outlet<> out1 {this, "(signal) Output1"};
-	outlet<> out2 {this, "(signal) Output2"};
+	outlet<> out1 {this, "(signal) Output1", "signal"};
+	outlet<> out2 {this, "(signal) Output2", "signal"};
 
 	attribute<number, threadsafe::no, limit::clamp> A {this, "Headrm", 0.5, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> B {this, "A Delay", 0.5, range {0.0, 1.0} };
@@ -51,6 +51,7 @@ public:
 		overallscale *= samplerate();
 
 		long sampleFrames = _input.frame_count();
+
 		double gain = A * 1.272;
 		double targetA = pow(B,4) * 4790.0;
 		double fractionA;

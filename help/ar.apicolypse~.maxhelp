@@ -93,38 +93,14 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "signal" ],
-									"patching_rect" : [ 21.5, 362.0, 42.0, 22.0 ],
-									"text" : "ar.air~"
+									"patching_rect" : [ 21.5, 362.0, 86.0, 22.0 ],
+									"text" : "ar.apicolypse~"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
-									"id" : "obj-13",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 257.0, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "Output Level",
-									"id" : "obj-16",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 281.052287581699318, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "11K tap",
+									"attr" : "Drive",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "filters Q",
+									"attr" : "Output",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -148,7 +124,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "22K tap",
+									"attr" : "Personality",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -160,7 +136,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "15K tap",
+									"attr" : "Hardness",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -263,7 +239,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "ar.air~" ],
+									"jsarguments" : [ "ar.apicolypse~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -287,22 +263,6 @@
 									"destination" : [ "obj-17", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-16", 0 ]
 								}
 
 							}
@@ -442,7 +402,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "ar.air~" ],
+									"jsarguments" : [ "ar.apicolypse~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -467,13 +427,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-30",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/air-vst/"
+									"patching_rect" : [ 16.0, 155.0, 329.0, 35.0 ],
+									"text" : ";\rmax launchbrowser https://www.airwindows.com/apicolypse/"
 								}
 
 							}
@@ -499,7 +459,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "ar.air~" ],
+					"jsarguments" : [ "ar.apicolypse~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -565,7 +525,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ar.air~.mxo",
+				"name" : "ar.apicolypse~.mxo",
 				"type" : "iLaX"
 			}
  ],

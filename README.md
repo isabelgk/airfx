@@ -10,7 +10,7 @@ Both the original airwindows project and this airfx project are licenced under t
 
 # Plugin list
 
-- [ ] ADClip7
+- [x] ADClip7
 - [x] ADT
 - [x] AQuickVoiceClip
 - [x] Acceleration

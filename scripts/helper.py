@@ -3,9 +3,9 @@ import os, shutil
 pwd = "/Users/isabelkaspriskie/Documents/Max 8/Packages/airfx/"
 projects_dir = pwd + "source/projects/"
 airwindows_dir = pwd + "source/airwindows/plugins/LinuxVST/src/"
-plugin = "Aura"
+plugin = "ToTape6"
 meta = {
-    "description": "new kind of resonant lowpass EQ",
+    "description": "tape emulation",
     "classname": plugin.lower()
 }
 
@@ -116,6 +116,23 @@ def get_initialization_code(num_io):
 
     return lines[start_index - 2:end_index]
 
+def get_template_help():
+    lines = []
+    result = []
+
+    with open(pwd + "scripts/template.maxhelp") as f:
+        lines = f.readlines()
+    
+    for line in lines:
+        if "ar.TEMPLATE~" in line:
+            result.append(line.replace("ar.TEMPLATE~", "ar." + plugin.lower() + "~"))
+        elif "PLUGINLINK" in line:
+            result.append(line.replace("PLUGINLINK", plugin.lower()))
+        else:
+            result.append(line)
+
+    return result
+
 
 
 def get_object_text(params):
@@ -130,7 +147,7 @@ def get_object_text(params):
     for i in range(params["num_ins"]):
         text += "\tinlet<> in" + str(i + 1) + " {this, \"(signal) Input" + str(i + 1) +"\"};\n"
     for i in range(params["num_outs"]):
-        text += "\toutlet<> out" + str(i + 1) + " {this, \"(signal) Output" + str(i + 1) +"\"};\n"
+        text += "\toutlet<> out" + str(i + 1) + " {this, \"(signal) Output" + str(i + 1) +"\", \"signal\"};\n"
 
     text += "\n"
 
@@ -198,10 +215,13 @@ if __name__ == "__main__":
         print("Failed to create CMakeLists.txt")
     
     # Copy the template help file
-    # TODO
+    t = """
+        {}
+        """.format("".join(get_template_help()))
+    with open(pwd + "help/ar." + plugin.lower() + "~.maxhelp", 'w') as f:
+        print(t, file=f)
 
     # Write the cpp
-    # print(get_object_text(get_param_info()))
     with open(projects_dir + project_name + "/" + project_name + ".cpp", 'w') as f:
         print(get_object_text(get_param_info()), file=f)
 

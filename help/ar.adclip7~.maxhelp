@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 130.0, 585.0, 573.0 ],
+						"rect" : [ 84.0, 129.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -86,6 +86,7 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",
@@ -93,38 +94,14 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "signal" ],
-									"patching_rect" : [ 21.5, 362.0, 42.0, 22.0 ],
-									"text" : "ar.air~"
+									"patching_rect" : [ 21.5, 362.0, 67.0, 22.0 ],
+									"text" : "ar.adclip7~"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
-									"id" : "obj-13",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 257.0, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "Output Level",
-									"id" : "obj-16",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 281.052287581699318, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "11K tap",
+									"attr" : "Boost",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +113,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "filters Q",
+									"attr" : "Soften",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -148,7 +125,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "22K tap",
+									"attr" : "Mode",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -160,7 +137,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "15K tap",
+									"attr" : "Enhance",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -176,7 +153,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 298.0, 179.0, 150.0, 20.0 ]
+									"patching_rect" : [ 321.0, 306.104575163398692, 190.0, 20.0 ],
+									"text" : "<- Normal, gain matched, clip only"
 								}
 
 							}
@@ -263,7 +241,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "ar.air~" ],
+									"jsarguments" : [ "ar.adclip7~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -292,23 +270,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-16", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-19", 1 ],
+									"midpoints" : [ 79.0, 405.0, 159.0, 405.0 ],
 									"order" : 1,
 									"source" : [ "obj-17", 1 ]
 								}
@@ -324,6 +287,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
+									"midpoints" : [ 79.0, 396.0, 242.5, 396.0 ],
 									"order" : 0,
 									"source" : [ "obj-17", 1 ]
 								}
@@ -442,7 +406,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "ar.air~" ],
+									"jsarguments" : [ "ar.adclip7~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -467,13 +431,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-30",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/air-vst/"
+									"patching_rect" : [ 16.0, 155.0, 315.0, 35.0 ],
+									"text" : ";\rmax launchbrowser https://www.airwindows.com/adclip-7/"
 								}
 
 							}
@@ -499,7 +463,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "ar.air~" ],
+					"jsarguments" : [ "ar.adclip7~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -565,7 +529,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ar.air~.mxo",
+				"name" : "ar.adclip7~.mxo",
 				"type" : "iLaX"
 			}
  ],
