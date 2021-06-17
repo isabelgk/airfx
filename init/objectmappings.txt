@@ -30,3 +30,4 @@ max objectfile mc.ar.tapedust~ mc.wrapper~ ar.tapedust~ multichannel;
 max objectfile mc.ar.buttercomp~ mc.wrapper~ ar.buttercomp~ multichannel;
 max objectfile mc.ar.buttercomp2~ mc.wrapper~ ar.buttercomp2~ multichannel;
 max objectfile mc.ar.tapedelay~ mc.wrapper~ ar.tapedelay~ multichannel;
+max objectfile mc.ar.tapefat~ mc.wrapper~ ar.tapefat~ multichannel;
