@@ -3,9 +3,9 @@ import os, shutil
 pwd = "/Users/isabelkaspriskie/Documents/Max 8/Packages/airfx/"
 projects_dir = pwd + "source/projects/"
 airwindows_dir = pwd + "source/airwindows/plugins/LinuxVST/src/"
-plugin = "ToTape6"
+plugin = "Hombre"
 meta = {
-    "description": "tape emulation",
+    "description": "atmosphere and texture (through very short delays)",
     "classname": plugin.lower()
 }
 
@@ -224,4 +224,10 @@ if __name__ == "__main__":
     # Write the cpp
     with open(projects_dir + project_name + "/" + project_name + ".cpp", 'w') as f:
         print(get_object_text(get_param_info()), file=f)
+
+    # Append to init/objectmappings.txt
+    with open(pwd + "init/objectmappings.txt", "a+") as f:
+        n = "ar." + plugin.lower() + "~"
+        if n + " multichannel;" not in f.read():
+            f.write("max objectfile mc." + n + " mc.wrapper~ " + n + " multichannel;\n")
 
