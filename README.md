@@ -11,22 +11,22 @@ Both the original airwindows project and this airfx project are licenced under t
 # Plugin list
 
 - [ ] ADClip7
-- [ ] ADT
-- [ ] AQuickVoiceClip
-- [ ] Acceleration
+- [x] ADT
+- [x] AQuickVoiceClip
+- [x] Acceleration
 - [x] Acceleration2
 - [x] Air
-- [ ] Apicolypse
+- [x] Apicolypse
 - [ ] AtmosphereBuss
 - [ ] AtmosphereChannel
-- [ ] Aura
-- [ ] AutoPan
-- [ ] AverMatrix
-- [ ] Average
-- [ ] BassAmp
-- [ ] BassDrive
-- [ ] BassKit
-- [ ] Baxandall
+- [x] Aura
+- [x] AutoPan
+- [x] AverMatrix
+- [x] Average
+- [x] BassAmp
+- [x] BassDrive
+- [x] BassKit
+- [x] Baxandall
 - [ ] Beam
 - [ ] Biquad
 - [ ] Biquad2
