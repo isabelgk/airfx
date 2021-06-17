@@ -19,5 +19,5 @@
 	},
 	"tags" : [ "effects", "audio" ],
 	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
-	"website" : "http://www.github.com/Cycling74/min-devkit"
+	"website" : "http://www.github.com/isabelgk/airfx"
 }
