@@ -27,3 +27,4 @@ max objectfile mc.ar.pyewacket~ mc.wrapper~ ar.pyewacket~ multichannel;
 max objectfile mc.ar.mojo~ mc.wrapper~ ar.mojo~ multichannel;
 max objectfile mc.ar.chorus~ mc.wrapper~ ar.chorus~ multichannel;
 max objectfile mc.ar.tapedust~ mc.wrapper~ ar.tapedust~ multichannel;
+max objectfile mc.ar.buttercomp~ mc.wrapper~ ar.buttercomp~ multichannel;
