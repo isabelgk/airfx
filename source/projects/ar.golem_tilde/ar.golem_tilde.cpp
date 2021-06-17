@@ -60,7 +60,7 @@ public:
 		}
 		int _near = (int)floor(fabs(offset));
 		double farLevel = fabs(offset) - _near;
-		int far = _near + 1;
+		int _far = _near + 1;
 		double nearLevel = 1.0 - farLevel;
 		
 		long double inputSampleL;
@@ -122,7 +122,7 @@ public:
 			{
 				p[count+2048] = p[count] = inputSampleL;
 				inputSampleL = p[count+_near]*nearLevel;
-				inputSampleL += p[count+far]*farLevel;
+				inputSampleL += p[count+_far]*farLevel;
 				
 				//consider adding third sample just to bring out superhighs subtly, like old interpolation hacks
 				//or third and fifth samples, ditto
@@ -133,7 +133,7 @@ public:
 			{
 				p[count+2048] = p[count] = inputSampleR;
 				inputSampleR = p[count+_near]*nearLevel;
-				inputSampleR += p[count+far]*farLevel;
+				inputSampleR += p[count+_far]*farLevel;
 			}
 			
 			count -= 1;
