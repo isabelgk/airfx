@@ -24,3 +24,4 @@ max objectfile mc.ar.bitglitter~ mc.wrapper~ ar.bitglitter~ multichannel;
 max objectfile mc.ar.ensemble~ mc.wrapper~ ar.ensemble~ multichannel;
 max objectfile mc.ar.tovinyl4~ mc.wrapper~ ar.tovinyl4~ multichannel;
 max objectfile mc.ar.pyewacket~ mc.wrapper~ ar.pyewacket~ multichannel;
+max objectfile mc.ar.mojo~ mc.wrapper~ ar.mojo~ multichannel;
