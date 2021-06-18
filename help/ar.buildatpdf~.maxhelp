@@ -1,5 +1,4 @@
-
-        {
+{
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
@@ -89,62 +88,91 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "Ninth",
+									"id" : "obj-1",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 321.0, 329.104575163398692, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "Tenth",
+									"id" : "obj-7",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 321.0, 353.15686274509801, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 21.5, 358.0, 42.0, 22.0 ],
+									"outlettype" : [ "signal", "signal" ],
+									"patching_rect" : [ 21.5, 358.0, 81.0, 22.0 ],
 									"text" : "ar.buildatpdf~"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Fifth",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 257.0, 150.0, 22.0 ]
+									"patching_rect" : [ 167.0, 353.15686274509801, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Eighth",
 									"id" : "obj-14",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 329.15686274509801, 150.0, 22.0 ]
+									"patching_rect" : [ 321.0, 305.104575163398692, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Seventh",
 									"id" : "obj-15",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 305.104575163398692, 150.0, 22.0 ]
+									"patching_rect" : [ 321.0, 281.052287581699375, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Sixth",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 281.052287581699318, 150.0, 22.0 ]
+									"patching_rect" : [ 321.0, 257.0, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "First",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -156,6 +184,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Fourth",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -167,6 +196,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Third",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -178,6 +208,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Second",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -295,6 +326,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -397,6 +436,14 @@
 									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -597,10 +644,12 @@
 				"type" : "TEXT",
 				"implicit" : 1
 			}
+, 			{
+				"name" : "ar.buildatpdf~.mxo",
+				"type" : "iLaX"
+			}
  ],
 		"autosave" : 0
 	}
 
 }
-
-        

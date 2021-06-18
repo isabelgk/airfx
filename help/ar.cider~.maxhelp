@@ -1,5 +1,4 @@
-
-        {
+{
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
@@ -93,58 +92,15 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 21.5, 358.0, 42.0, 22.0 ],
+									"outlettype" : [ "signal", "signal" ],
+									"patching_rect" : [ 21.5, 358.0, 55.0, 22.0 ],
 									"text" : "ar.cider~"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 257.0, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 329.15686274509801, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 305.104575163398692, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 281.052287581699318, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
+									"attr" : "Drive",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -156,6 +112,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Output",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -167,6 +124,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Persnlty",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -178,6 +136,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Hardns",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -304,38 +263,6 @@
 									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-15", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-16", 0 ]
 								}
 
 							}
@@ -597,10 +524,12 @@
 				"type" : "TEXT",
 				"implicit" : 1
 			}
+, 			{
+				"name" : "ar.cider~.mxo",
+				"type" : "iLaX"
+			}
  ],
 		"autosave" : 0
 	}
 
 }
-
-        
