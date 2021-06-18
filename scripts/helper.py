@@ -3,14 +3,9 @@ import os, shutil
 pwd = "/Users/isabelkaspriskie/Documents/Max 8/Packages/airfx/"
 projects_dir = pwd + "source/projects/"
 airwindows_dir = pwd + "source/airwindows/plugins/LinuxVST/src/"
-plugin = "Hombre"
-meta = {
-    "description": "atmosphere and texture (through very short delays)",
-    "classname": plugin.lower()
-}
 
 
-def get_param_info():
+def get_param_info(plugin, meta):
     result = {}
     num_params = 0;
     num_inlets = 0;
@@ -61,7 +56,7 @@ def get_param_info():
 
     return result
 
-def get_processing_code(num_io):
+def get_processing_code(plugin, meta, num_io):
     lines = []
     with open(airwindows_dir + plugin + "/" + plugin + "Proc.cpp") as f:
         lines = f.readlines()
@@ -77,7 +72,7 @@ def get_processing_code(num_io):
 
     return lines[start_index:-2].copy()
 
-def get_private_vars():
+def get_private_vars(plugin, meta):
     lines = []
     result = []
 
@@ -96,7 +91,7 @@ def get_private_vars():
 
     return result
 
-def get_initialization_code(num_io):
+def get_initialization_code(plugin, meta, num_io):
     lines = []
 
     # Get default values from *.cpp constructor
@@ -116,7 +111,7 @@ def get_initialization_code(num_io):
 
     return lines[start_index - 2:end_index]
 
-def get_template_help():
+def get_template_help(plugin, meta):
     lines = []
     result = []
 
@@ -134,8 +129,7 @@ def get_template_help():
     return result
 
 
-
-def get_object_text(params):
+def get_object_text(plugin, meta, params):
     text = "#include \"c74_min.h\"\n\n"
     text += "using namespace c74::min;\n\n"
     text += "class " + meta["classname"] + " : public object<" + meta["classname"] + ">, public vector_operator<> {\n"
@@ -162,7 +156,7 @@ def get_object_text(params):
     text += "\t\tMIN_FUNCTION {\n"
 
     # Add processing code
-    init_code = get_initialization_code(params["num_ins"] + params["num_outs"])
+    init_code = get_initialization_code(plugin, meta, params["num_ins"] + params["num_outs"])
     for l in init_code:
         text += "\t\t" + l
     text += "\t\t\treturn {};\n\t\t}\n\t};\n\n"
@@ -175,19 +169,23 @@ def get_object_text(params):
         text += "\t\tdouble* in" + str(i + 1) + " = _input.samples(" + str(i) + ");\n"
     for i in range(params["num_outs"]):
         text += "\t\tdouble* out" + str(i + 1) + " = _output.samples(" + str(i) + ");\n"
-
-    text += "\t\tdouble overallscale = 1.0;\n\t\toverallscale /= 44100.0;\n\t\toverallscale *= samplerate();\n\n"
+    
     text += "\t\tlong sampleFrames = _input.frame_count();\n\n"
 
     # Add processing code
-    proc_code = get_processing_code(params["num_ins"] + params["num_outs"])
+    proc_code = get_processing_code(plugin, meta, params["num_ins"] + params["num_outs"])
     for l in proc_code:
-        text += "\t" + l
+        if "getSampleRate()" in l:
+            text += "\t" + l.replace("getSampleRate", "samplerate")
+        elif "VstInt32" in l:
+            text += "\t" + l.replace("VstInt32", "uint32_t")
+        else:
+            text += "\t" + l
     text += "\t\t}\n\t}\n"
     
     #    Add private member variables
     text += "private:\n"
-    members = get_private_vars()
+    members = get_private_vars(plugin, meta)
     for m in members:
         text += m
     text += "};\n"
@@ -197,7 +195,7 @@ def get_object_text(params):
     return text
 
 
-if __name__ == "__main__":
+def main(plugin, meta):
     project_name = "ar." + plugin.lower() + "_tilde"
 
     # Create a project folder in the projects directory
@@ -217,13 +215,13 @@ if __name__ == "__main__":
     # Copy the template help file
     t = """
         {}
-        """.format("".join(get_template_help()))
+        """.format("".join(get_template_help(plugin, meta)))
     with open(pwd + "help/ar." + plugin.lower() + "~.maxhelp", 'w') as f:
         print(t, file=f)
 
     # Write the cpp
     with open(projects_dir + project_name + "/" + project_name + ".cpp", 'w') as f:
-        print(get_object_text(get_param_info()), file=f)
+        print(get_object_text(plugin, meta, get_param_info(plugin, meta)), file=f)
 
     # Append to init/objectmappings.txt
     with open(pwd + "init/objectmappings.txt", "a+") as f:
@@ -231,3 +229,17 @@ if __name__ == "__main__":
         if n + " multichannel;" not in f.read():
             f.write("max objectfile mc." + n + " mc.wrapper~ " + n + " multichannel;\n")
 
+
+if __name__ == "__main__":
+    projects = [
+        ("Deckwrecka", "fattens and dirties up beats"),
+        ("DeEss", "a de-esser"),
+        ("DeHiss", "hiss gate"),
+        ("Density", "a Swiss Army Knife of saturation/antisaturation"),
+        ("Density2", "a different color of Density for saturation/antisaturation"),
+    ]
+
+    for p in projects:
+        plugin = p[0]
+        meta = {"description" : p[1], "classname" : plugin.lower()}
+        main(plugin, meta)
