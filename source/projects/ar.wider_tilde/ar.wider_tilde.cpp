@@ -60,10 +60,10 @@ public:
 		if (offset > 0) offset = sin(offset);
 		if (offset < 0) offset = -sin(-offset);
 		offset = -(pow(offset,4) * 20 * overallscale);
-		int near = (int)floor(fabs(offset));
-		double farLevel = fabs(offset) - near;
-		int far = near + 1;
-		double nearLevel = 1.0 - farLevel;
+		int _near = (int)floor(fabs(offset));
+		double _farLevel = fabs(offset) - _near;
+		int _far = _near + 1;
+		double _nearLevel = 1.0 - _farLevel;
 		double bridgerectifier;
 		//interpolating the sample
 	    
@@ -148,15 +148,15 @@ public:
 			if (offset > 0)
 			{
 				p[count+2048] = p[count] = mid;
-				mid = p[count+near]*nearLevel;
-				mid += p[count+far]*farLevel;
+				mid = p[count+_near]*_nearLevel;
+				mid += p[count+_far]*_farLevel;
 			}
 			
 			if (offset < 0)
 			{
 				p[count+2048] = p[count] = side;
-				side = p[count+near]*nearLevel;
-				side += p[count+far]*farLevel;
+				side = p[count+_near]*_nearLevel;
+				side += p[count+_far]*_farLevel;
 			}
 			count -= 1;
 			
