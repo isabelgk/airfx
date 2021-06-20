@@ -16,11 +16,11 @@ public:
 	attribute<number, threadsafe::no, limit::clamp> A {this, "TGrind", 0.9, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> B {this, "Grd/Out", 0.5, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> C {this, "XOver", 0.74, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "BsDrive", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "BsVoice", 0.95, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "BassDrive", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "BassVoice", 0.95, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> F {this, "BassOut", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "SbDrive", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> H {this, "SbVoice", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "SubDrive", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> H {this, "SubVoice", 0.2, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> I {this, "SubOut", 0.5, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> J {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
 
@@ -201,7 +201,7 @@ public:
 			oscGate -= 0.001;
 			if (oscGate > 1.0) oscGate = 1.0;
 			if (oscGate < 0) oscGate = 0;
-			//got a value that only goes down low when there's silence or _near silence on input
+			//got a value that only goes down low when there's silence or near silence on input
 			clamp = 1.0-oscGate;
 			clamp *= 0.00001;
 			//set up the thing to choke off oscillations- belt and suspenders affair
