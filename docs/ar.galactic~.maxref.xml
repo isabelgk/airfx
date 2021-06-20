@@ -37,17 +37,7 @@
 
 	<attributelist>
 
-		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='Bigness' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='Detune' get='1' set='1' type='float64' size='1' >
+		<attribute name='Replace' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -57,7 +47,17 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='Replace' get='1' set='1' type='float64' size='1' >
+		<attribute name='Detune' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='Bigness' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

@@ -37,12 +37,12 @@
 
 	<attributelist>
 
-		<attribute name='Output Level' get='1' set='1' type='float64' size='1' >
+		<attribute name='Bite' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Bite' get='1' set='1' type='float64' size='1' >
+		<attribute name='Output Level' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

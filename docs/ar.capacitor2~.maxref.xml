@@ -37,7 +37,7 @@
 
 	<attributelist>
 
-		<attribute name='NonLin' get='1' set='1' type='float64' size='1' >
+		<attribute name='Lowpass' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -47,12 +47,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
+		<attribute name='NonLin' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Lowpass' get='1' set='1' type='float64' size='1' >
+		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

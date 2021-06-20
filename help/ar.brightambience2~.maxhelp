@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 585.0, 599.0 ],
+		"rect" : [ 997.0, 336.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 130.0, 585.0, 573.0 ],
+						"rect" : [ 997.0, 362.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -214,7 +214,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 1, "@wave", 2 ],
+									"args" : [ "@module", 0, "@loop", 1, "@file", "anton.aif" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -360,8 +360,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -432,8 +432,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/brightambience2/"
+									"patching_rect" : [ 16.0, 155.0, 257.0, 50.0 ],
+									"text" : ";\r\nmax launchbrowser https://www.airwindows.com/brightambience2/"
 								}
 
 							}
@@ -525,8 +525,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ar.brightambience2~.mxo",
-				"type" : "iLaX"
+				"name" : "ar.brightambience2~.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0

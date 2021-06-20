@@ -1,17 +1,16 @@
-
-        {
+{
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 585.0, 599.0 ],
+		"rect" : [ 59.0, 100.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 130.0, 585.0, 573.0 ],
+						"rect" : [ 59.0, 126.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -93,14 +92,15 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 21.5, 358.0, 42.0, 22.0 ],
+									"outlettype" : [ "signal", "signal" ],
+									"patching_rect" : [ 21.5, 358.0, 61.0, 22.0 ],
 									"text" : "ar.desk4~"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Output Trim",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,28 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 329.15686274509801, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 305.104575163398692, 150.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
+									"attr" : "Dry/Wet",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -145,6 +124,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Frequency",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -156,6 +136,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Power Sag",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -167,6 +148,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Overdrive",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -178,6 +160,7 @@
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Hi Choke",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -319,22 +302,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-15", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"hidden" : 1,
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -433,8 +400,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -505,8 +472,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/desk4/"
+									"patching_rect" : [ 16.0, 155.0, 257.0, 50.0 ],
+									"text" : ";\r\nmax launchbrowser https://www.airwindows.com/desk4/"
 								}
 
 							}
@@ -597,10 +564,12 @@
 				"type" : "TEXT",
 				"implicit" : 1
 			}
+, 			{
+				"name" : "ar.desk4~.mxe64",
+				"type" : "mx64"
+			}
  ],
 		"autosave" : 0
 	}
 
 }
-
-        

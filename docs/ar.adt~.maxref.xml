@@ -37,17 +37,12 @@
 
 	<attributelist>
 
-		<attribute name='Output' get='1' set='1' type='float64' size='1' >
+		<attribute name='A Level' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='B Level' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='B Delay' get='1' set='1' type='float64' size='1' >
+		<attribute name='Headrm' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -57,12 +52,17 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='A Level' get='1' set='1' type='float64' size='1' >
+		<attribute name='B Delay' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Headrm' get='1' set='1' type='float64' size='1' >
+		<attribute name='B Level' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='Output' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

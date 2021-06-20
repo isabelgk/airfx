@@ -42,7 +42,7 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='BassOut' get='1' set='1' type='float64' size='1' >
+		<attribute name='Drive' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -52,7 +52,7 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='Drive' get='1' set='1' type='float64' size='1' >
+		<attribute name='BassOut' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

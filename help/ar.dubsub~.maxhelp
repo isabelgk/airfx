@@ -1,17 +1,16 @@
-
-        {
+{
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 0,
+			"minor" : 1,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 585.0, 599.0 ],
+		"rect" : [ 59.0, 100.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 130.0, 585.0, 573.0 ],
+						"rect" : [ 59.0, 126.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -89,101 +88,133 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "SubOut",
+									"id" : "obj-1",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 320.0, 242.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "BassOut",
+									"id" : "obj-7",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 167.0, 242.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 21.5, 358.0, 42.0, 22.0 ],
+									"outlettype" : [ "signal", "signal" ],
+									"patching_rect" : [ 21.5, 358.0, 68.0, 22.0 ],
 									"text" : "ar.dubsub~"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "SbDrive",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 257.0, 150.0, 22.0 ]
+									"patching_rect" : [ 320.0, 266.0, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Grd/Out",
 									"id" : "obj-14",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 329.15686274509801, 150.0, 22.0 ]
+									"patching_rect" : [ 320.0, 338.15686274509801, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "XOver",
 									"id" : "obj-15",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 305.104575163398692, 150.0, 22.0 ]
+									"patching_rect" : [ 320.0, 314.104575163398692, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "SbVoice",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 281.052287581699318, 150.0, 22.0 ]
+									"patching_rect" : [ 320.0, 290.052287581699318, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "BsDrive",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 257.0, 150.0, 22.0 ]
+									"patching_rect" : [ 167.0, 266.0, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "Dry/Wet",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 329.15686274509801, 150.0, 22.0 ]
+									"patching_rect" : [ 167.0, 338.15686274509801, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "TGrind",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 305.104575163398692, 150.0, 22.0 ]
+									"patching_rect" : [ 167.0, 314.104575163398692, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"attr" : "BsVoice",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 281.052287581699318, 150.0, 22.0 ]
+									"patching_rect" : [ 167.0, 290.052287581699318, 150.0, 22.0 ]
 								}
 
 							}
@@ -292,6 +323,14 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
@@ -404,6 +443,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -433,8 +480,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 0,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -505,8 +552,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/dubsub/"
+									"patching_rect" : [ 16.0, 155.0, 257.0, 50.0 ],
+									"text" : ";\r\nmax launchbrowser https://www.airwindows.com/dubsub/"
 								}
 
 							}
@@ -597,10 +644,12 @@
 				"type" : "TEXT",
 				"implicit" : 1
 			}
+, 			{
+				"name" : "ar.dubsub~.mxe64",
+				"type" : "mx64"
+			}
  ],
 		"autosave" : 0
 	}
 
 }
-
-        

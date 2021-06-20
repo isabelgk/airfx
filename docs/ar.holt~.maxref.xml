@@ -37,17 +37,7 @@
 
 	<attributelist>
 
-		<attribute name='Output' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='Poles' get='1' set='1' type='float64' size='1' >
+		<attribute name='Freq' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -57,7 +47,17 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='Freq' get='1' set='1' type='float64' size='1' >
+		<attribute name='Poles' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='Output' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
