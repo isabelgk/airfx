@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Highpass",
+									"attr" : "highpass",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
