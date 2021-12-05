@@ -17,3 +17,5 @@ tmp
 .vs
 package-info.json
 .vscode
+.idea
+.cache
