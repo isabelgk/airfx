@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
+									"attr" : "mix",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Output Level",
+									"attr" : "output",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -124,7 +124,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "11K tap",
+									"attr" : "lowtap",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +136,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "filters Q",
+									"attr" : "filterq",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -148,7 +148,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "22K tap",
+									"attr" : "hightap",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -160,7 +160,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "15K tap",
+									"attr" : "midtap",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
