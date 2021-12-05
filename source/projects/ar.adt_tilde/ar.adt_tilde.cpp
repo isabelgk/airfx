@@ -5,7 +5,7 @@ using namespace c74::min;
 class adt : public object<adt>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"double short delay tap with saturation"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, delay, saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,12 +13,12 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Headrm", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "A Delay", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "A Level", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "B Delay", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "B Level", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Output", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "headroom", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "adelay", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "alevel", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "bdelay", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "blevel", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "output", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
