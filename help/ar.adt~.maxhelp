@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "A Level",
+									"attr" : "alevel",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "B Level",
+									"attr" : "blevel",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -124,7 +124,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "A Delay",
+									"attr" : "adelay",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +136,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Output",
+									"attr" : "output",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -148,7 +148,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Headrm",
+									"attr" : "headroom",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -160,7 +160,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "B Delay",
+									"attr" : "bdelay",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,

@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Drive",
+									"attr" : "drive",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Output",
+									"attr" : "output",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -124,7 +124,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Personality",
+									"attr" : "personality",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +136,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Hardness",
+									"attr" : "hardness",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,

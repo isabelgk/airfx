@@ -5,7 +5,7 @@ using namespace c74::min;
 class aquickvoiceclip : public object<aquickvoiceclip>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"softens headset mic recordings that have been super hard clipped on capture"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Highpass", 0.42, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "highpass", 0.42, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

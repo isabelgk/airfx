@@ -4,8 +4,8 @@ using namespace c74::min;
 
 class adclip7 : public object<adclip7>, public vector_operator<> {
 public:
-	MIN_DESCRIPTION {"loudness maximizer / peak control"};
-	MIN_TAGS {"audio, effect"};
+	MIN_DESCRIPTION {"loudness maximizer / peak control clipper"};
+	MIN_TAGS {"audio, effect, clipper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,17 +13,19 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Boost", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Soften", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Enhance", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Mode", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "boost", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "soften", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "enhance", 0.5, range {0.0, 1.0} };
+
+	enum class modes : int { normal, gainmatch, cliponly, enum_count };
+	enum_map mode_range = { "normal", "gainmatch", "cliponly" };
+	attribute<modes> mode { this, "mode", modes::gainmatch, mode_range };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
 			A = 0.0;
 			B = 0.5;
 			C = 0.5;
-			D = 0.0;
 		
 			lastSampleL = 0.0;
 			lastSampleR = 0.0;
@@ -69,7 +71,6 @@ public:
 		double invcalibsubs = 1.0 - calibsubs;
 		double subs = 0.81 + (calibsubs*2);
 		long double bridgerectifier;
-		int mode = (int) floor(D*2.999)+1;
 		double overshootL;
 		double overshootR;
 		double offsetH1 = 1.84;
@@ -476,9 +477,9 @@ public:
 			
 			switch (mode)
 			{
-				case 1: break; //Normal
-				case 2: inputSampleL /= inputGain; inputSampleR /= inputGain; break; //Gain Match
-				case 3: inputSampleL = overshootL + highsL + lowsL; inputSampleR = overshootR + highsR + lowsR; break; //Clip Only
+				case modes::normal: break; //Normal
+				case modes::gainmatch: inputSampleL /= inputGain; inputSampleR /= inputGain; break; //Gain Match
+				case modes::cliponly: inputSampleL = overshootL + highsL + lowsL; inputSampleR = overshootR + highsR + lowsR; break; //Clip Only
 			}
 			//this is our output mode switch, showing the effects
 			
