@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
+									"attr" : "mix",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Voicing",
+									"attr" : "voicing",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
