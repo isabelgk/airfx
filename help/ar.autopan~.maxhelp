@@ -116,7 +116,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Phase",
+									"attr" : "phase",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -128,7 +128,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
+									"attr" : "mix",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -140,7 +140,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Wide",
+									"attr" : "wideness",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -152,7 +152,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Rate",
+									"attr" : "rate",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
