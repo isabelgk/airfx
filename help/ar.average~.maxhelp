@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 585.0, 599.0 ],
+		"rect" : [ 82.0, 100.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 130.0, 585.0, 573.0 ],
+						"rect" : [ 82.0, 126.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Average",
+									"attr" : "average",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry/Wet",
+									"attr" : "mix",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -358,6 +358,19 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "jweb",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 16.0, 150.0, 481.0, 380.0 ],
+									"rendermode" : 0,
+									"url" : "https://www.airwindows.com/average/"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"border" : 0,
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
@@ -379,21 +392,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 216.0, 237.0, 20.0 ],
+									"patching_rect" : [ 16.0, 126.0, 237.0, 20.0 ],
 									"text" : "Original Airwindows DSP by Chris Johnson"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-30",
-									"linecount" : 3,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 49.0 ],
-									"text" : ";\rmax launchbrowser https://www.airwindows.com/average/"
 								}
 
 							}
