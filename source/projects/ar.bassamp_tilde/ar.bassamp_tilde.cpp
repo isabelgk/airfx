@@ -5,7 +5,7 @@ using namespace c74::min;
 class bassamp : public object<bassamp>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"gives some bass guitar tones"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,10 +13,10 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "High", 0.75, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Dry", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Dub", 0.75, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Sub", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "high", 0.75, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "dry", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "dub", 0.75, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "sub", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
