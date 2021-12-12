@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 847.0, 280.0, 585.0, 599.0 ],
+		"rect" : [ 112.0, 103.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 847.0, 306.0, 585.0, 573.0 ],
+						"rect" : [ 0.0, 26.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -90,9 +90,9 @@
 								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "signal", "signal" ],
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 21.5, 362.0, 46.0, 22.0 ],
 									"text" : "ar.adt~"
 								}
@@ -392,14 +392,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 585.0, 573.0 ],
+						"rect" : [ 112.0, 129.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -430,6 +430,43 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 490.0, 510.0, 77.0, 24.0 ],
+									"text" : "scroll me!"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "jweb",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 16.0, 148.0, 481.0, 413.0 ],
+									"rendermode" : 0,
+									"url" : "https://www.airwindows.com/adt-vst/"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 2,
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 16.0, 124.0, 237.0, 20.0 ],
+									"text" : "Original Airwindows DSP by Chris Johnson"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"border" : 0,
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
@@ -441,31 +478,6 @@
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 16.0, 13.0, 481.0, 100.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 2,
-									"id" : "obj-29",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 216.0, 237.0, 20.0 ],
-									"text" : "Original Airwindows DSP by Chris Johnson"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-30",
-									"linecount" : 3,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 257.0, 50.0 ],
-									"text" : ";\r\nmax launchbrowser https://www.airwindows.com/adt-vst/"
 								}
 
 							}
@@ -555,10 +567,6 @@
 				"bootpath" : "C74:/interfaces",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "ar.adt~.mxe64",
-				"type" : "mx64"
 			}
  ],
 		"autosave" : 0

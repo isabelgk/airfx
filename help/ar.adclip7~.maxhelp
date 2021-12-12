@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 1,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 100.0, 585.0, 599.0 ],
+		"rect" : [ 82.0, 100.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -93,7 +93,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "signal", "signal" ],
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 21.5, 362.0, 67.0, 22.0 ],
 									"text" : "ar.adclip7~"
 								}
@@ -214,7 +214,6 @@
 									"enablevscroll" : 0,
 									"id" : "obj-5",
 									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "demosound.maxpat",
 									"numinlets" : 0,
@@ -356,13 +355,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 1,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 585.0, 573.0 ],
+						"rect" : [ 82.0, 126.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -393,6 +392,43 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 499.0, 482.0, 77.0, 24.0 ],
+									"text" : "scroll me!"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "jweb",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 16.0, 150.0, 481.0, 380.0 ],
+									"rendermode" : 0,
+									"url" : "https://www.airwindows.com/adclip-7/"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 2,
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 16.0, 126.0, 237.0, 20.0 ],
+									"text" : "Original Airwindows DSP by Chris Johnson"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"border" : 0,
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
@@ -404,31 +440,6 @@
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 16.0, 13.0, 481.0, 100.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 2,
-									"id" : "obj-29",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 216.0, 237.0, 20.0 ],
-									"text" : "Original Airwindows DSP by Chris Johnson"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-30",
-									"linecount" : 2,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 155.0, 315.0, 36.0 ],
-									"text" : ";\r\nmax launchbrowser https://www.airwindows.com/adclip-7/"
 								}
 
 							}
@@ -518,10 +529,6 @@
 				"bootpath" : "C74:/interfaces",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "ar.adclip7~.mxe64",
-				"type" : "mx64"
 			}
  ],
 		"autosave" : 0
