@@ -37,22 +37,22 @@
 
 	<attributelist>
 
-		<attribute name='Type' get='1' set='1' type='float64' size='1' >
+		<attribute name='type' get='1' set='1' type='long' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Inv/Wet' get='1' set='1' type='float64' size='1' >
+		<attribute name='mix' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Freq' get='1' set='1' type='float64' size='1' >
+		<attribute name='q' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Q' get='1' set='1' type='float64' size='1' >
+		<attribute name='freq' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

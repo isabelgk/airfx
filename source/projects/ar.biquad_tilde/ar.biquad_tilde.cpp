@@ -13,15 +13,17 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Type", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Freq", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Q", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Inv/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "freq", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "q", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "mix", 1.0, range {0.0, 1.0} };
+
+    enum class types : int { lowpass, highpass, bandpass, notch, enum_count };
+    enum_map type_range = { "lowpass", "highpass", "bandpass", "notch" };
+    attribute<types> type { this, "type", types::lowpass, type_range };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
 			for (int x = 0; x < 11; x++) {biquad[x] = 0.0;}
-			A = 1.0;
 			B = 0.5;
 			C = 0.5;
 			D = 1.0;
@@ -42,8 +44,6 @@ public:
 		overallscale *= samplerate();
 
 		long sampleFrames = _input.frame_count();
-		
-		int type = ceil((A*3.999)+0.00001);
 		
 		biquad[0] = ((B*B*B*0.9999)+0.0001)*0.499;
 		if (biquad[0] < 0.0001) biquad[0] = 0.0001;
@@ -71,7 +71,7 @@ public:
 		//or in this 'read the controls' area (for letting you change freq and res with controls)
 		//or in 'reset' if the freq and res are absolutely fixed (use GetSampleRate to define freq)
 		
-		if (type == 1) { //lowpass
+		if (type == types::lowpass) { //lowpass
 			double K = tan(M_PI * biquad[0]);
 			double norm = 1.0 / (1.0 + K / biquad[1] + K * K);
 			biquad[2] = K * K * norm;
@@ -81,7 +81,7 @@ public:
 			biquad[6] = (1.0 - K / biquad[1] + K * K) * norm;
 		}
 		
-		if (type == 2) { //highpass
+		if (type == types::highpass) { //highpass
 			double K = tan(M_PI * biquad[0]);
 			double norm = 1.0 / (1.0 + K / biquad[1] + K * K);
 			biquad[2] = norm;
@@ -91,7 +91,7 @@ public:
 			biquad[6] = (1.0 - K / biquad[1] + K * K) * norm;
 		}
 		
-		if (type == 3) { //bandpass
+		if (type == types::bandpass) { //bandpass
 			double K = tan(M_PI * biquad[0]);
 			double norm = 1.0 / (1.0 + K / biquad[1] + K * K);
 			biquad[2] = K / biquad[1] * norm;
@@ -101,7 +101,7 @@ public:
 			biquad[6] = (1.0 - K / biquad[1] + K * K) * norm;
 		}
 		
-		if (type == 4) { //notch
+		if (type == types::notch) { //notch
 			double K = tan(M_PI * biquad[0]);
 			double norm = 1.0 / (1.0 + K / biquad[1] + K * K);
 			biquad[2] = (1.0 + K * K) * norm;
