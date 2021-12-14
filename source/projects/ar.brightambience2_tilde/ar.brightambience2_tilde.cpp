@@ -7,7 +7,7 @@ static int primeR[] = {3, 7, 11, 19, 31, 43, 59, 71, 83, 113, 127, 163, 179, 193
 class brightambience2 : public object<brightambience2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"more BrightAmbience with better tone and more slapbacky effects"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -15,10 +15,10 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Start", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Length", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Feedback", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Dry/Wet", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "start", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "length", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "feedback", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "mix", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

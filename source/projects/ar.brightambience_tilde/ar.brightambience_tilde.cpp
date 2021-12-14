@@ -5,7 +5,7 @@ using namespace c74::min;
 class brightambience : public object<brightambience>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"very bright gated reverbs"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Dry/Wet", 0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Sustain", 0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Decay", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "mix", 0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "sustain", 0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "decay", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

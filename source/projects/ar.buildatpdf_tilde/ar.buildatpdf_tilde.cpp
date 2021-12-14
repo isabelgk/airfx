@@ -5,7 +5,7 @@ using namespace c74::min;
 class buildatpdf : public object<buildatpdf>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a dither-making toolkit"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, dither"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,16 +13,16 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "First", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Second", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Third", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Fourth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Fifth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Sixth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "Seventh", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> H {this, "Eighth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> I {this, "Ninth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> J {this, "Tenth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "first", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "second", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "third", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "fourth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "fifth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "sixth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "seventh", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> H {this, "eighth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> I {this, "ninth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> J {this, "tenth", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
