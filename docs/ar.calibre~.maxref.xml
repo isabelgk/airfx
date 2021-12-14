@@ -37,22 +37,22 @@
 
 	<attributelist>
 
-		<attribute name='Drive' get='1' set='1' type='float64' size='1' >
+		<attribute name='output' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Hardns' get='1' set='1' type='float64' size='1' >
+		<attribute name='drive' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Persnlty' get='1' set='1' type='float64' size='1' >
+		<attribute name='personality' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Output' get='1' set='1' type='float64' size='1' >
+		<attribute name='hardness' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
