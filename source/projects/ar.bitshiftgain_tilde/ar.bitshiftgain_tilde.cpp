@@ -4,7 +4,7 @@ using namespace c74::min;
 
 class bitshiftgain : public object<bitshiftgain>, public vector_operator<> {
 public:
-	MIN_DESCRIPTION {"a ‘One Weird Trick’ perfect boost/pad, but in 6db increments only"};
+	MIN_DESCRIPTION {"a One Weird Trick perfect boost/pad, but in 6db increments only"};
 	MIN_TAGS {"audio, effect"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "BitShift", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "bitshift", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

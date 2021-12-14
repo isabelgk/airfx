@@ -6,8 +6,8 @@
 
 <c74object name='ar.bitshiftgain~' category='audio,  effect'>
 
-	<digest>a ‘One Weird Trick’ perfect boost/pad, but in 6db increments only </digest>
-	<description>a ‘One Weird Trick’ perfect boost/pad, but in 6db increments only </description>
+	<digest>a One Weird Trick perfect boost/pad, but in 6db increments only </digest>
+	<description>a One Weird Trick perfect boost/pad, but in 6db increments only </description>
 
 
 	<!--METADATA-->
@@ -37,7 +37,7 @@
 
 	<attributelist>
 
-		<attribute name='BitShift' get='1' set='1' type='float64' size='1' >
+		<attribute name='bitshift' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
