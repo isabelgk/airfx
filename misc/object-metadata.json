@@ -1,0 +1,322 @@
+{
+    "ar.acceleration2~": {
+        "description": "second gen acceleration limiter that tames edge, leaves brightness",
+        "url": "https://www.airwindows.com/acceleration2/",
+        "tags": [
+            "filter"
+        ]
+    },
+    "ar.acceleration~": {
+        "description": "acceleration limiter that tames edge, leaves brightness",
+        "url": "https://www.airwindows.com/acceleration/",
+        "tags": [
+            "filter"
+        ]
+    },
+    "ar.adclip7~": {
+        "description": "loudness maximizer / peak control clipper",
+        "url": "https://www.airwindows.com/acceleration/",
+        "tags": [
+            "clipper"
+        ]
+    },
+    "ar.adt~": {
+        "description": "double short delay tap with saturation",
+        "url": "https://www.airwindows.com/adt-vst/",
+        "tags": [
+            "delay",
+            "saturation"
+        ]
+    },
+    "ar.air~": {
+        "description": "add air to your mix",
+        "url": "https://www.airwindows.com/air-vst/",
+        "tags": [
+            "filter",
+            "eq"
+        ]
+    },
+    "ar.apicolypse~": {
+        "description": "API-style color adder",
+        "url": "https://www.airwindows.com/apicolypse/",
+        "tags": [
+            "character",
+            "saturation"
+        ]
+    },
+    "ar.aquickvoiceclip~": {
+        "description": "softens headset mic recordings that have been super hard clipped on capture",
+        "url": "https://www.airwindows.com/aquickvoicelip/",
+        "tags": [
+            "filter",
+            "utility"
+        ]
+    },
+    "ar.aura~": {
+        "description": "a new kind of resonant lowpass EQ",
+        "url": "https://www.airwindows.com/aura/",
+        "tags": [
+            "filter",
+            "lowpass"
+        ]
+    },
+    "ar.autopan~": {
+        "description": "for getting some organic stereo movement into your mix",
+        "url": "https://www.airwindows.com/autopan/",
+        "tags": [
+            "panning"
+        ]
+    },
+    "ar.average~": {
+        "description": "distinctive sort of lowpass filter",
+        "url": "https://www.airwindows.com/average/",
+        "tags": [
+            "filter",
+            "lowpass"
+        ]
+    },
+    "ar.avermatrix~": {
+        "description": "turns averaging into a full-featured EQ",
+        "url": "https://www.airwindows.com/avermatrix/",
+        "tags": [
+            "filter",
+            "eq"
+        ]
+    },
+    "ar.bassamp~": {
+        "description": "gives some bass guitar tones",
+        "url": "https://www.airwindows.com/bassamp/",
+        "tags": [
+            "bass"
+        ]
+    },
+    "ar.bassdrive~": {
+        "description": "like a kind of bass amp",
+        "url": "https://www.airwindows.com/bassdrive/",
+        "tags": [
+            "bass",
+            "drive"
+        ]
+    },
+    "ar.basskit~": {
+        "description": "A centered bass reinforcement with subs fill",
+        "url": "https://www.airwindows.com/basskit/",
+        "tags": [
+            "bass",
+            "saturation"
+        ]
+    },
+    "ar.baxandall~": {
+        "description": "a killer general-purpose EQ",
+        "url": "https://www.airwindows.com/baxandall/",
+        "tags": [
+            "filter",
+            "eq"
+        ]
+    },
+    "ar.beam~": {
+        "description": "wordlength reducer that tries to heighten sonority",
+        "url": "https://www.airwindows.com/beam/",
+        "tags": [
+            "utility"
+        ]
+    },
+    "ar.biquad~": {
+        "description": "Airwindows implementation of a biquad filter",
+        "url": "https://www.airwindows.com/biquad/",
+        "tags": [
+            "filter"
+        ]
+    },
+    "ar.bite~": {
+        "description": "an unusual edge-maker",
+        "url": "https://www.airwindows.com/bite/",
+        "tags": [
+            "distortion"
+        ]
+    },
+    "ar.bitglitter~": {
+        "description": "old-sampler style digital lo-fi effect",
+        "url": "https://www.airwindows.com/bitglitter/",
+        "tags": [
+            "lofi",
+            "bitcrusher"
+        ]
+    },
+    "ar.bitshiftgain~": {
+        "description": "a One Weird Trick perfect boost/pad, but in 6db increments only",
+        "url": "https://www.airwindows.com/bitshiftgain/",
+        "tags": [
+            "bitcrusher"
+        ]
+    },
+    "ar.blockparty~": {
+        "description": "a moderately saturated analog limiter emulation",
+        "url": "https://www.airwindows.com/blockparty/",
+        "tags": [
+            "limiter",
+            "analog",
+            "saturation"
+        ]
+    },
+    "ar.brassrider~": {
+        "description": "a One Weird Trick for drum overheads in metal",
+        "url": "https://www.airwindows.com/brassrider/",
+        "tags": [
+            "drums"
+        ]
+    },
+    "ar.brightambience~": {
+        "description": "very bright gated reverbs",
+        "url": "https://www.airwindows.com/brightambience/",
+        "tags": [
+            "reverb"
+        ]
+    },
+    "ar.brightambience2~": {
+        "description": "more BrightAmbience with better tone and more slapbacky effects",
+        "url": "https://www.airwindows.com/brightambience2/",
+        "tags": [
+            "reverb"
+        ]
+    },
+    "ar.buildatpdf~": {
+        "description": "a dither-making toolkit",
+        "url": "https://www.airwindows.com/buildatpdf/",
+        "tags": [
+            "dither",
+            "utility"
+        ]
+    },
+    "ar.buttercomp~": {
+        "description": "softest, smoothest compressor",
+        "url": "https://www.airwindows.com/buttercomp/",
+        "tags": [
+            "compressor"
+        ]
+    },
+    "ar.buttercomp2~": {
+        "description": "softest, smoothest compressor, improved with an output control and sound upgrades",
+        "url": "https://www.airwindows.com/buttercomp2/",
+        "tags": [
+            "compressor"
+        ]
+    },
+    "ar.calibre~": {
+        "description": "character-adding effect",
+        "url": "https://www.airwindows.com/calibre/",
+        "tags": [
+            "character"
+        ]
+    },
+    "ar.capacitor~": {
+        "description": "a lowpass/highpass filter",
+        "url": "https://www.airwindows.com/capacitor/",
+        "tags": [
+            "filter"
+        ]
+    },
+    "ar.capacitor2~": {
+        "description": "Capacitor with extra analog modeling and mojo",
+        "url": "https://www.airwindows.com/capacitor2/",
+        "tags": [
+            "filter",
+            "analog"
+        ]
+    },
+    "ar.chorus~": {
+        "description": "mono chorus, also works as a vibrato",
+        "url": "https://www.airwindows.com/chorus/",
+        "tags": [
+            "chorus",
+            "vibrato"
+        ]
+    },
+    "ar.chorusensemble~": {
+        "description": "a more complex, multi-tap mono chorus",
+        "url": "https://www.airwindows.com/chorusensemble/",
+        "tags": [
+            "chorus"
+        ]
+    },
+    "ar.chromeoxide~": {
+        "description": "an alternate path to vibey old tape sonics",
+        "url": "https://www.airwindows.com/chrome-oxide/",
+        "tags": [
+            "drive",
+            "saturation",
+            "tape",
+            "lofi"
+        ]
+    },
+    "ar.cider~": {
+        "description": "adds character",
+        "url": "https://www.airwindows.com/cider/",
+        "tags": [
+            "character"
+        ]
+    },
+    "ar.cliponly~": {
+        "description": "a clipper that suppresses the brightness of digital clipping without affecting unclipped samples",
+        "url": "https://www.airwindows.com/cliponly/",
+        "tags": [
+            "clipper"
+        ]
+    },
+    "ar.coils~": {
+        "description": "models the types of distortion you'll find in transformers",
+        "url": "https://www.airwindows.com/coils/",
+        "tags": [
+            "distortion",
+            "analog"
+        ]
+    },
+    "ar.coils2~": {
+        "description": "a transformer overdrive emulator",
+        "url": "https://www.airwindows.com/coils2/",
+        "tags": [
+            "analog",
+            "drive",
+            "saturation"
+        ]
+    },
+    "ar.cojones~": {
+        "description": "a kind of distortion effect",
+        "url": "https://www.airwindows.com/cojones/",
+        "tags": [
+            "distortion"
+        ]
+    },
+    "ar.compresaturator~": {
+        "description": "fades between compressing and soft clipping",
+        "url": "https://www.airwindows.com/compresaturator/",
+        "tags": [
+            "compressor",
+            "clipper"
+        ]
+    },
+    "ar.crunchygroovewear~": {
+        "description": "scrubs highs off mechanically like a stylus would plus extra edge and distortion",
+        "url": "https://www.airwindows.com/crunchygroovewear/",
+        "tags": [
+            "vinyl",
+            "distortion",
+            "filter",
+            "lofi"
+        ]
+    },
+    "ar.crystal~": {
+        "description": "a tone shaper and buss soft-clipper",
+        "url": "https://www.airwindows.com/crystal/",
+        "tags": [
+            "clipper"
+        ]
+    },
+    "ar.curve~": {
+        "description": "the simplest, purest form of Recurve (a special buss compressor with no threshold point) with no extra boosts",
+        "url": "https://www.airwindows.com/curve/",
+        "tags": [
+            "compressor"
+        ]
+    }
+}
