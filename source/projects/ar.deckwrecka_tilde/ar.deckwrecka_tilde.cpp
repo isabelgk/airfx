@@ -5,7 +5,7 @@ using namespace c74::min;
 class deckwrecka : public object<deckwrecka>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"fattens and dirties up beats"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, saturation, lofi"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Wreck", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "wreck", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

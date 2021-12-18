@@ -5,7 +5,7 @@ using namespace c74::min;
 class desk : public object<desk>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"subtle analog modeling"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, analog"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

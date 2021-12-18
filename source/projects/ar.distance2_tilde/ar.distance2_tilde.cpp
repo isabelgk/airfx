@@ -5,7 +5,7 @@ using namespace c74::min;
 class distance2 : public object<distance2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"shape shaper for creating depth"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Atmosph", 0.85, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Darken", 0.618, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Dry/Wet", 0.618, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "atmosphere", 0.85, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "darken", 0.618, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "mix", 0.618, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

@@ -5,7 +5,7 @@ using namespace c74::min;
 class dubsub : public object<dubsub>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a fully featured bass doctor"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,16 +13,16 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "TGrind", 0.9, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Grd/Out", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "XOver", 0.74, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "BsDrive", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "BsVoice", 0.95, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "BassOut", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "SbDrive", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> H {this, "SbVoice", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> I {this, "SubOut", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> J {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "tgrind", 0.9, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "grdout", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "crossover", 0.74, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "bassdrive", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "bassvoice", 0.95, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "bassout", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "subdrive", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> H {this, "subvoice", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> I {this, "subout", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> J {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

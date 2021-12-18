@@ -5,7 +5,7 @@ using namespace c74::min;
 class distortion : public object<distortion>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a slightly dark analog-style distortion with several presets"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, analog, distortion"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,15 +13,16 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Input", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Mode", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Output", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
-
-	message<> dspsetup {this, "dspsetup",
+	attribute<number, threadsafe::no, limit::clamp> A {this, "input", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "output", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "mix", 1.0, range {0.0, 1.0} };
+    enum class modes : int { density, drive, spiral, mojo, dyno, enum_count };
+    enum_map mode_range = { "density", "drive", "spiral", "mojo", "dyno" };
+    attribute<modes> mode { this, "mode", modes::spiral, mode_range };
+	
+    message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
 			A = 0.5;
-			B = 0.5;
 			C = 0.5;
 			D = 1.0;
 			for (int x = 0; x < 9; x++) {
@@ -45,7 +46,6 @@ public:
 		int stages = (int)floor(samplerate()/25000.0);
 		if (stages > 8) stages = 8;
 		double input = pow(10.0,((A-0.5)*24.0)/20.0);
-		int mode = (int) ( B * 4.999 );
 		double output = pow(10.0,((C-0.5)*24.0)/20.0);
 		double wet = D;
 	    
@@ -73,7 +73,7 @@ public:
 			
 			switch (mode)
 			{
-				case 0: //Density
+                case modes::density:
 					if (inputSampleL > 1.570796326794897) inputSampleL = 1.570796326794897;
 					if (inputSampleL < -1.570796326794897) inputSampleL = -1.570796326794897;
 					if (inputSampleR > 1.570796326794897) inputSampleR = 1.570796326794897;
@@ -82,7 +82,7 @@ public:
 					inputSampleL = sin(inputSampleL);
 					inputSampleR = sin(inputSampleR);
 					break;
-				case 1: //Drive				
+                case modes::drive:
 					if (inputSampleL > 1.0) inputSampleL = 1.0;
 					if (inputSampleL < -1.0) inputSampleL = -1.0;
 					if (inputSampleR > 1.0) inputSampleR = 1.0;
@@ -92,7 +92,7 @@ public:
 					inputSampleL *= 1.5;
 					inputSampleR *= 1.5;
 					break;
-				case 2: //Spiral
+                case modes::spiral:
 					if (inputSampleL > 1.2533141373155) inputSampleL = 1.2533141373155;
 					if (inputSampleL < -1.2533141373155) inputSampleL = -1.2533141373155;
 					if (inputSampleR > 1.2533141373155) inputSampleR = 1.2533141373155;
@@ -101,14 +101,14 @@ public:
 					inputSampleL = sin(inputSampleL * fabs(inputSampleL)) / ((fabs(inputSampleL) == 0.0) ?1:fabs(inputSampleL));
 					inputSampleR = sin(inputSampleR * fabs(inputSampleR)) / ((fabs(inputSampleR) == 0.0) ?1:fabs(inputSampleR));
 					break;
-				case 3: //Mojo
+                case modes::mojo:
 					long double mojo; mojo = pow(fabs(inputSampleL),0.25);
 					if (mojo > 0.0) inputSampleL = (sin(inputSampleL * mojo * M_PI * 0.5) / mojo) * 0.987654321;
 					mojo = pow(fabs(inputSampleR),0.25);
 					if (mojo > 0.0) inputSampleR = (sin(inputSampleR * mojo * M_PI * 0.5) / mojo) * 0.987654321;
 					//mojo is the one that flattens WAAAAY out very softly before wavefolding				
 					break;
-				case 4: //Dyno
+                case modes::dyno:
 					long double dyno; dyno = pow(fabs(inputSampleL),4);
 					if (dyno > 0.0) inputSampleL = (sin(inputSampleL * dyno) / dyno) * 1.1654321;
 					dyno = pow(fabs(inputSampleR),4);

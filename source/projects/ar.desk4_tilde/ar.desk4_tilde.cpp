@@ -5,7 +5,7 @@ using namespace c74::min;
 class desk4 : public object<desk4>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"distinctive analog coloration"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, analog"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,12 +13,12 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Overdrive", 0.27, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Hi Choke", 0.18, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Power Sag", 0.26, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Frequency", 0.54, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Output Trim", 0.84, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "overdrive", 0.27, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "hichoke", 0.18, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "powersag", 0.26, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "frequency", 0.54, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "outputtrim", 0.84, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
