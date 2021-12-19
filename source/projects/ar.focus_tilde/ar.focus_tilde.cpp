@@ -13,17 +13,19 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Boost", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Focus", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Mode", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Output", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	enum class modes : int { density, drive, spiral, mojo, dyno, enum_count };
+	enum_map mode_range = { "density", "drive", "spiral", "mojo", "dyno" };
+	attribute<modes> mode { this, "mode", modes::density, mode_range };
+	
+    attribute<number, threadsafe::no, limit::clamp> A {this, "boost", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "focus", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "output", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
 			A = 0.0;
 			B = 0.5;
-			C = 0.5;
 			D = 1.0;
 			E = 1.0;
 			for (int x = 0; x < 9; x++) {figureL[x] = 0.0;figureR[x] = 0.0;}
@@ -46,7 +48,6 @@ public:
 		double boost = pow(10.0,(A*12.0)/20.0);
 		figureL[0] = figureR[0] = 3515.775/samplerate(); //fixed frequency, 3.515775k
 		figureL[1] = figureR[1] = pow(pow(B,3)*2,2)+0.0001; //resonance
-		int mode = (int) ( C * 4.999 );
 		double output = D;
 		double wet = E;
 		
@@ -96,7 +97,7 @@ public:
 			
 			switch (mode)
 			{
-				case 0: //Density
+                case modes::density:
 					if (inputSampleL > 1.570796326794897) inputSampleL = 1.570796326794897;
 					if (inputSampleL < -1.570796326794897) inputSampleL = -1.570796326794897;
 					if (inputSampleR > 1.570796326794897) inputSampleR = 1.570796326794897;
@@ -105,7 +106,7 @@ public:
 					inputSampleL = sin(inputSampleL);
 					inputSampleR = sin(inputSampleR);
 					break;
-				case 1: //Drive				
+                case modes::drive:				
 					if (inputSampleL > 1.0) inputSampleL = 1.0;
 					if (inputSampleL < -1.0) inputSampleL = -1.0;
 					if (inputSampleR > 1.0) inputSampleR = 1.0;
@@ -115,7 +116,7 @@ public:
 					inputSampleL *= 1.6;
 					inputSampleR *= 1.6;
 					break;
-				case 2: //Spiral
+                case modes::spiral:
 					if (inputSampleL > 1.2533141373155) inputSampleL = 1.2533141373155;
 					if (inputSampleL < -1.2533141373155) inputSampleL = -1.2533141373155;
 					if (inputSampleR > 1.2533141373155) inputSampleR = 1.2533141373155;
@@ -124,14 +125,14 @@ public:
 					inputSampleL = sin(inputSampleL * fabs(inputSampleL)) / ((fabs(inputSampleL) == 0.0) ?1:fabs(inputSampleL));
 					inputSampleR = sin(inputSampleR * fabs(inputSampleR)) / ((fabs(inputSampleR) == 0.0) ?1:fabs(inputSampleR));
 					break;
-				case 3: //Mojo
+                case modes::mojo:
 					long double mojo; mojo = pow(fabs(inputSampleL),0.25);
 					if (mojo > 0.0) inputSampleL = (sin(inputSampleL * mojo * M_PI * 0.5) / mojo) * 0.987654321;
 					mojo = pow(fabs(inputSampleR),0.25);
 					if (mojo > 0.0) inputSampleR = (sin(inputSampleR * mojo * M_PI * 0.5) / mojo) * 0.987654321;
 					//mojo is the one that flattens WAAAAY out very softly before wavefolding				
 					break;
-				case 4: //Dyno
+                case modes::dyno:
 					long double dyno; dyno = pow(fabs(inputSampleL),4);
 					if (dyno > 0.0) inputSampleL = (sin(inputSampleL * dyno) / dyno) * 1.1654321;
 					dyno = pow(fabs(inputSampleR),4);

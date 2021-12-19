@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Balance", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Offset", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Phase", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "balance", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "offset", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "phase", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

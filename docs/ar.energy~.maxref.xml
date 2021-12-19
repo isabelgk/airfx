@@ -37,47 +37,47 @@
 
 	<attributelist>
 
-		<attribute name='Yowr' get='1' set='1' type='float64' size='1' >
+		<attribute name='mix' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Rat' get='1' set='1' type='float64' size='1' >
+		<attribute name='snarl' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Hiss' get='1' set='1' type='float64' size='1' >
+		<attribute name='chug' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Glitter' get='1' set='1' type='float64' size='1' >
+		<attribute name='fizz' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Fizz' get='1' set='1' type='float64' size='1' >
+		<attribute name='yowr' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Scrape' get='1' set='1' type='float64' size='1' >
+		<attribute name='scrape' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Chug' get='1' set='1' type='float64' size='1' >
+		<attribute name='rat' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Snarl' get='1' set='1' type='float64' size='1' >
+		<attribute name='glitter' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='I/Dr/Wt' get='1' set='1' type='float64' size='1' >
+		<attribute name='hiss' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

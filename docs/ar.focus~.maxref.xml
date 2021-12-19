@@ -37,27 +37,27 @@
 
 	<attributelist>
 
-		<attribute name='Output' get='1' set='1' type='float64' size='1' >
+		<attribute name='output' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Boost' get='1' set='1' type='float64' size='1' >
+		<attribute name='focus' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Focus' get='1' set='1' type='float64' size='1' >
+		<attribute name='mix' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Mode' get='1' set='1' type='float64' size='1' >
+		<attribute name='boost' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='Dry/Wet' get='1' set='1' type='float64' size='1' >
+		<attribute name='mode' get='1' set='1' type='long' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

@@ -13,15 +13,15 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Hiss", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Glitter", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Rat", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Fizz", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Scrape", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Chug", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "Yowr", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> H {this, "Snarl", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> I {this, "I/Dr/Wt", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "hiss", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "glitter", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "rat", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "fizz", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "scrape", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "chug", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "yowr", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> H {this, "snarl", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> I {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

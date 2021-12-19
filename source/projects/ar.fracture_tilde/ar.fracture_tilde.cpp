@@ -5,7 +5,7 @@ using namespace c74::min;
 class fracture : public object<fracture>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a frequency multiplier/waveshaper with a soft disruption to the sound"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"audio, effect, waveshaper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,10 +13,10 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Drive", 0.25, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Fracture", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Out Lvl", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "drive", 0.25, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "fracture", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "output", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
