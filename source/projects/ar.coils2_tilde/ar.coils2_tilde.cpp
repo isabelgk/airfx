@@ -5,7 +5,7 @@ using namespace c74::min;
 class coils2 : public object<coils2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a transformer overdrive emulator"};
-	MIN_TAGS {"audio, effect, drive, saturation"};
+	MIN_TAGS {"drive, saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class fromtape : public object<fromtape>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a minimalist, cleaner analog tape emulation"};
-	MIN_TAGS {"audio, effect, analog, tape"};
+	MIN_TAGS {"analog, tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -110,8 +110,8 @@ public:
 		overallscale /= 44100.0;
 		overallscale *= samplerate();
 		double inputgain = A*2.0;
-		double SoftenControl = B;
-		double RollAmount = (1.0-SoftenControl)/overallscale;
+		double softnessControl = B;
+		double RollAmount = (1.0-softnessControl)/overallscale;
 		double iirAmount = (0.004*(1.0-C))/overallscale;
 		double altAmount = 1.0 - iirAmount;
 		double outputgain = D*2.0;
@@ -183,7 +183,7 @@ public:
 				inputSampleR *= inputgain;
 			}		
 			
-			randy = (rand()/(double)RAND_MAX) * SoftenControl; //for soften
+			randy = (rand()/(double)RAND_MAX) * softnessControl; //for soften
 			invrandy = (1.0-randy);
 			randy /= 2.0;
 			//we've set up so that we dial in the amount of the alt sections (in pairs) with invrandy being the source section
@@ -299,7 +299,7 @@ public:
 			if (SubtractR > 0) SubtractR = bridgerectifierR;
 			if (SubtractR < 0) SubtractR = -bridgerectifierR;
 			inputSampleR -= SubtractR;
-			//Soften works using the MidRoller stuff, defining a bright parallel channel that we apply negative Density
+			//softness works using the MidRoller stuff, defining a bright parallel channel that we apply negative Density
 			//to, and then subtract from the main audio. That makes the 'highs channel subtract' hit only the loudest
 			//transients, plus we are subtracting any artifacts we got from the negative Density.				
 			

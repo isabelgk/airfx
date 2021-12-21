@@ -5,7 +5,7 @@ using namespace c74::min;
 class brightambience : public object<brightambience>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"very bright gated reverbs"};
-	MIN_TAGS {"audio, effect, reverb"};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

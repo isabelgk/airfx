@@ -5,7 +5,7 @@ using namespace c74::min;
 class tape : public object<tape>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"Tape mojo"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,8 +13,8 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Slam", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Bump", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "slam", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "bump", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
@@ -207,18 +207,18 @@ public:
 				inputSampleR *= inputgain;
 			} //gain boost inside UnBox: do not boost fringe audio
 			
-			long double applySoften = fabs(HighsSampleL)*1.57079633;
-			if (applySoften > 1.57079633) applySoften = 1.57079633;
-			applySoften = 1-cos(applySoften);
-			if (HighsSampleL > 0) inputSampleL -= applySoften;
-			if (HighsSampleL < 0) inputSampleL += applySoften;
-			//apply Soften depending on polarity
-			applySoften = fabs(HighsSampleR)*1.57079633;
-			if (applySoften > 1.57079633) applySoften = 1.57079633;
-			applySoften = 1-cos(applySoften);
-			if (HighsSampleR > 0) inputSampleR -= applySoften;
-			if (HighsSampleR < 0) inputSampleR += applySoften;
-			//apply Soften depending on polarity
+			long double applysoftness = fabs(HighsSampleL)*1.57079633;
+			if (applysoftness > 1.57079633) applysoftness = 1.57079633;
+			applysoftness = 1-cos(applysoftness);
+			if (HighsSampleL > 0) inputSampleL -= applysoftness;
+			if (HighsSampleL < 0) inputSampleL += applysoftness;
+			//apply softness depending on polarity
+			applysoftness = fabs(HighsSampleR)*1.57079633;
+			if (applysoftness > 1.57079633) applysoftness = 1.57079633;
+			applysoftness = 1-cos(applysoftness);
+			if (HighsSampleR > 0) inputSampleR -= applysoftness;
+			if (HighsSampleR < 0) inputSampleR += applysoftness;
+			//apply softness depending on polarity
 			
 			if (inputSampleL > 1.2533141373155) inputSampleL = 1.2533141373155;
 			if (inputSampleL < -1.2533141373155) inputSampleL = -1.2533141373155;

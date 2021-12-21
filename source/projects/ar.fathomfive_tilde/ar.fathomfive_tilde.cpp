@@ -4,8 +4,8 @@ using namespace c74::min;
 
 class fathomfive : public object<fathomfive>, public vector_operator<> {
 public:
-	MIN_DESCRIPTION {"a way of supplementing extreme bass that’s not just EQ"};
-	MIN_TAGS {"audio, effect, bass"};
+	MIN_DESCRIPTION {"a way of supplementing extreme bass that's not just EQ"};
+	MIN_TAGS {"bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

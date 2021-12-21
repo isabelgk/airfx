@@ -5,7 +5,7 @@ using namespace c74::min;
 class facet : public object<facet>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"hard clip that adds two sharp corners into the wave"};
-	MIN_TAGS {"audio, effect, clipper"};
+	MIN_TAGS {"clipper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class deess : public object<deess>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a de-esser"};
-	MIN_TAGS {"audio, effect, utility, deess"};
+	MIN_TAGS {"utility, deess"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -15,7 +15,7 @@ public:
 
 	attribute<number, threadsafe::no, limit::clamp> A {this, "intensity", 0.0, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> B {this, "maxds", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "freq", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "frequency", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

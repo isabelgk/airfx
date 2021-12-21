@@ -5,7 +5,7 @@ using namespace c74::min;
 class guitarconditioner : public object<guitarconditioner>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"tone shaper"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

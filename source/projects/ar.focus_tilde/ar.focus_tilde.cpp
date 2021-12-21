@@ -5,7 +5,7 @@ using namespace c74::min;
 class focus : public object<focus>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"brings out clarity by distorting"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

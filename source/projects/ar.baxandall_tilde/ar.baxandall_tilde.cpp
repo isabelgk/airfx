@@ -5,7 +5,7 @@ using namespace c74::min;
 class baxandall : public object<baxandall>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a killer general-purpose EQ"};
-	MIN_TAGS {"audio, effect, filter"};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

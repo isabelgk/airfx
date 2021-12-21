@@ -5,7 +5,7 @@ using namespace c74::min;
 class preponderant : public object<preponderant>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"Anti-Soothe, a strange tone intensifier and balancer."};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,11 +13,11 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Narrow", 0.25, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Medium", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Wide", 0.75, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Resonan", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "narrow", 0.25, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "medium", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "wide", 0.75, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "resonance", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

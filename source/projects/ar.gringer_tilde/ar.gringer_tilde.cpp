@@ -5,7 +5,7 @@ using namespace c74::min;
 class gringer : public object<gringer>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"full-wave rectifier"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

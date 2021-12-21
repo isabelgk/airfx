@@ -5,7 +5,7 @@ using namespace c74::min;
 class highpass : public object<highpass>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a time warp, for retro midrangey sounds"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Highpass", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Loose/Tight", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "highpass", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "tightness", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

@@ -5,7 +5,7 @@ using namespace c74::min;
 class adclip7 : public object<adclip7>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"loudness maximizer / peak control clipper"};
-	MIN_TAGS {"audio, effect, clipper"};
+	MIN_TAGS {"clipper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

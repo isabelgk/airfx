@@ -7,7 +7,7 @@ static int primeR[] = {3, 7, 11, 19, 31, 43, 59, 71, 83, 113, 127, 163, 179, 193
 class brightambience2 : public object<brightambience2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"more BrightAmbience with better tone and more slapbacky effects"};
-	MIN_TAGS {"audio, effect, reverb"};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

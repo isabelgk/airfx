@@ -5,7 +5,7 @@ using namespace c74::min;
 class ironoxide5 : public object<ironoxide5>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"old school, heavily colored Airwindows tape emulation"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,13 +13,13 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Input Trim", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Tape High", 0.562341325190349, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Tape Low", 0.562341325190349, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Flutter", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Noise", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Output Trim", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "Inv/Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "inputtrim", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "tapehigh", 0.562341325190349, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "tapelow", 0.562341325190349, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "flutter", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "noise", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "outputtrim", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

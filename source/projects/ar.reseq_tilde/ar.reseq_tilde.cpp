@@ -5,7 +5,7 @@ using namespace c74::min;
 class reseq : public object<reseq>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a bank of mostly midrange resonances"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"filter, EQ"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,15 +13,15 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Reso 1", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Reso 2", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Reso 3", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Reso 4", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Reso 5", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Reso 6", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "Reso 7", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> H {this, "Reso 8", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> I {this, "Dry/Wet", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "reso1", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "reso2", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "reso3", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "reso4", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "reso5", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "reso6", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "reso7", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> H {this, "reso8", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> I {this, "mix", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

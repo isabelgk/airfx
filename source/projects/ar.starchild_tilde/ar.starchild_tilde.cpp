@@ -5,7 +5,7 @@ using namespace c74::min;
 class starchild : public object<starchild>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a weird digital ambience/echo plugin"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"delay, reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Sustain", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Grain", 0.7, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Dry/Wet", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "sustain", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "grain", 0.7, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "mix", 0.2, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

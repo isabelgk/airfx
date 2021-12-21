@@ -5,7 +5,7 @@ using namespace c74::min;
 class elation : public object<elation>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"adds some character"};
-	MIN_TAGS {"audio, effect, character"};
+	MIN_TAGS {"character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

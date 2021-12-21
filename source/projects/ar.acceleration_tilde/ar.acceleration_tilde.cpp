@@ -5,7 +5,7 @@ using namespace c74::min;
 class acceleration : public object<acceleration>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"acceleration limiter that tames edge, leaves brightness"};
-	MIN_TAGS {"audio, effect, filter"};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

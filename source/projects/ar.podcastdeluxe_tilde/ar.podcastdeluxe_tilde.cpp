@@ -5,7 +5,7 @@ using namespace c74::min;
 class podcastdeluxe : public object<podcastdeluxe>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a pile of compressors (curve style) and phase rotators"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"compressor"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Boost", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "boost", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

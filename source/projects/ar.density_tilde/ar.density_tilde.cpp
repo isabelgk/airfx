@@ -5,7 +5,7 @@ using namespace c74::min;
 class density : public object<density>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a Swiss Army Knife of saturation/antisaturation"};
-	MIN_TAGS {"audio, effect, saturation"};
+	MIN_TAGS {"saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

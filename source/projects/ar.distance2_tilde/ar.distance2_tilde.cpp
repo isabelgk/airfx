@@ -5,7 +5,7 @@ using namespace c74::min;
 class distance2 : public object<distance2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"shape shaper for creating depth"};
-	MIN_TAGS {"audio, effect, reverb"};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -4,8 +4,8 @@ using namespace c74::min;
 
 class tapedust : public object<tapedust>, public vector_operator<> {
 public:
-	MIN_DESCRIPTION {"special treble-erode noise, a ‘slew noise’ effect"};
-	MIN_TAGS {"audio, effect"};
+	MIN_DESCRIPTION {"special treble-erode noise, a 'slew noise' effect"};
+	MIN_TAGS {"tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,8 +13,8 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Dust", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "dust", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

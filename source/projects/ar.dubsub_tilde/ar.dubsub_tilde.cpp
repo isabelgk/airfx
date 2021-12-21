@@ -5,7 +5,7 @@ using namespace c74::min;
 class dubsub : public object<dubsub>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a fully featured bass doctor"};
-	MIN_TAGS {"audio, effect, bass"};
+	MIN_TAGS {"bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

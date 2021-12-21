@@ -5,7 +5,7 @@ using namespace c74::min;
 class dark : public object<dark>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a wordlength reducer that gives your music a blacker backdrop"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

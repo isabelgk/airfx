@@ -5,7 +5,7 @@ using namespace c74::min;
 class distortion : public object<distortion>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a slightly dark analog-style distortion with several presets"};
-	MIN_TAGS {"audio, effect, analog, distortion"};
+	MIN_TAGS {"analog, distortion"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

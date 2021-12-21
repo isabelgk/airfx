@@ -5,7 +5,7 @@ using namespace c74::min;
 class fracture : public object<fracture>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a frequency multiplier/waveshaper with a soft disruption to the sound"};
-	MIN_TAGS {"audio, effect, waveshaper"};
+	MIN_TAGS {"waveshaper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

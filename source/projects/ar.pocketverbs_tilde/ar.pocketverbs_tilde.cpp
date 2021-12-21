@@ -5,7 +5,7 @@ using namespace c74::min;
 class pocketverbs : public object<pocketverbs>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"special effects reverbs"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,14 +13,16 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Type", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Size", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Gating", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Dry/Wet", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "size", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "gating", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "mix", 0.5, range {0.0, 1.0} };
+
+	enum class modes : int { chamber, spring, tiled, room, stretch, zarathustra, enum_count };
+    enum_map mode_range = { "chamber", "spring", "tiled", "room", "stretch", "zarathustra" };
+    attribute<modes> verbtype { this, "mode", modes::chamber, mode_range };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
 			B = 0.5;
 			C = 0.0;
 			D = 0.5;
@@ -213,8 +215,6 @@ public:
 		double* out2 = _output.samples(1);
 		long sampleFrames = _input.frame_count();
 
-		int verbtype = (uint32_t)( A * 5.999 )+1;
-		
 		double roomsize = (pow(B,2)*1.9)+0.1;
 		
 		double release = 0.00008 * pow(C,3);
@@ -700,8 +700,7 @@ public:
 			switch (verbtype)
 			{
 					
-					
-				case 1://Chamber
+				case modes::chamber:
 					allpasstemp = alpAL - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleL -= aAL[allpasstemp]*constallpass;
@@ -1438,7 +1437,7 @@ public:
 					
 					
 					
-				case 2:	//Spring
+				case modes::spring:
 					
 					allpasstemp = alpAL - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
@@ -2173,7 +2172,7 @@ public:
 					break;
 					
 					
-				case 3:	//Tiled
+				case modes::tiled:	//Tiled
 					allpasstemp = alpAL - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleL -= aAL[allpasstemp]*constallpass;
@@ -2855,7 +2854,7 @@ public:
 					break;
 					
 					
-				case 4://Room
+				case modes::room:
 					allpasstemp = alpAL - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleL -= aAL[allpasstemp]*constallpass;
@@ -3589,11 +3588,7 @@ public:
 					break;
 					
 					
-					
-					
-					
-					
-				case 5:	//Stretch	
+				case modes::stretch:
 					allpasstemp = alpAL - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleL -= aAL[allpasstemp]*constallpass;
@@ -4275,7 +4270,7 @@ public:
 					break;				
 					
 					
-				case 6:	//Zarathustra	
+				case modes::zarathustra:
 					allpasstemp = alpAL - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleL -= aAL[allpasstemp]*constallpass;
@@ -5015,7 +5010,7 @@ public:
 			{
 					
 					
-				case 1://Chamber
+				case modes::chamber:
 					allpasstemp = alpAR - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleR -= aAR[allpasstemp]*constallpass;
@@ -5752,8 +5747,7 @@ public:
 					
 					
 					
-				case 2:	//Spring
-					
+				case modes::spring:
 					allpasstemp = alpAR - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleR -= aAR[allpasstemp]*constallpass;
@@ -6487,7 +6481,7 @@ public:
 					break;
 					
 					
-				case 3:	//Tiled
+				case modes::tiled:
 					allpasstemp = alpAR - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleR -= aAR[allpasstemp]*constallpass;
@@ -7169,7 +7163,7 @@ public:
 					break;
 					
 					
-				case 4://Room
+				case modes::room:
 					allpasstemp = alpAR - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleR -= aAR[allpasstemp]*constallpass;
@@ -7907,7 +7901,7 @@ public:
 					
 					
 					
-				case 5:	//Stretch	
+				case modes::stretch:
 					allpasstemp = alpAR - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleR -= aAR[allpasstemp]*constallpass;
@@ -8589,7 +8583,7 @@ public:
 					break;				
 					
 					
-				case 6:	//Zarathustra	
+				case modes::zarathustra:
 					allpasstemp = alpAR - 1;
 					if (allpasstemp < 0 || allpasstemp > delayA) {allpasstemp = delayA;}
 					inputSampleR -= aAR[allpasstemp]*constallpass;

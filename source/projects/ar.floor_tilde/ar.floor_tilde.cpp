@@ -5,7 +5,7 @@ using namespace c74::min;
 class arfloor : public object<arfloor>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"add a fake bottom octave"};
-	MIN_TAGS {"audio, effect, bass"};
+	MIN_TAGS {"bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

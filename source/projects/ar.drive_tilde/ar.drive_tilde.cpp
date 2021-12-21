@@ -5,7 +5,7 @@ using namespace c74::min;
 class drive : public object<drive>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"the angry distortion"};
-	MIN_TAGS {"audio, effect, distortion"};
+	MIN_TAGS {"distortion"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class totape6 : public object<totape6>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"tape emulation"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,12 +13,12 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Input", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Soften", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Head B", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Flutter", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Output", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "input", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "softness", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "headb", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "flutter", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "output", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
@@ -73,8 +73,8 @@ public:
 		overallscale *= samplerate();
 		
 		double inputgain = pow(10.0,((A-0.5)*24.0)/20.0);
-		double SoftenControl = pow(B,2);
-		double RollAmount = (1.0-(SoftenControl * 0.45))/overallscale;
+		double softnessControl = pow(B,2);
+		double RollAmount = (1.0-(softnessControl * 0.45))/overallscale;
 		double HeadBumpControl = C * 0.25 * inputgain;
 		double HeadBumpFreq = 0.12/overallscale;
 		//[0] is frequency: 0.000001 to 0.499999 is near-zero to near-Nyquist
@@ -263,18 +263,18 @@ public:
 				inputSampleR *= inputgain;
 			}
 			
-			long double applySoften = fabs(HighsSampleL)*1.57079633;
-			if (applySoften > 1.57079633) applySoften = 1.57079633;
-			applySoften = 1-cos(applySoften);
-			if (HighsSampleL > 0) inputSampleL -= applySoften;
-			if (HighsSampleL < 0) inputSampleL += applySoften;
-			//apply Soften depending on polarity
-			applySoften = fabs(HighsSampleR)*1.57079633;
-			if (applySoften > 1.57079633) applySoften = 1.57079633;
-			applySoften = 1-cos(applySoften);
-			if (HighsSampleR > 0) inputSampleR -= applySoften;
-			if (HighsSampleR < 0) inputSampleR += applySoften;
-			//apply Soften depending on polarity
+			long double applysoftness = fabs(HighsSampleL)*1.57079633;
+			if (applysoftness > 1.57079633) applysoftness = 1.57079633;
+			applysoftness = 1-cos(applysoftness);
+			if (HighsSampleL > 0) inputSampleL -= applysoftness;
+			if (HighsSampleL < 0) inputSampleL += applysoftness;
+			//apply softness depending on polarity
+			applysoftness = fabs(HighsSampleR)*1.57079633;
+			if (applysoftness > 1.57079633) applysoftness = 1.57079633;
+			applysoftness = 1-cos(applysoftness);
+			if (HighsSampleR > 0) inputSampleR -= applysoftness;
+			if (HighsSampleR < 0) inputSampleR += applysoftness;
+			//apply softness depending on polarity
 			
 			double suppress = (1.0-fabs(inputSampleL)) * 0.00013;
 			if (iirHeadBumpAL > suppress) iirHeadBumpAL -= suppress;

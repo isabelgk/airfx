@@ -5,7 +5,7 @@ using namespace c74::min;
 class crystal : public object<crystal>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a tone shaper and buss soft-clipper"};
-	MIN_TAGS {"audio, effect, softclipper"};
+	MIN_TAGS {"softclipper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

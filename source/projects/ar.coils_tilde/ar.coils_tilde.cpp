@@ -5,7 +5,7 @@ using namespace c74::min;
 class coils : public object<coils>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"models the types of distortion you'll find in transformers"};
-	MIN_TAGS {"audio, effect, distortion"};
+	MIN_TAGS {"distortion"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

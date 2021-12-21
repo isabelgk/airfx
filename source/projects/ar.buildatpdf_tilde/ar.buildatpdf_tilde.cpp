@@ -5,7 +5,7 @@ using namespace c74::min;
 class buildatpdf : public object<buildatpdf>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a dither-making toolkit"};
-	MIN_TAGS {"audio, effect, dither"};
+	MIN_TAGS {"dither"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

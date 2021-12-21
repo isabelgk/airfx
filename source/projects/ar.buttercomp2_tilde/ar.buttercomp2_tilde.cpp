@@ -5,7 +5,7 @@ using namespace c74::min;
 class buttercomp2 : public object<buttercomp2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"The softest, smoothest compressor, improved with an output control and sound upgrades."};
-	MIN_TAGS {"audio, effect, compressor"};
+	MIN_TAGS {"compressor"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

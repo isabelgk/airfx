@@ -5,7 +5,7 @@ using namespace c74::min;
 class drumslam : public object<drumslam>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a heavy-processing tape modeler"};
-	MIN_TAGS {"audio, effect, tape"};
+	MIN_TAGS {"tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class adt : public object<adt>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"double short delay tap with saturation"};
-	MIN_TAGS {"audio, effect, delay, saturation"};
+	MIN_TAGS {"delay, saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

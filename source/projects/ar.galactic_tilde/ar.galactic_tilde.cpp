@@ -5,7 +5,7 @@ using namespace c74::min;
 class galactic : public object<galactic>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"super-reverb designed specially for pads and space ambient"};
-	MIN_TAGS {"audio, effect, reverb"};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class softgate : public object<softgate>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a gate that can mute hiss and smooth sample tails"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"gate"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Thresh", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Darken", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Silence", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "threshold", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "darkness", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "silence", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

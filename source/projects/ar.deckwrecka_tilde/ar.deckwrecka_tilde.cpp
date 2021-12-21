@@ -5,7 +5,7 @@ using namespace c74::min;
 class deckwrecka : public object<deckwrecka>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"fattens and dirties up beats"};
-	MIN_TAGS {"audio, effect, saturation, lofi"};
+	MIN_TAGS {"saturation, lofi"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class curve : public object<curve>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"the simplest, purest form of Recurve (a special buss compressor with no threshold point) with no extra boosts"};
-	MIN_TAGS {"audio, effect, compressor"};
+	MIN_TAGS {"compressor"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

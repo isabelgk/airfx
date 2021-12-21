@@ -5,7 +5,7 @@ using namespace c74::min;
 class apicolypse : public object<apicolypse>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"API-style color adder"};
-	MIN_TAGS {"audio, effect, saturation"};
+	MIN_TAGS {"saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class vibrato : public object<vibrato>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"vibrato, chorus, flange, and make odd FM noises"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"vibrato, chorus"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,11 +13,11 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Speed", 0.3, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Depth", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "FMSpeed", 0.4, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "FMDepth", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Inv/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "speed", 0.3, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "depth", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "fmspeed", 0.4, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "fmdepth", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

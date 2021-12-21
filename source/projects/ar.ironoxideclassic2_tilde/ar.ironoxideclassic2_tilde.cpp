@@ -5,7 +5,7 @@ using namespace c74::min;
 class ironoxideclassic2 : public object<ironoxideclassic2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a bandpassy tape sim"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"tape, filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Input Trim", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Tape Speed", 0.562341325190349, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Output Trim", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "inputtrim", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "tapespeed", 0.55, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "outputtrim", 0.5, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

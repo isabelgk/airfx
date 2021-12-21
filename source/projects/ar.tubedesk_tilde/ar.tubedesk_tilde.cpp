@@ -5,7 +5,7 @@ using namespace c74::min;
 class tubedesk : public object<tubedesk>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a tube recording console type tone coloring"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

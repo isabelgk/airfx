@@ -5,7 +5,7 @@ using namespace c74::min;
 class isolator : public object<isolator>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a steep highpass or lowpass filter, like you might find in a speaker crossover"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,9 +13,9 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Freq", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "High", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Low", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "frequency", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "high", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "low", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

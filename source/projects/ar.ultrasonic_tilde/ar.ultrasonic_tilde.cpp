@@ -5,7 +5,7 @@ using namespace c74::min;
 class ultrasonic : public object<ultrasonic>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"very clean, plain, high quality supersonic filter, for using inside digital mixes"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

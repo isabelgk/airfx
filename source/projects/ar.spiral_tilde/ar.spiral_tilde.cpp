@@ -5,7 +5,7 @@ using namespace c74::min;
 class spiral : public object<spiral>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"smooth distortion"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"distortion"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

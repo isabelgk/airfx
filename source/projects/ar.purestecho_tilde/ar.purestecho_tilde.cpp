@@ -5,7 +5,7 @@ using namespace c74::min;
 class purestecho : public object<purestecho>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"optimized Airwindows echo with exactly four evenly spaced taps on tap"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"delay"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,11 +13,11 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Time", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Tap 1", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Tap 2", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Tap 3", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Tap 4", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "time", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "tap1", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "tap2", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "tap3", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "tap4", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

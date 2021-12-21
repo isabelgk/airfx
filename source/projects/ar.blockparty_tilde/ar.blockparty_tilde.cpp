@@ -5,7 +5,7 @@ using namespace c74::min;
 class blockparty : public object<blockparty>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a moderately saturated analog limiter emulation"};
-	MIN_TAGS {"audio, effect, saturation"};
+	MIN_TAGS {"saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

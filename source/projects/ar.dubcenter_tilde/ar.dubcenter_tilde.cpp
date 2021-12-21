@@ -5,7 +5,7 @@ using namespace c74::min;
 class dubcenter : public object<dubcenter>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a version of DubSub where the bass reinforcement is purely mono"};
-	MIN_TAGS {"audio, effect, bass"};
+	MIN_TAGS {"bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

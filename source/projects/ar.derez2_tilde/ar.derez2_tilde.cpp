@@ -5,7 +5,7 @@ using namespace c74::min;
 class derez2 : public object<derez2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"retro-digital hardware effect"};
-	MIN_TAGS {"audio, effect, distortion, bitcrusher"};
+	MIN_TAGS {"distortion, bitcrusher"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

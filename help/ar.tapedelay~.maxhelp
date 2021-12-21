@@ -100,7 +100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Dry",
+									"attr" : "dry",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -112,7 +112,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Wet",
+									"attr" : "wetness",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -124,7 +124,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Delay",
+									"attr" : "delay",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -136,7 +136,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Lean/Ft",
+									"attr" : "fatness",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -148,7 +148,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Feedbak",
+									"attr" : "feedback",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -160,7 +160,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "Depth",
+									"attr" : "depth",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -225,7 +225,7 @@
 											"parameter_longname" : "live.gain~",
 											"parameter_mmax" : 30.0,
 											"parameter_mmin" : -70.0,
-											"parameter_shortname" : "Gain",
+											"parameter_shortname" : "gain",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
 										}
@@ -512,9 +512,9 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-19" : [ "live.gain~", "Gain", 0 ],
+			"obj-1::obj-19" : [ "live.gain~", "gain", 0 ],
 			"obj-1::obj-5::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-1::obj-5::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-1::obj-5::obj-35" : [ "[5]", "level", 0 ],
 			"parameterbanks" : 			{
 
 			}

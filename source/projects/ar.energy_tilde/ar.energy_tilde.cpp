@@ -5,7 +5,7 @@ using namespace c74::min;
 class energy : public object<energy>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"electrifying fixed-frequency treble boosts"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

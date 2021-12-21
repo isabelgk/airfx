@@ -5,7 +5,7 @@ using namespace c74::min;
 class golem : public object<golem>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"blend a stereo track of two mics on an amp"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

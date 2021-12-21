@@ -5,7 +5,7 @@ using namespace c74::min;
 class brassrider : public object<brassrider>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a 'One Weird Trick' for drum overheads in metal"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "thresh", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "threshold", 0.0, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> B {this, "mix", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",

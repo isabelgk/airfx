@@ -5,7 +5,7 @@ using namespace c74::min;
 class density2 : public object<density2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a different color of Density for saturation/antisaturation"};
-	MIN_TAGS {"audio, effect, saturation"};
+	MIN_TAGS {"saturation"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

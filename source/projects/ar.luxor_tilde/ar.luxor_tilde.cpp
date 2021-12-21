@@ -5,7 +5,7 @@ using namespace c74::min;
 class luxor : public object<luxor>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"adds some character"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,10 +13,10 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Hardns", 0.70, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Persnlty", 0.3333333, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Drive", 0.3333333, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Output", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "hardness", 0.70, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "personality", 0.3333333, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "drive", 0.3333333, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "output", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

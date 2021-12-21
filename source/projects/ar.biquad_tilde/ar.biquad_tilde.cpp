@@ -5,7 +5,7 @@ using namespace c74::min;
 class biquad : public object<biquad>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"Airwindows implementation of a biquad filter"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> B {this, "freq", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "frequency", 0.5, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> C {this, "q", 0.5, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> D {this, "mix", 1.0, range {0.0, 1.0} };
 

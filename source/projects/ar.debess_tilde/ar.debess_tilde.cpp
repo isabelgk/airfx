@@ -5,7 +5,7 @@ using namespace c74::min;
 class debess : public object<debess>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"an improved de-esser"};
-	MIN_TAGS {"audio, effect, deess, utility"};
+	MIN_TAGS {"deess, utility"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

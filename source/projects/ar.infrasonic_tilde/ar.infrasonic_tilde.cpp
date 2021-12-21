@@ -5,7 +5,7 @@ using namespace c74::min;
 class infrasonic : public object<infrasonic>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a very steep subsonic filter"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

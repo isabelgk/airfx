@@ -5,7 +5,7 @@ using namespace c74::min;
 class chorusensemble : public object<chorusensemble>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a more complex, multi-tap mono chorus"};
-	MIN_TAGS {"audio, effect, chorus"};
+	MIN_TAGS {"chorus"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

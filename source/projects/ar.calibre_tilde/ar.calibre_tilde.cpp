@@ -5,7 +5,7 @@ using namespace c74::min;
 class calibre : public object<calibre>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"character-adding effect"};
-	MIN_TAGS {"audio, effect, character"};
+	MIN_TAGS {"character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

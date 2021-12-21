@@ -5,7 +5,7 @@ using namespace c74::min;
 class gatelope : public object<gatelope>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a special gate that applies filters"};
-	MIN_TAGS {"audio, effect, filter, gate"};
+	MIN_TAGS {"filter, gate"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "thresh", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "threshold", 0.0, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> B {this, "treblesustain", 1.0, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> C {this, "basssustain", 0.5, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> D {this, "attack", 0.0, range {0.0, 1.0} };

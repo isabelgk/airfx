@@ -5,7 +5,7 @@ using namespace c74::min;
 class slew2 : public object<slew2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"works like a de-esser or acceleration limiter: controls extreme highs"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"desser"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Clamping", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "clamping", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

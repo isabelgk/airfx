@@ -5,7 +5,7 @@ using namespace c74::min;
 class logical4 : public object<logical4>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a classic 2-buss compressor"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"compressor"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,11 +13,11 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Threshold", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Ratio", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Speed", 0.2, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "MakeupGn", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "threshold", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "ratio", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "speed", 0.2, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "makeupgain", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

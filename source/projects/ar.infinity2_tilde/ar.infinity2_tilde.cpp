@@ -5,7 +5,7 @@ using namespace c74::min;
 class infinity2 : public object<infinity2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a reverb specifically designed to sustain and layer sounds forever with more tone shaping and a kill-switch"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {""};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,12 +13,12 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Filter", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Size", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Damping", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Allpass", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Feedback", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Dry/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "filter", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "size", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "damping", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "allpass", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "feedback", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

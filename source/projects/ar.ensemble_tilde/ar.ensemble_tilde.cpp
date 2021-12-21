@@ -5,7 +5,7 @@ using namespace c74::min;
 class ensemble : public object<ensemble>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"weird flangey little modulation effect"};
-	MIN_TAGS {"audio, effect, chorus"};
+	MIN_TAGS {"chorus"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

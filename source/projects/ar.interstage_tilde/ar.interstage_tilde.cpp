@@ -5,7 +5,7 @@ using namespace c74::min;
 class interstage : public object<interstage>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a subtle and sophisticated analogifier"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"analog"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

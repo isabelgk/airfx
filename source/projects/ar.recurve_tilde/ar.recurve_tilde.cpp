@@ -5,7 +5,7 @@ using namespace c74::min;
 class recurve : public object<recurve>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a special buss compressor with no threshold point"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"compressor"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

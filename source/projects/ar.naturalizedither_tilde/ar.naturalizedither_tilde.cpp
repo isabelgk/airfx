@@ -5,7 +5,7 @@ using namespace c74::min;
 class naturalizedither : public object<naturalizedither>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a deterministic dither that uses Benford Realness calculations for each sample"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"dither"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class distance : public object<distance>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a reverb"};
-	MIN_TAGS {"audio, effect, reverb"};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class cojones : public object<cojones>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a kind of distortion effect"};
-	MIN_TAGS {"audio, effect, distortion"};
+	MIN_TAGS {"distortion"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class cliponly : public object<cliponly>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a clipper that suppresses the brightness of digital clipping without affecting unclipped samples"};
-	MIN_TAGS {"audio, effect, clipper"};
+	MIN_TAGS {"clipper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

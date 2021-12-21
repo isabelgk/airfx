@@ -5,7 +5,7 @@ using namespace c74::min;
 class transdesk : public object<transdesk>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a transistory, rock desk analog modeling"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"analog"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

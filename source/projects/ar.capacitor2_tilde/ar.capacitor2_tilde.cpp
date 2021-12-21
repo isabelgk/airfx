@@ -5,7 +5,7 @@ using namespace c74::min;
 class capacitor2 : public object<capacitor2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"Capacitor with extra analog modeling and mojo"};
-	MIN_TAGS {"audio, effect, filter, nonlinear"};
+	MIN_TAGS {"filter, nonlinear"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

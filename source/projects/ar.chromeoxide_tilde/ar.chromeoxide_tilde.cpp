@@ -5,7 +5,7 @@ using namespace c74::min;
 class chromeoxide : public object<chromeoxide>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"an alternate path to vibey old tape sonics"};
-	MIN_TAGS {"audio, effect, drive, saturation, tape"};
+	MIN_TAGS {"drive, saturation, tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

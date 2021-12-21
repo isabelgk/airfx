@@ -5,7 +5,7 @@ using namespace c74::min;
 class dustbunny : public object<dustbunny>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"unpredictable distorty noise, like dust wedged under your turntable needle"};
-	MIN_TAGS {"audio, effect, lofi"};
+	MIN_TAGS {"lofi"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

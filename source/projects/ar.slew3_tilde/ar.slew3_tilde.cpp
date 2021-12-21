@@ -5,7 +5,7 @@ using namespace c74::min;
 class slew3 : public object<slew3>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a new approach to slew clipping meant for a more analog-like darkening effect"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"clipping"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,7 +13,7 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Clamping", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "clamping", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

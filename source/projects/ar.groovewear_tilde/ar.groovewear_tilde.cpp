@@ -5,7 +5,7 @@ using namespace c74::min;
 class groovewear : public object<groovewear>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"for scrubbing highs off mechanically like a stylus would"};
-	MIN_TAGS {"audio, effect, lofi"};
+	MIN_TAGS {"lofi"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

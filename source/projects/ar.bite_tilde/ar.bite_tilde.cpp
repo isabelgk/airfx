@@ -5,7 +5,7 @@ using namespace c74::min;
 class bite : public object<bite>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"an unusual edge-maker"};
-	MIN_TAGS {"audio, effect, destruction"};
+	MIN_TAGS {"destruction"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

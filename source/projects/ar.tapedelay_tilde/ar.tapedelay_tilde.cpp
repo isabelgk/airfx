@@ -5,7 +5,7 @@ using namespace c74::min;
 class tapedelay : public object<tapedelay>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"old school tape echo with pitch swerve effects"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"delay, tape"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,12 +13,12 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Dry", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Wet", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Delay", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Feedbak", 0.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Lean/Ft", 1.0, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Depth", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "dry", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "wetness", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "delay", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "feedback", 0.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "fatness", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "depth", 0.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {

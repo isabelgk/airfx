@@ -5,7 +5,7 @@ using namespace c74::min;
 class pafnuty : public object<pafnuty>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a Chebyshev filter that adds harmonics"};
-	MIN_TAGS {"audio, effect"};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,19 +13,19 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "Second", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "Third", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "Fourth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> D {this, "Fifth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> E {this, "Sixth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> F {this, "Seventh", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> G {this, "Eighth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> H {this, "Ninth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> I {this, "Tenth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> J {this, "Elevnth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> K {this, "Twelvth", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> L {this, "Thirtnh", 0.5, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> M {this, "Inv/Wet", 1.0, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "second", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "third", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "fourth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> D {this, "fifth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> E {this, "xixth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> F {this, "seventh", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> G {this, "eighth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> H {this, "ninth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> I {this, "tenth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> J {this, "elevnth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> K {this, "twelvth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> L {this, "thirteenth", 0.5, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> M {this, "mix", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
