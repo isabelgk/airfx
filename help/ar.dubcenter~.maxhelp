@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 100.0, 585.0, 599.0 ],
+		"rect" : [ 2215.0, 226.0, 585.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -294,6 +294,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-5",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "demosound.maxpat",
 									"numinlets" : 0,
@@ -481,13 +482,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 126.0, 585.0, 573.0 ],
+						"rect" : [ 2215.0, 252.0, 585.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -606,7 +607,7 @@
 		"parameters" : 		{
 			"obj-1::obj-19" : [ "live.gain~", "gain", 0 ],
 			"obj-1::obj-5::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-1::obj-5::obj-35" : [ "[5]", "level", 0 ],
+			"obj-1::obj-5::obj-35" : [ "[5]", "Level", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -657,8 +658,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ar.dubcenter~.mxo",
-				"type" : "iLaX"
+				"name" : "ar.dubcenter~.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0
