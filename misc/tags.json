@@ -1,0 +1,223 @@
+{
+    "filter": [
+        "ar.aquickvoiceclip~",
+        "ar.ironoxideclassic2~",
+        "ar.ultrasonic~",
+        "ar.acceleration2~",
+        "ar.average~",
+        "ar.aura~",
+        "ar.lowpass2~",
+        "ar.lowpass~",
+        "ar.baxandall~",
+        "ar.capacitor~",
+        "ar.highpass2~",
+        "ar.crunchygroovewear~",
+        "ar.phasenudge~",
+        "ar.gatelope~",
+        "ar.isolator~",
+        "ar.acceleration~",
+        "ar.capacitor2~",
+        "ar.infrasonic~",
+        "ar.holt~",
+        "ar.reseq~",
+        "ar.pafnuty~",
+        "ar.avermatrix~"
+    ],
+    "softclipper": [
+        "ar.crystal~",
+        "ar.compresaturator~"
+    ],
+    "delay": [
+        "ar.tapedelay~",
+        "ar.purestecho~",
+        "ar.adt~",
+        "ar.starchild~"
+    ],
+    "tape": [
+        "ar.tapedelay~",
+        "ar.tapefat~",
+        "ar.ironoxideclassic2~",
+        "ar.tape~",
+        "ar.fromtape~",
+        "ar.chromeoxide~",
+        "ar.totape6~",
+        "ar.drumslam~",
+        "ar.tapedither~",
+        "ar.tapedust~"
+    ],
+    "analog": [
+        "ar.interstage~",
+        "ar.powersag2~",
+        "ar.desk4~",
+        "ar.fromtape~",
+        "ar.transdesk~",
+        "ar.derez~",
+        "ar.distortion~",
+        "ar.desk~"
+    ],
+    "gate": [
+        "ar.dehiss~",
+        "ar.digitalblack~",
+        "ar.gatelope~",
+        "ar.softgate~"
+    ],
+    "utility": [
+        "ar.deess~",
+        "ar.debess~"
+    ],
+    "deess": [
+        "ar.deess~",
+        "ar.debess~"
+    ],
+    "lofi": [
+        "ar.groovewear~",
+        "ar.dustbunny~",
+        "ar.deckwrecka~"
+    ],
+    "bass": [
+        "ar.dubcenter~",
+        "ar.darknoise~",
+        "ar.fathomfive~",
+        "ar.dubsub~",
+        "ar.floor~"
+    ],
+    "clipper": [
+        "ar.adclip7~",
+        "ar.facet~",
+        "ar.podcast~",
+        "ar.onecornerclip~",
+        "ar.cliponly~"
+    ],
+    "character": [
+        "ar.neverland~",
+        "ar.voiceofthestarship~",
+        "ar.elation~",
+        "ar.calibre~",
+        "ar.luxor~",
+        "ar.tubedesk~",
+        "ar.precious~"
+    ],
+    "saturation": [
+        "ar.bassamp~",
+        "ar.basskit~",
+        "ar.tremolo~",
+        "ar.compresaturator~",
+        "ar.bassdrive~",
+        "ar.apicolypse~",
+        "ar.adt~",
+        "ar.chromeoxide~",
+        "ar.coils2~",
+        "ar.density2~",
+        "ar.deckwrecka~",
+        "ar.blockparty~",
+        "ar.hardvacuum~",
+        "ar.density~"
+    ],
+    "destruction": [
+        "ar.bitglitter~",
+        "ar.crunchygroovewear~",
+        "ar.bite~"
+    ],
+    "vinyl": [
+        "ar.tovinyl4~"
+    ],
+    "EQ": [
+        "ar.xhighpass~",
+        "ar.xbandpass~",
+        "ar.xlowpass~",
+        "ar.toneslant~",
+        "ar.xnotch~",
+        "ar.reseq~",
+        "ar.mackeq~"
+    ],
+    "compressor": [
+        "ar.recurve~",
+        "ar.podcast~",
+        "ar.pyewacket~",
+        "ar.compresaturator~",
+        "ar.podcastdeluxe~",
+        "ar.thunder~",
+        "ar.varimu~",
+        "ar.curve~",
+        "ar.pop~",
+        "ar.logical4~",
+        "ar.buttercomp2~",
+        "ar.pressure4~",
+        "ar.buttercomp~",
+        "ar.surge~"
+    ],
+    "panning": [
+        "ar.autopan~"
+    ],
+    "tremolo": [
+        "ar.tremolo~",
+        "ar.tremosquare~"
+    ],
+    "eq": [
+        "ar.air~"
+    ],
+    "dither": [
+        "ar.naturalizedither~",
+        "ar.buildatpdf~",
+        "ar.vinyldither~"
+    ],
+    "waveshaper": [
+        "ar.fracture~"
+    ],
+    "chorus": [
+        "ar.chorus~",
+        "ar.chorusensemble~",
+        "ar.ensemble~",
+        "ar.melt~",
+        "ar.vibrato~"
+    ],
+    "vibrato": [
+        "ar.chorus~",
+        "ar.vibrato~"
+    ],
+    "distortion": [
+        "ar.cojones~",
+        "ar.crunchygroovewear~",
+        "ar.derez~",
+        "ar.derez2~",
+        "ar.distortion~",
+        "ar.spiral2~",
+        "ar.unbox~",
+        "ar.drive~",
+        "ar.spiral~",
+        "ar.loud~",
+        "ar.coils~"
+    ],
+    "drive": [
+        "ar.chromeoxide~",
+        "ar.coils2~"
+    ],
+    "reverb": [
+        "ar.reverb~",
+        "ar.distance2~",
+        "ar.brightambience2~",
+        "ar.starchild~",
+        "ar.mv~",
+        "ar.verbity~",
+        "ar.distance~",
+        "ar.brightambience~",
+        "ar.pocketverbs~",
+        "ar.galactic~"
+    ],
+    "desser": [
+        "ar.slew2~"
+    ],
+    "bitcrusher": [
+        "ar.derez~",
+        "ar.derez2~"
+    ],
+    "allpass": [
+        "ar.phasenudge~"
+    ],
+    "nonlinear": [
+        "ar.capacitor2~"
+    ],
+    "clipping": [
+        "ar.slew3~"
+    ]
+}

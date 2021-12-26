@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 objects = dict()
-base_path = Path("C:/Users/Isabel Kaspriskie/Documents/Max 8/Packages/airfx/")
+base_path = Path("../../airfx")
 
 
 def get_tags(name):
@@ -53,8 +53,7 @@ def get_names():
         names.append(n.split(".maxref.xml")[0])
     return names
 
-
-def main():
+def write_objects_json():
     names = get_names()
     for n in names:
         objects[n] = dict()
@@ -62,8 +61,25 @@ def main():
         objects[n]["digest"] = get_description(n)
         objects[n]["url"] = get_url(n)
 
-    with open(Path(os.path.join(base_path, "misc/objects-dump.json")), 'a') as f:
+    with open(Path(os.path.join(base_path, "misc/objects.json")), "w") as f:
         json.dump(objects, f)
+
+
+def write_tags_json():
+    result = {}
+    for obj, info in objects.items():
+        for t in info['tags']:
+            if t not in result:
+                result[t] = []
+            result[t].append(obj)
+    
+    with open(Path(os.path.join(base_path, "misc/tags.json")), "w") as f:
+        json.dump(result, f)
+
+
+def main():
+    write_objects_json()
+    write_tags_json()
 
 
 if __name__ == "__main__":
