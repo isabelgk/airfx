@@ -7,10 +7,10 @@ string(REGEX REPLACE "(.*)/" "" THIS_PACKAGE_NAME "${CMAKE_CURRENT_SOURCE_DIR}")
 
 
 if (${CMAKE_GENERATOR} MATCHES "Xcode")
-         if (${XCODE_VERSION} VERSION_LESS 10)
-              message(STATUS "Xcode 10 or higher is required. Please install from the Mac App Store.")
-            return ()
-        endif ()
+    if (${XCODE_VERSION} VERSION_LESS 10)
+        message(STATUS "Xcode 10 or higher is required. Please install from the Mac App Store.")
+        return ()
+    endif ()
 endif ()
 
 
@@ -19,7 +19,7 @@ message(STATUS "Updating Git Submodules")
 execute_process(
     COMMAND				git submodule update --init --recursive
     WORKING_DIRECTORY	"${CMAKE_CURRENT_SOURCE_DIR}"
-)
+    )
 
 
 # Misc setup and subroutines
