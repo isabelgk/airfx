@@ -5,6 +5,9 @@ enable_testing()
 
 string(REGEX REPLACE "(.*)/" "" THIS_PACKAGE_NAME "${CMAKE_CURRENT_SOURCE_DIR}")
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_OSX_ARCHITECTURES x86_64;arm64)  # Enable Apple silicon builds
 
 if (${CMAKE_GENERATOR} MATCHES "Xcode")
     if (${XCODE_VERSION} VERSION_LESS 10)
@@ -12,14 +15,6 @@ if (${CMAKE_GENERATOR} MATCHES "Xcode")
         return ()
     endif ()
 endif ()
-
-
-# Fetch the correct version of the min-api
-message(STATUS "Updating Git Submodules")
-execute_process(
-    COMMAND				git submodule update --init --recursive
-    WORKING_DIRECTORY	"${CMAKE_CURRENT_SOURCE_DIR}"
-    )
 
 
 # Misc setup and subroutines
