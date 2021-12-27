@@ -5,7 +5,7 @@ using namespace c74::min;
 class righteous4 : public object<righteous4>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a final output stage for targeting dynamic range"};
-	MIN_TAGS {""};
+	MIN_TAGS {"utility"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

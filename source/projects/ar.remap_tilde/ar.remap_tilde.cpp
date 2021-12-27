@@ -5,7 +5,7 @@ using namespace c74::min;
 class remap : public object<remap>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"puts the guts back into overloudenated audio"};
-	MIN_TAGS {""};
+	MIN_TAGS {"utility, dynamics"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -37,7 +37,12 @@
 
 	<attributelist>
 
-		<attribute name='dry' get='1' set='1' type='float64' size='1' >
+		<attribute name='fatness' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='feedback' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -57,12 +62,7 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='feedback' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='fatness' get='1' set='1' type='float64' size='1' >
+		<attribute name='dry' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

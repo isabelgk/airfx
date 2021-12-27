@@ -36,12 +36,12 @@
 
 	<attributelist>
 
-		<attribute name='thunder' get='1' set='1' type='float64' size='1' >
+		<attribute name='outputtrim' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='outputtrim' get='1' set='1' type='float64' size='1' >
+		<attribute name='thunder' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

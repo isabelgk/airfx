@@ -5,7 +5,7 @@ using namespace c74::min;
 class surgetide : public object<surgetide>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"surge and flow dynamics"};
-	MIN_TAGS {""};
+	MIN_TAGS {"character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

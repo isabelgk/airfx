@@ -36,7 +36,7 @@
 
 	<attributelist>
 
-		<attribute name='size' get='1' set='1' type='float64' size='1' >
+		<attribute name='darkness' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -46,12 +46,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='darkness' get='1' set='1' type='float64' size='1' >
+		<attribute name='wet' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='wet' get='1' set='1' type='float64' size='1' >
+		<attribute name='size' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

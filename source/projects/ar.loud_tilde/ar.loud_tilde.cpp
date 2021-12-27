@@ -5,7 +5,7 @@ using namespace c74::min;
 class loud : public object<loud>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"distortion and demolition of air molecules, modeled"};
-	MIN_TAGS {"distortion"};
+	MIN_TAGS {"distortion, dynamics"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

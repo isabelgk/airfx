@@ -5,7 +5,7 @@ using namespace c74::min;
 class slew2 : public object<slew2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"works like a de-esser or acceleration limiter: controls extreme highs"};
-	MIN_TAGS {"desser"};
+	MIN_TAGS {"deess"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

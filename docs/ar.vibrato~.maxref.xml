@@ -37,16 +37,6 @@
 
 	<attributelist>
 
-		<attribute name='speed' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='depth' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
 		<attribute name='fmspeed' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
@@ -58,6 +48,16 @@
 		</attribute>
 
 		<attribute name='fmdepth' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='depth' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='speed' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

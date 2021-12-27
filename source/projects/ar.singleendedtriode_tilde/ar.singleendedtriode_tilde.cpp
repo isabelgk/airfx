@@ -5,7 +5,7 @@ using namespace c74::min;
 class singleendedtriode : public object<singleendedtriode>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"unusual analog modeling effects"};
-	MIN_TAGS {""};
+	MIN_TAGS {"analog, character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

@@ -5,7 +5,7 @@ using namespace c74::min;
 class beam : public object<beam>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"wordlength reducer that tries to heighten sonority"};
-	MIN_TAGS {""};
+	MIN_TAGS {"utility"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

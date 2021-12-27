@@ -5,7 +5,7 @@ using namespace c74::min;
 class purestdrive : public object<purestdrive>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"the magic saturation effect of subtlety and French House tone"};
-	MIN_TAGS {""};
+	MIN_TAGS {"saturation, drive"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

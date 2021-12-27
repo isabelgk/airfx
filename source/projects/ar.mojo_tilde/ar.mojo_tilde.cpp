@@ -5,7 +5,7 @@ using namespace c74::min;
 class mojo : public object<mojo>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a biggenator that also works as a loudenator"};
-	MIN_TAGS {""};
+	MIN_TAGS {"dynamics"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

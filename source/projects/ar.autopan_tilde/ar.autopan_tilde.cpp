@@ -5,7 +5,7 @@ using namespace c74::min;
 class autopan : public object<autopan>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"for getting some organic stereo movement into your mix"};
-	MIN_TAGS {"panning"};
+	MIN_TAGS {"stereo"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

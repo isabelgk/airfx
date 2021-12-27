@@ -5,7 +5,7 @@ using namespace c74::min;
 class matrixverb : public object<matrixverb>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a wildly adjustable, strangely colorful reverb for deep and flexible spaces"};
-	MIN_TAGS {""};
+	MIN_TAGS {"reverb"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

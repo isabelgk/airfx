@@ -5,7 +5,7 @@ using namespace c74::min;
 class tovinyl4 : public object<tovinyl4>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"vinyl-mastering simulator bringing several vinyl-type colors"};
-	MIN_TAGS {"vinyl"};
+	MIN_TAGS {"lofi, vinyl"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

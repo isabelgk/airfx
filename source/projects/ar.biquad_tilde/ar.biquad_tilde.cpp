@@ -5,7 +5,7 @@ using namespace c74::min;
 class biquad : public object<biquad>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"Airwindows implementation of a biquad filter"};
-	MIN_TAGS {""};
+	MIN_TAGS {"filter"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

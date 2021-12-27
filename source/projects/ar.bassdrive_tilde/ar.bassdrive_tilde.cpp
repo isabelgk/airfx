@@ -5,7 +5,7 @@ using namespace c74::min;
 class bassdrive : public object<bassdrive>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"like a kind of bass amp"};
-	MIN_TAGS {"saturation"};
+	MIN_TAGS {"saturation, drive, bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

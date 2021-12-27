@@ -42,7 +42,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='intensity' get='1' set='1' type='float64' size='1' >
+		<attribute name='sharp' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='sensitivity' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -52,12 +57,7 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='sharp' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='sensitivity' get='1' set='1' type='float64' size='1' >
+		<attribute name='intensity' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

@@ -5,7 +5,7 @@ using namespace c74::min;
 class apicolypse : public object<apicolypse>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"API-style color adder"};
-	MIN_TAGS {"saturation"};
+	MIN_TAGS {"saturation, character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
@@ -13,16 +13,16 @@ public:
 	outlet<> out1 {this, "(signal) Output1", "signal"};
 	outlet<> out2 {this, "(signal) Output2", "signal"};
 
-	attribute<number, threadsafe::no, limit::clamp> A {this, "hardness", 0.70, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> B {this, "personality", 0.3333333, range {0.0, 1.0} };
-	attribute<number, threadsafe::no, limit::clamp> C {this, "drive", 0.3333333, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> A {this, "hardness", 0.7, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> B {this, "personality", 0.3, range {0.0, 1.0} };
+	attribute<number, threadsafe::no, limit::clamp> C {this, "drive", 0.3, range {0.0, 1.0} };
 	attribute<number, threadsafe::no, limit::clamp> D {this, "output", 1.0, range {0.0, 1.0} };
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.70;
-			B = 0.3333333;
-			C = 0.3333333;
+			A = 0.7;
+			B = 0.3;
+			C = 0.3;
 			D = 1.0;
 			for(int count = 0; count < 34; count++) {bR[count] = 0;bL[count] = 0;}
 			lastSampleR = 0.0;lastSampleL = 0.0;

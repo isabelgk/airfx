@@ -5,7 +5,7 @@ using namespace c74::min;
 class bitshiftgain : public object<bitshiftgain>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a One Weird Trick perfect boost/pad, but in 6db increments only"};
-	MIN_TAGS {""};
+	MIN_TAGS {"utility"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

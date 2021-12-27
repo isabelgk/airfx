@@ -5,7 +5,7 @@ using namespace c74::min;
 class aquickvoiceclip : public object<aquickvoiceclip>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"softens headset mic recordings that have been super hard clipped on capture"};
-	MIN_TAGS {"filter"};
+	MIN_TAGS {"filter, utility"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

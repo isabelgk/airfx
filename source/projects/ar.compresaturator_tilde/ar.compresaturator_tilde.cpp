@@ -5,7 +5,7 @@ using namespace c74::min;
 class compresaturator : public object<compresaturator>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"fades between compressing and soft clipping"};
-	MIN_TAGS {"compressor, saturation, softclipper"};
+	MIN_TAGS {"compressor, saturation, clipper"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

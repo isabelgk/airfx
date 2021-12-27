@@ -5,7 +5,7 @@ using namespace c74::min;
 class ironoxide5 : public object<ironoxide5>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"old school, heavily colored Airwindows tape emulation"};
-	MIN_TAGS {""};
+	MIN_TAGS {"tape, lofi"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

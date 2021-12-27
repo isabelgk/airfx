@@ -5,7 +5,7 @@ using namespace c74::min;
 class wider : public object<wider>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"stereo space shaping"};
-	MIN_TAGS {""};
+	MIN_TAGS {"stereo"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

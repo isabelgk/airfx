@@ -37,12 +37,7 @@
 
 	<attributelist>
 
-		<attribute name='rate' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='rez' get='1' set='1' type='float64' size='1' >
+		<attribute name='mix' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -52,7 +47,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='mix' get='1' set='1' type='float64' size='1' >
+		<attribute name='rez' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='rate' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

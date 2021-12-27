@@ -36,12 +36,12 @@
 
 	<attributelist>
 
-		<attribute name='slam' get='1' set='1' type='float64' size='1' >
+		<attribute name='bump' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='bump' get='1' set='1' type='float64' size='1' >
+		<attribute name='slam' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

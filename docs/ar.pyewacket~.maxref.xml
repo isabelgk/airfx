@@ -41,12 +41,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='inputgain' get='1' set='1' type='float64' size='1' >
+		<attribute name='release' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='release' get='1' set='1' type='float64' size='1' >
+		<attribute name='inputgain' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

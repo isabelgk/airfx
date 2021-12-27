@@ -4,8 +4,8 @@ using namespace c74::min;
 
 class basskit : public object<basskit>, public vector_operator<> {
 public:
-	MIN_DESCRIPTION {"A centered bass reinforcement with subs fill. Clean and controllable."};
-	MIN_TAGS {"saturation"};
+	MIN_DESCRIPTION {"a centered bass reinforcement with subs fill. Clean and controllable."};
+	MIN_TAGS {"saturation, bass"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

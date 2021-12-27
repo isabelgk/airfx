@@ -41,12 +41,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
+		<attribute name='high' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='high' get='1' set='1' type='float64' size='1' >
+		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

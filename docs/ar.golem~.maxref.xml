@@ -35,7 +35,7 @@
 
 	<attributelist>
 
-		<attribute name='balance' get='1' set='1' type='float64' size='1' >
+		<attribute name='phase' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -45,7 +45,7 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='phase' get='1' set='1' type='float64' size='1' >
+		<attribute name='balance' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

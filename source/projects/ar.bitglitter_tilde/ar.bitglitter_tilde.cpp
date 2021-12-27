@@ -5,7 +5,7 @@ using namespace c74::min;
 class bitglitter : public object<bitglitter>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"old-sampler style digital lo-fi effect"};
-	MIN_TAGS {"destruction"};
+	MIN_TAGS {"destruction, lofi"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

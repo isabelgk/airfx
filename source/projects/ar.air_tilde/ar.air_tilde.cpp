@@ -5,7 +5,7 @@ using namespace c74::min;
 class air : public object<air>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"add air to your mix"};
-	MIN_TAGS {"eq"};
+	MIN_TAGS {"EQ"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<>  in1 {this, "(signal) Input 1"};

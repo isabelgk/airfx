@@ -5,7 +5,7 @@ using namespace c74::min;
 class rawtimbers : public object<rawtimbers>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"add brightness with quantization"};
-	MIN_TAGS {""};
+	MIN_TAGS {"character"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

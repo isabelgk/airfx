@@ -35,12 +35,12 @@
 
 	<attributelist>
 
-		<attribute name='intrim' get='1' set='1' type='float64' size='1' >
+		<attribute name='outpad' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='outpad' get='1' set='1' type='float64' size='1' >
+		<attribute name='intrim' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

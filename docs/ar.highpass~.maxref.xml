@@ -40,12 +40,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='highpass' get='1' set='1' type='float64' size='1' >
+		<attribute name='mix' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='mix' get='1' set='1' type='float64' size='1' >
+		<attribute name='highpass' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

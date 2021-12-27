@@ -5,7 +5,7 @@ using namespace c74::min;
 class aura : public object<aura>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a new kind of resonant lowpass EQ"};
-	MIN_TAGS {"filter"};
+	MIN_TAGS {"filter, EQ"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

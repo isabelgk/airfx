@@ -5,7 +5,7 @@ using namespace c74::min;
 class srsly2 : public object<srsly2>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"psychoacoustic stereo processor"};
-	MIN_TAGS {""};
+	MIN_TAGS {"stereo"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};

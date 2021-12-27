@@ -1,4 +1,5 @@
 autowatch = 1;
+outlets = 2;
 
 var tagsDict = new Dict;
 var objDict = new Dict;
@@ -8,7 +9,7 @@ objDict.import_json("objects.json");
 
 function getListOfObjects(tag) {
     if (tag == "all" || tag == "misc") {
-        return objDict.getkeys();
+        return objDict.getkeys().sort();
     } else {
         var names = tagsDict.get(tag);
 
@@ -26,10 +27,16 @@ function getListOfObjects(tag) {
         }
     }
 }
+getListOfObjects.local = 1;
+
+function getListOfTags() {
+    outlet(1, tagsDict.getkeys().sort());
+}
 
 function setItems(tag) {
     var names = getListOfObjects(tag);
     outlet(0, ["clear", "all"]);
+	outlet(0, ["rows", names.length]);
     for (var i = 0; i < names.length; i++) {
         outlet(0, ["set", 0, i, names[i]]);
         outlet(0, ["set", 1, i, objDict.get(names[i]).get("digest")]);

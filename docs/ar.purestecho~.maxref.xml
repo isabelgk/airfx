@@ -36,12 +36,12 @@
 
 	<attributelist>
 
-		<attribute name='time' get='1' set='1' type='float64' size='1' >
+		<attribute name='tap3' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='tap1' get='1' set='1' type='float64' size='1' >
+		<attribute name='tap4' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
@@ -51,12 +51,12 @@
 			<description></description>
 		</attribute>
 
-		<attribute name='tap3' get='1' set='1' type='float64' size='1' >
+		<attribute name='tap1' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>
 
-		<attribute name='tap4' get='1' set='1' type='float64' size='1' >
+		<attribute name='time' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

@@ -36,6 +36,16 @@
 
 	<attributelist>
 
+		<attribute name='voicing' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
+		<attribute name='mix' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
 		<attribute name='negthresh' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
@@ -47,16 +57,6 @@
 		</attribute>
 
 		<attribute name='input' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='voicing' get='1' set='1' type='float64' size='1' >
-			<digest></digest>
-			<description></description>
-		</attribute>
-
-		<attribute name='mix' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
 		</attribute>

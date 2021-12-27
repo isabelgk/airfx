@@ -5,7 +5,7 @@ using namespace c74::min;
 class slew3 : public object<slew3>, public vector_operator<> {
 public:
 	MIN_DESCRIPTION {"a new approach to slew clipping meant for a more analog-like darkening effect"};
-	MIN_TAGS {"clipping"};
+	MIN_TAGS {"clipper, analog"};
 	MIN_AUTHOR {"Isabel Kaspriskie"};
 
 	inlet<> in1 {this, "(signal) Input1"};
