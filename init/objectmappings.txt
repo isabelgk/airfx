@@ -1,6 +1,6 @@
 max objectfile mc.ar.acceleration~ mc.wrapper~ ar.acceleration~ multichannel;
 max objectfile mc.ar.acceleration2~ mc.wrapper~ ar.acceleration2~ multichannel;
-max objectfile mc.ar.adclip7~ mc.wrapper~ ar.adclip7 ~ multichannel;
+max objectfile mc.ar.adclip7~ mc.wrapper~ ar.adclip7~ multichannel;
 max objectfile mc.ar.adt~ mc.wrapper~ ar.adt~ multichannel;
 max objectfile mc.ar.air~ mc.wrapper~ ar.air~ multichannel;
 max objectfile mc.ar.apicolypse~ mc.wrapper~ ar.apicolypse~ multichannel;
