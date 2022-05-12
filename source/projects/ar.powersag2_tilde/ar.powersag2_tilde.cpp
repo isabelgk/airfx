@@ -18,9 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.3;
-			B = 0.5;
-		
 			for(int count = 0; count < 16385; count++) {dL[count] = 0; dR[count] = 0;}
 			controlL = 0;
 			controlR = 0;

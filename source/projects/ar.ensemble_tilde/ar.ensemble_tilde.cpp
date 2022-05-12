@@ -20,11 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.0;
-			C = 1.0;
-			D = 1.0;
-		
 			for(int count = 0; count < totalsamples-1; count++) {dL[count] = 0; dR[count] = 0;}
 			for(int count = 0; count < 49; count++) {sweep[count] = 3.141592653589793238 / 2.0;}
 			gcount = 0;

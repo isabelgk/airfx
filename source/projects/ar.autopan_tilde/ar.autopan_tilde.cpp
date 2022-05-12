@@ -20,10 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.1;
-			B = 0.5;
-			C = 0.0;
-			D = 1.0;
 			rate = 3.0;
 			oldfpd = 429496.7295;
 			fpdL = 1.0; while (fpdL < 16386) fpdL = rand()*UINT32_MAX;

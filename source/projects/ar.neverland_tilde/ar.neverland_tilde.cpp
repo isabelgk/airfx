@@ -20,10 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.74;
-			B = 0.3333333;
-			C = 0.3333333;
-			D = 1.0;
 			for(int count = 0; count < 34; count++) {bR[count] = 0;bL[count] = 0;}
 			lastSampleR = 0.0;lastSampleL = 0.0;
 		

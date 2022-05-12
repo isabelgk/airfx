@@ -21,11 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 1.0;
-			B = 1.0;
-			C = 0.0;
-			D = 0.0;
-			E = 0.0;
 			for(int count = 0; count < totalsamples-1; count++) {dL[count] = 0;dR[count] = 0;}
 			gcount = 0;
 			fpNShapeL = 0.0;

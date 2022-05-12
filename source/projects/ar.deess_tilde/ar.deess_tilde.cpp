@@ -19,10 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.5; //-48.0 to 0.0
-			C = 0.5;
-			
 			s1L = s2L = s3L = s4L = s5L = s6L= s7L = 0.0;
 			m1L = m2L = m3L = m4L = m5L = m6L = 0.0;
 			c1L = c2L = c3L = c4L = c5L = 0.0;

@@ -17,7 +17,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
 			fpd = 17;
 			//this is reset: values being initialized only once. Startup values, whatever they are.
 			

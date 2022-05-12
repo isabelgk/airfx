@@ -20,10 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 1.0;
-			B = 0.0;
-			C = 0.5;
-			D = 1.0;
 			WasNegativeL = false;
 			SubOctaveL = false;
 			iirSampleLA = 0.0;

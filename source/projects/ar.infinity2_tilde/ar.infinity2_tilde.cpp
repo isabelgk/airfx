@@ -22,12 +22,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 1.0;
-			B = 0.5;
-			C = 0.0;
-			D = 1.0;
-			E = 1.0;
-			F = 1.0;
 			for (int x = 0; x < 11; x++) {biquadA[x] = 0.0; biquadB[x] = 0.0; biquadC[x] = 0.0;}
 			
 			feedbackAL = feedbackAR = 0.0;

@@ -29,19 +29,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
-			D = 0.5;
-			E = 0.5;
-			F = 0.5;
-			G = 0.5;
-			H = 0.5;
-			I = 0.5;
-			J = 0.5;
-			K = 0.5;
-			L = 0.5;
-			M = 1.0;
 			fpNShapeL = 0.0;
 			fpNShapeR = 0.0;
 			//this is reset: values being initialized only once. Startup values, whatever they are.

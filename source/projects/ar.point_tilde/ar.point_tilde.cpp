@@ -19,9 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
 			nibAL = 0.0;
 			nobAL = 0.0;
 			nibBL = 0.0;

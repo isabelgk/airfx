@@ -21,11 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.25;
-			B = 0.5;
-			C = 0.75;
-			D = 0.5;
-			E = 1.0;
 			for (int x = 0; x < 15; x++) {biquadA[x] = 0.0; biquadB[x] = 0.0; biquadC[x] = 0.0;}
 			bassBalanceL = midBalanceL = highBalanceL = 1.0;
 			bassTrackL = midTrackL = highTrackL = 0.0;

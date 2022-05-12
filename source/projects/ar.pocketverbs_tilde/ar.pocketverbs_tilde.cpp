@@ -23,10 +23,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			B = 0.5;
-			C = 0.0;
-			D = 0.5;
-			
 			for(count = 0; count < 6; count++) {dAL[count] = 0.0; dBL[count] = 0.0; dCL[count] = 0.0; dDL[count] = 0.0; dEL[count] = 0.0;
 				dFL[count] = 0.0; dGL[count] = 0.0; dHL[count] = 0.0; dIL[count] = 0.0; dJL[count] = 0.0; dKL[count] = 0.0; dLL[count] = 0.0;
 				dML[count] = 0.0; dNL[count] = 0.0; dOL[count] = 0.0; dPL[count] = 0.0; dQL[count] = 0.0; dRL[count] = 0.0; dSL[count] = 0.0;

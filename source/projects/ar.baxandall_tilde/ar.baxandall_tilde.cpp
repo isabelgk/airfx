@@ -19,9 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
 			for (int x = 0; x < 9; x++) {
 				trebleAL[x] = 0.0;
 				trebleBL[x] = 0.0;

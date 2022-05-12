@@ -19,9 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
 			chase = 1.0;
 			lastrectifierL = 0.0;
 			lastrectifierR = 0.0;

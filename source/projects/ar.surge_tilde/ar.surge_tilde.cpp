@@ -26,8 +26,6 @@ public:
 			chaseC = 0.0;	
 			chaseD = 0.0;	
 			chaseMax = 0.0;	
-			A = 0.0;
-			B = 1.0;
 			//this is reset: values being initialized only once. Startup values, whatever they are.
 			
 			return {};

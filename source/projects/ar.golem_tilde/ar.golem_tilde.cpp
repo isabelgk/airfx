@@ -19,9 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.0;
 			for(count = 0; count < 4098; count++) {p[count] = 0.0;}
 			count = 0;
 			fpNShapeL = 0.0;

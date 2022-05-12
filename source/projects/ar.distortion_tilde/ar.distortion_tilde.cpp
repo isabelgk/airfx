@@ -22,9 +22,6 @@ public:
 	
     message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			C = 0.5;
-			D = 1.0;
 			for (int x = 0; x < 9; x++) {
 				previousInL[x] = 0.0; previousOutL[x] = 0.0;
 				previousInR[x] = 0.0; previousOutR[x] = 0.0;

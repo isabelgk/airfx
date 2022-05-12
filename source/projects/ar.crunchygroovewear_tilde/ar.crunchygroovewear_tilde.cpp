@@ -18,9 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.064;
-			B = 1.0;
-			
 			for(int count = 0; count < 21; count++) {
 				aMidL[count] = 0.0;
 				bMidL[count] = 0.0;

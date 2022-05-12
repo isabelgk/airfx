@@ -21,12 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5; //-12 to +12 dB
-			B = 0.5; //0 to 100%
-			C = 0.5; //50 to 5000 samples, default 500
-			D = 1.0;
-			E = 1.0;
-			
 			for(int count = 0; count < 10990; count++) {dL[count] = 0.0; dR[count] = 0.0;}
 			dCount = 0;
 			lastWidthL = 500;

@@ -22,12 +22,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
-			D = 0.5;
-			E = 0.5;
-			F = 1.0;
 			iirMidRollerAL = 0.0;
 			iirMidRollerBL = 0.0;
 			iirHeadBumpAL = 0.0;

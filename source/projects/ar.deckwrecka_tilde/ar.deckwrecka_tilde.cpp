@@ -17,7 +17,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
 			fpd = 17;
 			bflip = 1;
 			

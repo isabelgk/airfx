@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.421;
-			B = 0.5;
 			for(int count = 0; count < 4000; count++) {pL[count] = 0.0; pR[count] = 0.0;}
 			gcount = 0;
 			slide = 0.421;

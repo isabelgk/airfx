@@ -19,10 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.9;
-			B = 0.5;
-			C = 1.0;
-		
 			swellL = 0.0;
 			swellR = 0.0;
 			louderL = false;

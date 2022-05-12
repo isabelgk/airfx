@@ -25,16 +25,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
-			D = 0.5;
-			E = 0.5;
-			F = 0.5;
-			G = 0.5;
-			H = 0.5;
-			I = 1.0;
-			
 			duoEvenL = 0.0;
 			duoOddL = 0.0;
 			duoFactorL = 0.0;

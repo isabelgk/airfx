@@ -26,17 +26,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.9;
-			B = 0.5;
-			C = 0.74;
-			D = 1.0;
-			E = 0.95;
-			F = 0.5;
-			G = 0.2;
-			H = 0.2;
-			I = 0.5;
-			J = 1.0;
-			
 			WasNegativeL = false;
 			SubOctaveL = false;
 			WasNegativeR = false;

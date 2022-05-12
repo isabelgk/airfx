@@ -19,27 +19,22 @@ public:
 	attribute<number, threadsafe::no, limit::clamp> D {this, "voicing", 0.618, range {0.0, 1.0}};
 	attribute<number, threadsafe::no, limit::clamp> E {this, "mix", 1.0, range {0.0, 1.0}};
 
-	message<> dspsetup {this, "dspsetup", MIN_FUNCTION {A = 0.33333333333333333;
-	B = 0.966;
-	C = 0.966;
-	D = 0.618;
-	E = 1.0;
+    message<> dspsetup {this, "dspsetup", 
+        MIN_FUNCTION {
+            lastSampleL = 0.0;
+            limitPosL   = 0.0;
+            limitNegL   = 0.0;
+            lastSampleR = 0.0;
+            limitPosR   = 0.0;
+            limitNegR   = 0.0;
 
-	lastSampleL = 0.0;
-	limitPosL   = 0.0;
-	limitNegL   = 0.0;
-	lastSampleR = 0.0;
-	limitPosR   = 0.0;
-	limitNegR   = 0.0;
+            fpNShapeL = 0.0;
+            fpNShapeR = 0.0;
+            // this is reset: values being initialized only once. Startup values, whatever they are.
 
-	fpNShapeL = 0.0;
-	fpNShapeR = 0.0;
-	// this is reset: values being initialized only once. Startup values, whatever they are.
-
-	return {};
-}
-}
-;
+            return {};
+        }
+    };
 
 void operator()(audio_bundle _input, audio_bundle _output) {
 	double* in1          = _input.samples(0);

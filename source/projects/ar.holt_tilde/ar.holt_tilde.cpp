@@ -21,12 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 1.0;
-			B = 0.5;
-			C = 1.0;
-			D = 1.0;
-			E = 1.0;
-			
 			previousSampleAL = 0.0;
 			previousTrendAL = 0.0;
 			previousSampleBL = 0.0;

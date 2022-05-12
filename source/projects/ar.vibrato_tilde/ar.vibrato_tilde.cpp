@@ -21,12 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.3;
-			B = 0.0;
-			C = 0.4;
-			D = 0.0;
-			E = 1.0;
-			
 			for(int count = 0; count < 16385; count++) {pL[count] = 0.0; pR[count] = 0.0;}
 			sweep = 3.141592653589793238 / 2.0;
 			sweepB = 3.141592653589793238 / 2.0;

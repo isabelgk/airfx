@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 1.0;
 			controlAposL = 1.0;
 			controlAnegL = 1.0;
 			controlBposL = 1.0;

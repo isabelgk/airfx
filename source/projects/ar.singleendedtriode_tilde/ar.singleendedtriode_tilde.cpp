@@ -20,11 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.0;
-			C = 0.0;
-			D = 0.0;
-		
 			postsine = sin(0.5);
 			
 			fpNShapeL = 0.0;

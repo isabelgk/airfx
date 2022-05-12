@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 1.0;
 			osc = 0.0;
 			polarityL = false;
 			muteL = false;	

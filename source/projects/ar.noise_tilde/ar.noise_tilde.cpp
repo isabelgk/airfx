@@ -22,12 +22,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
-			D = 1.0;
-			E = 0.0;
-			F = 1.0;
 			position = 99999999;
 			quadratic = 0;
 			noiseAL = 0.0;

@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 1.0;
 			WasNegativeL = false;
 			ZeroCrossL = 0;
 			gaterollerL = 0.0;

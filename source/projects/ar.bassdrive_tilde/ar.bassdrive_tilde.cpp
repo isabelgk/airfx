@@ -21,11 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
-			D = 0.5;
-			E = 0.5;
 			for (int fcount = 0; fcount < 7; fcount++)
 			{
 				presenceInAL[fcount] = 0.0;

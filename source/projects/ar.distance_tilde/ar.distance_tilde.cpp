@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 1.0;
 			thirdresultL = prevresultL = lastclampL = clampL = changeL = lastL = 0.0;
 			thirdresultR = prevresultR = lastclampR = clampR = changeR = lastR = 0.0;
 			fpNShapeL = 0.0;

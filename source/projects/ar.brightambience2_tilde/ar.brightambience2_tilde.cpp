@@ -25,10 +25,6 @@ public:
 			for(int count = 0; count < 32767; count++) {pL[count] = 0.0; pR[count] = 0.0;}
 			feedbackA = feedbackB = feedbackC = 0.0;
 			gcount = 0;
-			A = 0.2;
-			B = 0.2;
-			C = 0.0;
-			D = 0.5;
 			fpd = 17;
 			//this is reset: values being initialized only once. Startup values, whatever they are.
 			

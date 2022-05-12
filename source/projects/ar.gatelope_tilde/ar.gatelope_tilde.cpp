@@ -21,11 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 1.0;
-			C = 0.5;
-			D = 0.0;
-			E = 1.0;
 			iirLowpassAL = 0.0;
 			iirLowpassBL = 0.0;
 			iirHighpassAL = 0.0;

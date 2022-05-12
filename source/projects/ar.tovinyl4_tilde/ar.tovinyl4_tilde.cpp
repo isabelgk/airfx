@@ -91,10 +91,6 @@ public:
 			o1R = o2R = o3R = 0.0;
 			m1R = m2R = desR = 0.0;
 		
-			A = 0.203419;  //22.0 hz = ((A*A)*290)+10  (A*A)*290 = 12   (A*A) = 0.0413793  sqrt() = 0.203419
-			B = 0.3424051; //44.0 hz = ((B*B)*290)+10  (B*B)*290 = 34   (B*B) = 0.1172413  sqrt() = 0.3424051
-			C = 0.32;
-			D = 0.064;
 			fpNShapeL = 0.0;
 			fpNShapeR = 0.0;
 			//this is reset: values being initialized only once. Startup values, whatever they are.

@@ -25,15 +25,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.0;
-			C = 0.0;
-			D = 0.0;
-			E = 0.0;
-			F = 0.0;
-			G = 0.0;
-			H = 0.0;
-			I = 0.0;
 			for(int count = 0; count < 60; count++) {
 				bL[count] = 0.0; fL[count] = 0.0;
 				bR[count] = 0.0; fR[count] = 0.0;

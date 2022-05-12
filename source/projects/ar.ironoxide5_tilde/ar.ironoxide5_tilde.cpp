@@ -23,15 +23,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5; //0.0 input trim in dB -18 to +18, default 0 ((A*36.0)-18.0)
-			B = 0.562341325190349; //15.0 ips 1.5 to 150.0 logarithmic. B*B
-			C = 0.562341325190349; // (C*C) * (C*C) * 150 gives 15 ips (clamp to 1.5 minimum)
-			D = 0.5; //0.5 flutter 0 to 1
-			E = 0.5; //0.5 noise 0 to 1
-			F = 0.5; //0.0 output trim in dB -18 to +18, default 0 ((E*36.0)-18.0)
-			G = 1.0; //1.0 inv/dry/wet -1 0 1 ((F*2.0)-1.0)
-			//needs very fussy defaults to comply with unusual defaults
-			
 			for (int temp = 0; temp < 263; temp++) {dL[temp] = 0.0; dR[temp] = 0.0;}
 			gcount = 0;
 			

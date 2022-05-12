@@ -20,10 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.5;
-			C = 1.0;
-			D = 1.0;
 			muSpeedAL = 10000;
 			muSpeedBL = 10000;
 			muCoefficientAL = 1;

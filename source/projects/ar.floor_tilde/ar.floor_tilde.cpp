@@ -19,10 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.0;
-			C = 1.0;
-			
 			flip = false;
 			iirSample1AL = 0.0;
 			iirSample1BL = 0.0;

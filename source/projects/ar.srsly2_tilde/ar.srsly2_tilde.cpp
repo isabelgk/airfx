@@ -32,11 +32,6 @@ public:
 				biquadS3[x] = 0.0;
 				biquadS5[x] = 0.0;
 			}
-			A = 0.5;
-			B = 0.5;
-			C = 1.0;
-			D = 0.5;
-			E = 1.0;
 			fpdL = 1.0; while (fpdL < 16386) fpdL = rand()*UINT32_MAX;
 			fpdR = 1.0; while (fpdR < 16386) fpdR = rand()*UINT32_MAX;
 			//this is reset: values being initialized only once. Startup values, whatever they are.

@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 1.0;
 			sweep = 3.141592653589793238 / 2.0;
 			speedChase = 0.0;
 			depthChase = 0.0;

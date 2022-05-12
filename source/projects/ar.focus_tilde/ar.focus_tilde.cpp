@@ -24,10 +24,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.5;
-			D = 1.0;
-			E = 1.0;
 			for (int x = 0; x < 9; x++) {figureL[x] = 0.0;figureR[x] = 0.0;}
 			fpd = 17;
 			//this is reset: values being initialized only once. Startup values, whatever they are.

@@ -18,9 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 1.0;
-		
 			fpNShapeL = 0.0;
 			fpNShapeR = 0.0;
 			muSpeedA = 10000;

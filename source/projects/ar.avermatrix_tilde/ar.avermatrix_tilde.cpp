@@ -19,9 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 0.0;
-			C = 1.0;
 			for(int x = 0; x < 11; x++) {
 				f[x] = 0.0;
 				for (int y = 0; y < 11; y++) {

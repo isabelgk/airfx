@@ -21,12 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.5;
-			C = 0.5;
-			D = 1.0;
-			E = 1.0;
-			
 			int count;
 			for(count = 0; count < 15149; count++) {aAL[count] = 0.0; aAR[count] = 0.0;}
 			for(count = 0; count < 14617; count++) {aBL[count] = 0.0; aBR[count] = 0.0;}

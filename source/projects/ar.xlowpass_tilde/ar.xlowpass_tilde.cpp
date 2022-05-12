@@ -20,11 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 1.0;
-			C = 0.0;
-			D = 1.0;
-			
 			for (int x = 0; x < 15; x++) {biquad[x] = 0.0; biquadA[x] = 0.0; biquadB[x] = 0.0; biquadC[x] = 0.0; biquadD[x] = 0.0;}
 			fpdL = 1.0; while (fpdL < 16386) fpdL = rand()*UINT32_MAX;
 			fpdR = 1.0; while (fpdR < 16386) fpdR = rand()*UINT32_MAX;

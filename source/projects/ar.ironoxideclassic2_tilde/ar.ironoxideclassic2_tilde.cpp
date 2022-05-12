@@ -19,10 +19,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.562341325190349;
-			C = 0.5;
-			
 			for (int x = 0; x < 15; x++) {biquadA[x] = 0.0; biquadB[x] = 0.0;}
 			for (int temp = 0; temp < 263; temp++) {dL[temp] = 0.0;dR[temp] = 0.0;}
 			for(int count = 0; count < 6; count++) {lastRefL[count] = 0.0;lastRefR[count] = 0.0;}

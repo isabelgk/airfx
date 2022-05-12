@@ -20,11 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.75;
-			B = 0.0;
-			C = 0.75;
-			D = 0.0;
-			
 			LataLast6Sample = 0.0;
 			LataLast5Sample = 0.0;
 			LataLast4Sample = 0.0;

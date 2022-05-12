@@ -21,12 +21,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5;
-			B = 0.2;
-			C = 0.2;
-			D = 0.5;
-			E = 1.0;
-			
 			//begin ButterComps
 			controlAposL = 1.0;
 			controlAnegL = 1.0;

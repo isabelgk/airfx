@@ -20,11 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.25;
-			B = 0.75;
-			C = 1.0;
-			D = 1.0;
-		
 			for(int count = 0; count < 32001; count++) {dL[count] = 0;dR[count] = 0;}
 			combineL = 0; combineR = 0;
 			scalefactorL = 0.999; scalefactorR = 0.999;

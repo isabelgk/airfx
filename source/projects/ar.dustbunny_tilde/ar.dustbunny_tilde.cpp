@@ -17,8 +17,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			
 			LataLast3Sample = LataLast2Sample = LataLast1Sample = 0.0;
 			LataHalfwaySample = LataHalfDrySample = LataHalfDiffSample = 0.0;
 			LataA = LataB = LataC = LataDrySample = LataDiffSample = LataPrevDiffSample = 0.0;

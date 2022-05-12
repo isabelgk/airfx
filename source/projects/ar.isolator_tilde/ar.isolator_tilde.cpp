@@ -20,9 +20,6 @@ public:
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
 			for (int x = 0; x < 15; x++) {biquadA[x] = 0.0; biquadB[x] = 0.0; biquadC[x] = 0.0;}
-			A = 1.0;
-			B = 0.0;
-			C = 1.0;
 			fpd = 17;
 			//this is reset: values being initialized only once. Startup values, whatever they are.
 			

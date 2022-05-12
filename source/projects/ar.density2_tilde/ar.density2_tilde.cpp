@@ -20,11 +20,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.2;
-			B = 0.0;
-			C = 1.0;
-			D = 1.0;
-		
 			ataAL = ataBL = ataCL = lastDiffSampleL = 0.0;
 			iirSampleAL = iirSampleBL = last3SampleL = last2SampleL = last1SampleL = 0.0;
 			ataAR = ataBR = ataCR = lastDiffSampleR = 0.0;

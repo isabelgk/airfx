@@ -22,13 +22,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.5; //0.0 to 2.0 headroom
-			B = 0.5; //delay time
-			C = 0.5; //-1.0  to 1.0 inv/out
-			D = 0.5; //delay time
-			E = 0.5; //-1.0 to 1.0 inv/out
-			F = 0.5; //0.0 to 2.0 output level
-			
 			for(int count = 0; count < 9999; count++) {pL[count] = 0; pR[count] = 0;}
 			offsetA = 9001;
 			offsetB = 9001;  //  :D

@@ -18,8 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 0.0;
-			B = 1.0;
 			for(int count = 0; count < 1502; count++) {dL[count] = 0.0; dR[count] = 0.0;}
 			one = 1; maxdelay = 9001;
 			fpNShapeL = 0.0;

@@ -18,9 +18,6 @@ public:
 
 	message<> dspsetup {this, "dspsetup",
 		MIN_FUNCTION {
-			A = 1.0;
-			B = 1.0;
-			
 			lastSampleL = 0.0;
 			heldSampleL = 0.0;
 			lastSampleR = 0.0;
