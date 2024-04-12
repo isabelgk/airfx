@@ -19,3 +19,4 @@ package-info.json
 .vscode
 .idea
 .cache
+cmake-build-*/
