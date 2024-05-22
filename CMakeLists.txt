@@ -5,9 +5,13 @@ enable_testing()
 
 string(REGEX REPLACE "(.*)/" "" THIS_PACKAGE_NAME "${CMAKE_CURRENT_SOURCE_DIR}")
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES x86_64;arm64)  # Enable Apple silicon builds
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    add_compile_options(-Wno-unused-value)
+endif()
 
 if (${CMAKE_GENERATOR} MATCHES "Xcode")
     if (${XCODE_VERSION} VERSION_LESS 10)
@@ -38,3 +42,5 @@ endforeach ()
 
 # Comment the line below if you want automatic cmake regneration enabled
 set(CMAKE_SUPPRESS_REGENERATION true)
+
+
