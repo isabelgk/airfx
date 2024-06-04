@@ -1,45 +1,41 @@
-BasedOnStyle: WebKit
+---
+BasedOnStyle: LLVM
+IndentWidth: 4
+IndentAccessModifiers: false
+ColumnLimit: 0
+
+---
+Language: Cpp
+DerivePointerAlignment: false
+PointerAlignment: Left
+Cpp11BracedListStyle: false
+BreakBeforeBinaryOperators: NonAssignment
+IndentCaseLabels: true
+AlignTrailingComments: false
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortFunctionsOnASingleLine: Inline
 SortIncludes: false
-ColumnLimit: 140
-UseTab: ForContinuationAndIndentation
-TabWidth: 4
-
-BreakBeforeBraces: Attach
-
-Cpp11BracedListStyle: true
-AllowShortFunctionsOnASingleLine: Empty
-AlwaysBreakTemplateDeclarations: true
-SpaceAfterTemplateKeyword: false
-ConstructorInitializerIndentWidth: 0
-
-NamespaceIndentation: All
-CompactNamespaces: true
-FixNamespaceComments: true 
-
-SpacesBeforeTrailingComments: 4
 
 BreakBeforeBraces: Custom
-BraceWrapping:   
-  AfterClass:      false
-  AfterControlStatement: false
-  AfterEnum:       false
-  AfterFunction:   false
-  AfterNamespace:  false
-  AfterObjCDeclaration: false
-  AfterStruct:     false
-  AfterUnion:      false
-  AfterExternBlock: false
-  BeforeCatch:     true
-  BeforeElse:      true
-  IndentBraces:    false
-  SplitEmptyFunction: false
+BraceWrapping:
+  AfterClass: true
+  AfterCaseLabel: true
+  AfterControlStatement: MultiLine
+  AfterEnum: true
+  AfterFunction: true
+  AfterStruct: true
+  AfterUnion: true
+  BeforeElse: true
   SplitEmptyRecord: false
   SplitEmptyNamespace: false
+  SplitEmptyFunction: true
 
-AlignConsecutiveAssignments: true
-AlignConsecutiveDeclarations: true
-AlignEscapedNewlines: Right
-AlignTrailingComments: true
-
-IndentCaseLabels: true
-MaxEmptyLinesToKeep: 2
+BreakInheritanceList: BeforeComma
+BreakConstructorInitializers: BeforeComma
+InsertBraces: true
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: 1
+PackConstructorInitializers: CurrentLine
