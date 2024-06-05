@@ -4,7 +4,8 @@
 using namespace c74::min;
 
 template <typename TWrapper, typename TWrapped>
-class airfx : public object<TWrapper>, public vector_operator<>
+class airfx : public object<TWrapper>
+    , public vector_operator<>
 {
   protected:
     std::unique_ptr<TWrapped> m_wrapped{ std::make_unique<TWrapped>() };
@@ -47,8 +48,18 @@ class airfx : public object<TWrapper>, public vector_operator<>
     inlet<> in2{ this, "(signal) Input R" };
     outlet<> out1{ this, "(signal) Output L", "signal" };
     outlet<> out2{ this, "(signal) Output R", "signal" };
+    outlet<> dump_out{ this, "Dump outlet" };
 
-    void operator()(audio_bundle input, audio_bundle output)
+    message<> m_dsp_setup{
+        this,
+        "dspsetup",
+        [this](const atoms& args, const int inlet) -> atoms {
+            m_wrapped->setSampleRate(samplerate());
+            return {};
+        }
+    };
+
+    void operator()(audio_bundle input, audio_bundle output) override
     {
         m_wrapped->process(input.samples(), output.samples(), input.frame_count());
     }
