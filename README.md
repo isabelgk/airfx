@@ -1,7 +1,6 @@
 # airfx
 
-Note: Hi! This hasn't been updated recently, but I am working on automation and a new version coming out soon!
----
+> Note: Hi! This hasn't been updated recently, but I am working on automation and a new version coming out soon!
 
 Max objects ported from the open source VST2 [airwindows](https://github.com/airwindows/airwindows/) plugins by Chris Johnson. 
 
