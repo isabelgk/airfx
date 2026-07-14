@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.brightambience~" module="MSP" category="ambience">
+
+	<digest>
+		BrightAmbience is a plugin for very bright gated reverbs.
+	</digest>
+
+	<description>
+		BrightAmbience is a plugin for very bright gated reverbs.
+	</description>
+
+	<discussion>
+		BrightAmbience is one of the old secret weapons of classic Airwindows. It’s nasty enough to be pretty unique, and nice enough to be useable. What it does, is it sets up a BIG pile of delay taps spaced by prime numbers. There’s a decay control and a sustain control: the sustain will help with its CPU hungriness, the decay won’t. Dry/wet is at the top (what can I say, this was an early one) and wet tends to run HOT so you might like to use it as mostly dry and add its coloration to things as needed.It’s CPU hungry because it’s using a really naive method of doing all that, but it also has a really distinct sound that differs from what you can get out of convolution reverbs. And since the distribution of delay taps is prime-numbered but also kind of naive, instead of getting a convincing room you get a sort of steel-chamber effect with a nasty resonance up near the Nyquist frequency. But that can work as a special effect. Back in the day I meant this to be a great reverb, but it’s not. However, it IS a great ‘crazy bright ambience effect’, though it’s pretty CPU hungry like I said. You can apply it to anything that you’d like a halo of shiny around, and its tone is nicer at 96K as I demo it. (the sustain is tied to maximum sample delay, so higher sample rates will give you shorter sustains and denser shininess)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">ambience</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="sustain" get="1" set="1" type="float64" size="1">
+			<digest>Sustain</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="decay" get="1" set="1" type="float64" size="1">
+			<digest>Decay</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "stereo/srsly.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::srsly::Srsly<double>;
 
-class srsly_tilde : public airfx<srsly_tilde, airwindohhs::srsly::Srsly<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::srsly::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::srsly::k_name.data() };
-    MIN_TAGS{ airwindohhs::srsly::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    srsly_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(srsly_tilde);
+    airfx::init_class<TWrapped>("airfx.srsly~", airwindohhs::srsly::k_long_description.data());
+}

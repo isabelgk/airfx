@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "xyz-filters/ynothighpass.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::ynothighpass::YNotHighpass<double>;
 
-class ynothighpass_tilde : public airfx<ynothighpass_tilde, airwindohhs::ynothighpass::YNotHighpass<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::ynothighpass::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::ynothighpass::k_name.data() };
-    MIN_TAGS{ airwindohhs::ynothighpass::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    ynothighpass_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(ynothighpass_tilde);
+    airfx::init_class<TWrapped>("airfx.ynothighpass~", airwindohhs::ynothighpass::k_long_description.data());
+}

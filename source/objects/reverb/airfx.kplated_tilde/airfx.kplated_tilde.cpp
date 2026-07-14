@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "reverb/kplated.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::kplated::kPlateD<double>;
 
-class kplated_tilde : public airfx<kplated_tilde, airwindohhs::kplated::kPlateD<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::kplated::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::kplated::k_name.data() };
-    MIN_TAGS{ airwindohhs::kplated::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    kplated_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(kplated_tilde);
+    airfx::init_class<TWrapped>("airfx.kplated~", airwindohhs::kplated::k_long_description.data());
+}

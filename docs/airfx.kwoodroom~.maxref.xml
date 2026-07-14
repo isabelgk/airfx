@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.kwoodroom~" module="MSP" category="reverb">
+
+	<digest>
+		kWoodRoom is a small wooden performing space.
+	</digest>
+
+	<description>
+		kWoodRoom is a small wooden performing space.
+	</description>
+
+	<discussion>
+		This concludes a series of plugin releases around Xmas and thereabouts! First there was ChimeyDeluxe, then ConsoleX2 with a bit of music to go along with it, and now the final shoe to drop is the unreleased reverb that was used to make what was seemingly a Dead show from 1972 or so!kWoodRoom was more stumbled upon than searched for. I'm continuing to pursue reverb things, doing better and better at delivering a really convincing virtual place to be in, but kWoodRoom popped up when searching for something else, and it's the last example of where my reverb work stood in 2025.It's got all the same controls as recent Airwindows reverbs, and it's the tone that is unusual. From the first instant I heard it I went 'oh hey a wood paneled room, that's weird'. It didn't seem special in any other way, didn't max out any of the things I was aiming for, but there it was, sounding like a thing. I've learned to pay attention to that, especially when there's no real explanation for it.That's because the reverbs I make search through hundreds of millions of possible delay time options to find optimal settings that balance many different requirements. They're purely Householder matrixes using comb filters alone, and relying upon matrix size to produce a smooth sound… unless I'm guiding them towards a rough sound, or a sound like a series of concrete arches, or what have you. I get to seek out all kinds of different qualities in the countless hours of computer time spent running genetic algorithms and permutations of delay lines.And then in the middle of all that, there'll be a kWoodRoom, more recognized than created. It just had a personality. Will it be a personality you like? I don't know, but if you give it a shot you will probably hear what it's like right away, and then it's up to you :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">reverb</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="regen" get="1" set="1" type="float64" size="1">
+			<digest>Regen</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="derez" get="1" set="1" type="float64" size="1">
+			<digest>Derez</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="filter" get="1" set="1" type="float64" size="1">
+			<digest>Filter</digest>
+			<description>
+				Range 0.0-1.0. Default 0.25.
+			</description>
+		</attribute>
+		<attribute name="earlyrf" get="1" set="1" type="float64" size="1">
+			<digest>EarlyRF</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="positin" get="1" set="1" type="float64" size="1">
+			<digest>Positin</digest>
+			<description>
+				Range 0.0-1.0. Default 0.75.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "lo-fi/crunchygroovewear.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::crunchygroovewear::CrunchyGrooveWear<double>;
 
-class crunchygroovewear_tilde : public airfx<crunchygroovewear_tilde, airwindohhs::crunchygroovewear::CrunchyGrooveWear<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::crunchygroovewear::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::crunchygroovewear::k_name.data() };
-    MIN_TAGS{ airwindohhs::crunchygroovewear::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    crunchygroovewear_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(crunchygroovewear_tilde);
+    airfx::init_class<TWrapped>("airfx.crunchygroovewear~", airwindohhs::crunchygroovewear::k_long_description.data());
+}

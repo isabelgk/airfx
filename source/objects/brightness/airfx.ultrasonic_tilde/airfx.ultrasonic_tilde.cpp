@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "brightness/ultrasonic.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::ultrasonic::Ultrasonic<double>;
 
-class ultrasonic_tilde : public airfx<ultrasonic_tilde, airwindohhs::ultrasonic::Ultrasonic<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::ultrasonic::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::ultrasonic::k_name.data() };
-    MIN_TAGS{ airwindohhs::ultrasonic::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    ultrasonic_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(ultrasonic_tilde);
+    airfx::init_class<TWrapped>("airfx.ultrasonic~", airwindohhs::ultrasonic::k_long_description.data());
+}

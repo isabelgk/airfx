@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "xyz-filters/zhighpass2.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::zhighpass2::ZHighpass2<double>;
 
-class zhighpass2_tilde : public airfx<zhighpass2_tilde, airwindohhs::zhighpass2::ZHighpass2<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::zhighpass2::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::zhighpass2::k_name.data() };
-    MIN_TAGS{ airwindohhs::zhighpass2::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    zhighpass2_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(zhighpass2_tilde);
+    airfx::init_class<TWrapped>("airfx.zhighpass2~", airwindohhs::zhighpass2::k_long_description.data());
+}

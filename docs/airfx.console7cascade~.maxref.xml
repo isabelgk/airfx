@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.console7cascade~" module="MSP" category="consoles">
+
+	<digest>
+		Console7Cascade is a drop-in replacement for Console7Channel that allows for MUCH higher gain.
+	</digest>
+
+	<description>
+		Console7Cascade is a drop-in replacement for Console7Channel that allows for MUCH higher gain.
+	</description>
+
+	<discussion>
+		I heard you liked slamming consoles. So I put five individually ultrasonic-filtered stages of slamming into your console so you can slam console while you Console7 :DThis is pretty straightforward. It’s a drop-in replacement for Console7Channel, right down to the gain staging that works with the trim control to fit the result into the mix.The difference is, this uses FIVE gain stages of the same processing in Console7Channel. And of course it’s always better (I’m learning) to filter more gently between individual stages, rather than try to super-filter all at once and then do all the distorting. And so, Console7Cascade is born: turns out to be a very very ‘consoley’ type of crunch.By that I mean it seems to barely crunch at all. It just intensifies and gets REALLY LOUD. Might work as a guitar amp sim too? It worked so well for me on my drums that I might end up just using it by default for that: just all of the channels, all get Console7Cascade. You could also put it in place on a submix… or all the submixes, if you’re kind of insane. This produces a really intense tubey loud effect with very little scratchyness or grind. I’m pretty sure it’ll be kind of brutal on the CPU as it’s not only an Ultrasonic, but also five Console7Channels, each of which run two sine functions.You might just find it was all worth it, though. Why compress when you can cascade Console7Channels?
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">consoles</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="cascade" get="1" set="1" type="float64" size="1">
+			<digest>Cascade</digest>
+			<description>
+				Range 0.0-1.0. Default 0.39.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

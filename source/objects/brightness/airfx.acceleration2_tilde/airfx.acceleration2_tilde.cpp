@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "brightness/acceleration2.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::acceleration2::Acceleration2<double>;
 
-class acceleration2_tilde : public airfx<acceleration2_tilde, airwindohhs::acceleration2::Acceleration2<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::acceleration2::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::acceleration2::k_name.data() };
-    MIN_TAGS{ airwindohhs::acceleration2::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    acceleration2_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(acceleration2_tilde);
+    airfx::init_class<TWrapped>("airfx.acceleration2~", airwindohhs::acceleration2::k_long_description.data());
+}

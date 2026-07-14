@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.density3~" module="MSP" category="distortion">
+
+	<digest>
+		Density3 refines Density to keep up with recent developments.
+	</digest>
+
+	<description>
+		Density3 refines Density to keep up with recent developments.
+	</description>
+
+	<discussion>
+		This secret weapon's seen a little fine-tuning.Density's one of my first plugins. Its power is in using sin() based overdrive combined with a very gentle highpass, one that can dial back the amount of saturation on heavy basses… while allowing it through anyhow using the dry/wet control. It's an incredible dirt-shaper for refined work.But what if it used the technique from PurestSaturation? That's Density3: finally an upgrade.But there's more! Turns out the negative Density range enjoys a change too: it blended better with a phase-flip. I could have known it needed one, except nobody constructs inverse saturations like this, as it doesn't seem like a useful sound. Until you take advantage of its gatey qualities to dial in tone, between -1 and 0, that keeps the nature of the tone the same but dries up its quieter regions, as subtly as you'd like.This is out because another dev I know was looking into Density2, and wanting to shoot it out against his own algorithms. I said, just so you know, there's a Density3 and it's on the github repository, it's just not out yet.Now it is :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">distortion</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="density" get="1" set="1" type="float64" size="1">
+			<digest>Density</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="highpas" get="1" set="1" type="float64" size="1">
+			<digest>Highpas</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

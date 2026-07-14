@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "amp-sims/bassdrive.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::bassdrive::BassDrive<double>;
 
-class bassdrive_tilde : public airfx<bassdrive_tilde, airwindohhs::bassdrive::BassDrive<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::bassdrive::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::bassdrive::k_name.data() };
-    MIN_TAGS{ airwindohhs::bassdrive::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    bassdrive_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(bassdrive_tilde);
+    airfx::init_class<TWrapped>("airfx.bassdrive~", airwindohhs::bassdrive::k_long_description.data());
+}

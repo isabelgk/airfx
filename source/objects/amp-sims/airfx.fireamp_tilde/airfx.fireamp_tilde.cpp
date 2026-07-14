@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "amp-sims/fireamp.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::fireamp::FireAmp<double>;
 
-class fireamp_tilde : public airfx<fireamp_tilde, airwindohhs::fireamp::FireAmp<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::fireamp::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::fireamp::k_name.data() };
-    MIN_TAGS{ airwindohhs::fireamp::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    fireamp_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(fireamp_tilde);
+    airfx::init_class<TWrapped>("airfx.fireamp~", airwindohhs::fireamp::k_long_description.data());
+}

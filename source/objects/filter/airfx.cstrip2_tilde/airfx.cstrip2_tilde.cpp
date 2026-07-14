@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "filter/cstrip2.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::cstrip2::CStrip2<double>;
 
-class cstrip2_tilde : public airfx<cstrip2_tilde, airwindohhs::cstrip2::CStrip2<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::cstrip2::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::cstrip2::k_name.data() };
-    MIN_TAGS{ airwindohhs::cstrip2::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    cstrip2_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(cstrip2_tilde);
+    airfx::init_class<TWrapped>("airfx.cstrip2~", airwindohhs::cstrip2::k_long_description.data());
+}

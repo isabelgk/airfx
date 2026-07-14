@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "dithers/beam.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::beam::Beam<double>;
 
-class beam_tilde : public airfx<beam_tilde, airwindohhs::beam::Beam<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::beam::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::beam::k_name.data() };
-    MIN_TAGS{ airwindohhs::beam::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    beam_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(beam_tilde);
+    airfx::init_class<TWrapped>("airfx.beam~", airwindohhs::beam::k_long_description.data());
+}

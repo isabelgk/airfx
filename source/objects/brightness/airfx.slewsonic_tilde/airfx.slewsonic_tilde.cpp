@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "brightness/slewsonic.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::slewsonic::SlewSonic<double>;
 
-class slewsonic_tilde : public airfx<slewsonic_tilde, airwindohhs::slewsonic::SlewSonic<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::slewsonic::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::slewsonic::k_name.data() };
-    MIN_TAGS{ airwindohhs::slewsonic::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    slewsonic_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(slewsonic_tilde);
+    airfx::init_class<TWrapped>("airfx.slewsonic~", airwindohhs::slewsonic::k_long_description.data());
+}

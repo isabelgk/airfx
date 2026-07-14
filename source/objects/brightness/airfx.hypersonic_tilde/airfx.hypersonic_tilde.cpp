@@ -1,31 +1,11 @@
-#include "c74_min.h"
+#include "ext.h"
+
 #include "airfx.hpp"
 #include "brightness/hypersonic.hpp"
 
-using namespace c74::min;
+using TWrapped = airwindohhs::hypersonic::Hypersonic<double>;
 
-class hypersonic_tilde : public airfx<hypersonic_tilde, airwindohhs::hypersonic::Hypersonic<double>>
+extern "C" void ext_main(void *r)
 {
-    atom m_about_text = symbol{ airwindohhs::hypersonic::k_long_description.data() };
-
-  public:
-    MIN_DESCRIPTION{ airwindohhs::hypersonic::k_name.data() };
-    MIN_TAGS{ airwindohhs::hypersonic::k_tags.data() };
-
-    message<> m_about{
-        this,
-        "about",
-        description{ "Get the original Airwindows 'about' text for this object" },
-        [this](const atoms& args, const int inlet) -> atoms {
-            dump_out.send({"about", m_about_text});
-            return {};
-        }
-    };
-
-    hypersonic_tilde(const atoms& args = {})
-        : airfx(args)
-    {
-    }
-};
-
-MIN_EXTERNAL(hypersonic_tilde);
+    airfx::init_class<TWrapped>("airfx.hypersonic~", airwindohhs::hypersonic::k_long_description.data());
+}

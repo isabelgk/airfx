@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.peareq~" module="MSP" category="filter">
+
+	<digest>
+		PearEQ is a six-band Pear-based graphic EQ.
+	</digest>
+
+	<description>
+		PearEQ is a six-band Pear-based graphic EQ.
+	</description>
+
+	<discussion>
+		Turns out Pear wasn't done, even though it's been around for years. Pear, Pear2 for more nonlinearity, ConsoleMC and MD, ConsoleLA… all based on my filter derived from the Holt filter. I've done it by itself, I've stacked it up in the traditional way for making a steep multipole filter, I've taken those and made multi-band units nineteen Pear filters deep.And all of that was before I started fooling with AngleEQ, which is incapable of doing what Pear or a biquad filter can do. Angle screws up the phase so thoroughly that if you generate a rolled-off filtered crossover, and subtract the filtered part from dry, the result still has just as much bass as before.So, the trick was reconstructing the original sound out of however many bands you have, EACH pole of the filter. Seemingly a pointless endeavor, but when you do that… suddenly the weird filter is able to filter both ways. So what happens if you do that to a biquad filter that was already able to do both things?You get SmoothEQ2. That's what I did to make the hyper-flexible filter with tilty shelves. And that's great, and Pear was just sitting there, waiting for me to try it.PearEQ combines an intensely natural, analog-sounding character around the sharpness of the filter edges, with a steepness otherwise unavailable to that kind of sound. It's a completely different sound from any other way you'd get that Q factor. You can take any biquad filter (for instance, any DAW standard filter) and crank up the steepness, and you'll get that sharp of a crossover… with obvious resonance, and it'll sound totally different. You can construct an isolator filter out of biquads and it'll still act different: Pear produces an increasingly steep drop-off into the stopband, and biquads won't. It's just different, and PearEQ lets you use that differentness either for great subtlety and natural tone… or to rip and boost frequencies WAY more than you should.Go right ahead, and I'll keep working on more out of all this, as it comes together and shows its usefulness :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">filter</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="high" get="1" set="1" type="float64" size="1">
+			<digest>High</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="hmid" get="1" set="1" type="float64" size="1">
+			<digest>HMid</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="mid" get="1" set="1" type="float64" size="1">
+			<digest>Mid</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lmid" get="1" set="1" type="float64" size="1">
+			<digest>LMid</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="bass" get="1" set="1" type="float64" size="1">
+			<digest>Bass</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="sub" get="1" set="1" type="float64" size="1">
+			<digest>Sub</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>
