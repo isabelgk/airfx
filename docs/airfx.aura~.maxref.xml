@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.aura~" module="MSP" category="effects">
+
+	<digest>
+		Aura is a new kind of resonant lowpass EQ.
+	</digest>
+
+	<description>
+		Aura is a new kind of resonant lowpass EQ.
+	</description>
+
+	<discussion>
+		So this turned out to be a bear to bring up to date, because the original code was insane. I’m not quite sure how I got there, and I was still bugfixing long after the demo video was made. You’ll find the actual version of Aura has a slightly wider range, better adjustability in the low range, and the Dry/Wet control gets a touch of added functionality: as you go full wet, the resonant quality gets enhanced, so be sure and explore the half-wet or barely-wet settings. If it’s too scary-resonant, just pull it back a teeny bit and it should cooperate.And this one is a bit scary as it seems to be channeling analog filters. I agree that it would be great to have this principle work as a full-range, synth-style filter that goes all the way into the bass. I can’t do it, though: it freaks out when I try, and it took endless hacking just to expand it a bit from what you see in the video. This is the algorithm derived from GrooveWear, which averages the rate of change OF the rate of change of the waveform. It’s not even slightly normal. You get what you get.But what you get, is a lowpass with a striking resonant edge that’s implemented in a totally new way, and which has no pre-ring at all… and the way it gets its sound gives it an extraordinary sonority. Pretty much anything in audio that you’d want to project loudly as if from an acoustic space, can be given a sheen and glisten and sonority with Aura. I’ve got it extending down fairly low into the midrange if you’re at 44.1K or so: that should help if you need to use it at high sample rates, because the technique for doing it is not exactly cooperative and I found no way to simply tune it down: everything’s so geared to slew rate between samples that it’s best used for treble effects. I think it’s got a useful tonality for its treble manipulations, and I’ve spent a lot of time coming up with interesting ways to cut or enhance treble. This one’s good at what it does. You can really do stuff with the texture of your mix by aggressively using Aura on suitable elements.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">effects</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="voicing" get="1" set="1" type="float64" size="1">
+			<digest>Voicing</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

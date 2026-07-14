@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.sidepass~" module="MSP" category="stereo">
+
+	<digest>
+		Sidepass is a simple utility plugin, a highpass on the side channel. Mono-maker.
+	</digest>
+
+	<description>
+		Sidepass is a simple utility plugin, a highpass on the side channel. Mono-maker.
+	</description>
+
+	<discussion>
+		This one was by request. It’s not very fancy, but I hope it’ll come in handy. If it is, spread the word!I’ve got a plugin called ToVinyl, which is rather fancy. It’s the Airwindows attempt at a vinyl mastering suite: elliptical EQ, highpass on the mid to help get levels, an acceleration limiter to tame sudden energy spikes without really cutting brightness otherwise, and even a groove wear modeler that was the precursor to Airwindows Aura. That’s one of the Kagi for-pay plugins, number 9 on the list when I reach $800 a month and begin doing those.But, I got asked for something much simpler. A highpass filter on just the side channel, and one that would go up the full range from subs to highs, so at full crank it’d be purely mono.Well, I’ve altered that a teeny bit: Sidepass is aware of sample rates, so if you’re at a 0.1 setting at 44.1K, it ought to be doing the same thing at 0.1 at 96K. But apart from that, here’s a little utility for AU, Mac and PC VST that just highpasses the side, from DC to 22K. It’s an Airwindows filter, same as what’s in Density and Drive as a highpass, and it ought to do nicely.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">stereo</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="cutoff" get="1" set="1" type="float64" size="1">
+			<digest>Cutoff</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

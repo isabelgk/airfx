@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.noise~" module="MSP" category="noise">
+
+	<digest>
+		Noise is the Airwindows deep noise oscillator, as a sound reinforcer.
+	</digest>
+
+	<description>
+		Noise is the Airwindows deep noise oscillator, as a sound reinforcer.
+	</description>
+
+	<discussion>
+		Noise started out as a plugin called Voice Of The Starship. It’s an algorithm that generates brownian-motion noise which won’t ‘wander’ into excessive DC offset, but without a highpass filter needed! The original Voice Of The Starship can be made to do any sort of deep rumble, including purely subsonic rumble that still works as an audio stream.Noise is like Voice Of The Spaceship, except it also triggers on input sounds. It can pretty closely track rhythms coming in, and you can combine it with underlying stuff with Dry/Wet, and the Distance control applies to both Dry AND Wet, to blend and darken them together.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">noise</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="highcut" get="1" set="1" type="float64" size="1">
+			<digest>HighCut</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lowcut" get="1" set="1" type="float64" size="1">
+			<digest>LowCut</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lshape" get="1" set="1" type="float64" size="1">
+			<digest>LShape</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="decay" get="1" set="1" type="float64" size="1">
+			<digest>Decay</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="distnc" get="1" set="1" type="float64" size="1">
+			<digest>Distnc</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

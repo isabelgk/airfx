@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.purestdualpan~" module="MSP" category="utility">
+
+	<digest>
+		PurestDualPan is an updated PurestGain but as a dual pan.
+	</digest>
+
+	<description>
+		PurestDualPan is an updated PurestGain but as a dual pan.
+	</description>
+
+	<discussion>
+		This one's by patron request: as in, one specific patron REALLY wanted a PurestDualPan, so now everybody has one :)It is using dezippering, but instead of the much slower one from PurestGain, it's the quicker and more direct one from out of the Z filter plugins. It's using the pan law I used in Console9 and later, that uses sine functions to come up with a pan law. And it's using a quirky little audio taper in its left and right gain controls, so that 0.5 is unity gain, but full crank is actually 3.069492192001773 because it's 2 to the power of the golden ratio, same for the taper of attenuating anything. This produces a funny sort of taper that I like, and also makes it impossible to reference the actual control's number in any useful way. So, behave as if you can't see numbers, they certainly won't be what you think they are and there's no predicting what they will be in dB terms.I have a Bit Shift one also, but it doesn't strictly count as that because it requires an add as part of the algorithm. This one counts as a PurestGain, though! If you're a PurestGain fan, this is the same only as a dual pan.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="l_vol" get="1" set="1" type="float64" size="1">
+			<digest>L Vol</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="l_pan" get="1" set="1" type="float64" size="1">
+			<digest>L Pan</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="r_vol" get="1" set="1" type="float64" size="1">
+			<digest>R Vol</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="r_pan" get="1" set="1" type="float64" size="1">
+			<digest>R Pan</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.zlowpass~" module="MSP" category="xyz-filters">
+
+	<digest>
+		ZLowpass is a lowpass made to sound and act like the Emu e6400 Ultra lowpass.
+	</digest>
+
+	<description>
+		ZLowpass is a lowpass made to sound and act like the Emu e6400 Ultra lowpass.
+	</description>
+
+	<discussion>
+		Onward! Today we have ZLowpass. I think this one might be the closest to the hardware yet! It works like my previous Z series filters, except it’s the lowpass this time.You might notice my video looks a bit different: that’s because my Blackmagic ATEM Mini finally and permanently blew up. I’m pretty sure I know why: there were times I ran it for long periods, I’ve often run many inputs into it or had it working hard doing things like chromakeying/lumakeying stuff at higher resolution and downscaling the result to HD, or running my laptop’s HDMI feed into it and having it upscale THAT to the higher native resolution, overlay the main camera and then downscale again to HD. On top of that, I’ve had it sitting on top of my Lavry DAC, and we’ve had some heat waves this summer.So, it melted. For a while it just had its input to the computer die (I found a Razer capture card to be more reliable) and then in some livestreams it’s been flaking out, and tonight it blew up for good and couldn’t even run a single camera. Anyone out there, be careful with these things. They’re just $300 or so, but you cannot push them too hard in warm conditions or they will melt. Or maybe the fan blew up. I know I can’t return it under warranty because, being me, I took it apart to see if I could make the cooling work better. Too little too late. Be warned and don’t run these little buggers hard, or do lots of up and downscaling, while sitting them on a warm thing. No more ATEM Mini.Until I get another, that is, and this time will NOT touch a thing about it, will fill in any warranty card it has, and will probably get a little laptop cooler pad or something. Whatever it takes, because my setup ended up pretty sweet if it wasn’t for the thing melting under the strain. (Replacement of the ATEM will NOT be out of what I’m saving up for getting a bigger and more classic sampler. Never fear, that journey will progress unhindered.)Anyway, here’s ZLowpass :D(followup: I did in fact replace the ATEM Mini, put it on a heatsink with a blue heatsink pad between, and used it extensively, and the replacement didn't melt. I ended up putting it aside and shooting video directly on the camera, so I could use 4k resolutions. The replacement ATEM with the heatsink should still be good.)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">xyz-filters</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="input" get="1" set="1" type="float64" size="1">
+			<digest>Input</digest>
+			<description>
+				Range 0.0-1.0. Default 0.1.
+			</description>
+		</attribute>
+		<attribute name="freq" get="1" set="1" type="float64" size="1">
+			<digest>Freq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="poles" get="1" set="1" type="float64" size="1">
+			<digest>Poles</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

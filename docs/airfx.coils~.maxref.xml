@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.coils~" module="MSP" category="subtlety">
+
+	<digest>
+		Coils models the types of distortion you'll find in transformers.
+	</digest>
+
+	<description>
+		Coils models the types of distortion you'll find in transformers.
+	</description>
+
+	<discussion>
+		Coils is like the inverse of Focus. Instead of boosting/distorting UP the mids, it saturates DOWN the extreme highs and lows leaving the mids untouched. Because it’s a fixed mid shape mimicking the Neve transformer picture I was shown, the biquad doesn’t have to run inside Console as it’s not a high-Q filter at all (you’ll notice way more of an effect on steep filters) so it trades off that effect for less processing. The saturation is the Density algorithm, but without clipping, so if you trash it you get wrap-around on the transfer function curve, which works out to be kinda transformery.The top control increasingly distorts (still kinda subtle), the middle one DC biases the core (second harmonics!) which does more when you’re less saturated, and then there’s a dry/wet. Enjoy :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">subtlety</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="saturat" get="1" set="1" type="float64" size="1">
+			<digest>Saturat</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="core_dc" get="1" set="1" type="float64" size="1">
+			<digest>Core DC</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

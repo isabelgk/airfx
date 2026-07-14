@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.sampledelay~" module="MSP" category="ambience">
+
+	<digest>
+		SampleDelay is three delays combined: millisecond, sample and subsample.
+	</digest>
+
+	<description>
+		SampleDelay is three delays combined: millisecond, sample and subsample.
+	</description>
+
+	<discussion>
+		SampleDelay is a very simple thing, implemented in a particular way. It's not exactly an echo (though it can be), not exactly a timing adjustment tool, not exactly a sound shaper… more like, a little of all of those things.You've got up to 100 milliseconds of delay on the first control. On the second, you have 0 to 10 samples of delay, exactly. And on the third control, you have zero to one sample: you have a subsample trim. They all work separately and combine into a single delay, with an inverse/dry/wet control on the fourth slider.Why? Why like this?Sure, you can use part-dry and part-wet for a single slapback echo. Sure, you could set it to half-inverse and have total cancellation and make a comb-filter effect, or set it full wet… or full inverse… for a small timing adjustment on a multimiked setup.But let's consider that multimike setup. Suppose we're trying to get a snare mike in phase with nearby overheads. Well, one thing we could do is isolate the snare mic with an overhead, and set the snare to fully inverse (assuming the mic's phase isn't also flipped…) and dial in the timing to cancel as much as possible. Then, go to the opposite (inverse or wet) and you have your fully in phase signal.Same with multimiked guitar cabs. Find the beef by canceling it and then flipping from inverse to wet (or vice versa)Or, go for effect and have the spot mike stay inverted and don't bring it up as much, and it'll make things more bright and complex… or put it slightly off for a tonal shift. Three separately adjustable delay ranges down to the finest you could have, and the one inv/wet control to let you quickly do whatever you want.There's a reason I've been asked to bring this one back. Hope you like it. For some this will be a very boring effect. For others… not :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">ambience</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="ms" get="1" set="1" type="float64" size="1">
+			<digest>ms</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="samples" get="1" set="1" type="float64" size="1">
+			<digest>Samples</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="subsamp" get="1" set="1" type="float64" size="1">
+			<digest>Subsamp</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="inv/wet" get="1" set="1" type="float64" size="1">
+			<digest>Inv/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

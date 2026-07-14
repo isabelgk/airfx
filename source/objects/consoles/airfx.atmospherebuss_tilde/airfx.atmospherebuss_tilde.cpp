@@ -1,0 +1,11 @@
+#include "ext.h"
+
+#include "airfx.hpp"
+#include "consoles/atmospherebuss.hpp"
+
+using TWrapped = airwindohhs::atmospherebuss::AtmosphereBuss<double>;
+
+extern "C" void ext_main(void *r)
+{
+    airfx::init_class<TWrapped>("airfx.atmospherebuss~", airwindohhs::atmospherebuss::k_long_description.data());
+}

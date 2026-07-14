@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.kchamberar~" module="MSP" category="ambience">
+
+	<digest>
+		kChamberAR is a take on tape echo into chamber echo.
+	</digest>
+
+	<description>
+		kChamberAR is a take on tape echo into chamber echo.
+	</description>
+
+	<discussion>
+		While I'm working on other stuff, here's a wild little toy!I've been struggling to get the sound of the Abbey Road chamber, on my Monday streams. Pretty sure what I'm doing works better with larger spaces (which I'm certainly going to do) and that I've got to dig into other approaches for studio-friendly, nice chambers (which I'm certainly going to do, especially since I might get to my goal June or July and get the Bricasti to study).So I didn't get the Abbey Road chamber, not really. But what did I get?Welcome to kChamberAR! Instead of a nice, classy Abbey Road chamber, it's a tape echo into a chamber gone terribly wrong. Or maybe it won't seem so wrong… but it's dirty, aggressive, and wild. If you crank the regeneration up it distorts and goes into infinite echo. If you crank up the bass cut, it filters way harder than the real Abbey Road STEED unit ('cos why not), and if you mess with the delay time, you get wild pitch modulations, all of which feed into the little, boxy, room.I honestly think this works better as an instrument and didn't work as a capital-C Chamber, much less the Abbey Road chamber. There's better to come, as far as serious chamber emulations go. When I do meet my goal and get the Bricasti to study, chambers will be first in my investigations, and I'll get to the bottom of the problem.Oh… because the delay works like you're speeding up the tape more and more, if you crank it all the way to the left for minimum delay, it's probably eating more CPU. For predelay keep it in the middle and it should be fine for that. The reason it goes that much faster is, you can tune the delay to bass notes like a monstrous Karplus-Strong oscillator which then drives (overdrives) a small room. And this is such a horrifying, awesome sound that I had to let you have it.I'll have more legit stuff coming soon. For now, have fun with the new monstrosity. It won't behave, but nothing you have will make noises like it, and that's always part of what I do :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">ambience</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="input" get="1" set="1" type="float64" size="1">
+			<digest>Input</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="delay" get="1" set="1" type="float64" size="1">
+			<digest>Delay</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="regen" get="1" set="1" type="float64" size="1">
+			<digest>Regen</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="low_cut" get="1" set="1" type="float64" size="1">
+			<digest>Low Cut</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="wetness" get="1" set="1" type="float64" size="1">
+			<digest>Wetness</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

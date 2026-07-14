@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.electrohat~" module="MSP" category="noise">
+
+	<digest>
+		ElectroHat is a hi-hat tone generator that uses the original sound as a control voltage.
+	</digest>
+
+	<description>
+		ElectroHat is a hi-hat tone generator that uses the original sound as a control voltage.
+	</description>
+
+	<discussion>
+		I’ve always liked this one. ElectroHat uses primitive residue sequences to produce a ‘noise’ like effect that makes the hi-hat, but since it’s such a crude method of generating randomness, you get artifacts and peculiar electronic noises instead of nice pure noise. Peculiar electronic noises turn out to be a lot of fun as hi-hats!You use this by feeding some sort of control voltage to it. It responds very, very quickly, so if there’s any amplitude modulation as part of your wave, you’ll hear it affecting the hat. You can use that on purpose, you can use a real DC control voltage to drive it, or you can simply make the envelope you want using a square wave tone for the underlying signal: it’ll rectify the squarewave to be only positive, and that’ll end up the same as a control voltage.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">noise</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="hihat" get="1" set="1" type="float64" size="1">
+			<digest>HiHat</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="trim" get="1" set="1" type="float64" size="1">
+			<digest>Trim</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="bright" get="1" set="1" type="float64" size="1">
+			<digest>Bright</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 0.1.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

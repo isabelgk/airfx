@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.ynotbandpass~" module="MSP" category="xyz-filters">
+
+	<digest>
+		YNotBandpass is soft and smooth to nasty, edgy texture-varying filtering, no control smoothing.
+	</digest>
+
+	<description>
+		YNotBandpass is soft and smooth to nasty, edgy texture-varying filtering, no control smoothing.
+	</description>
+
+	<discussion>
+		YNotBandpass has various uses. One I was trying out in the original video, was setting it up as a ‘walkie-talkie’ sort of tone on my voice, and then turning up ResEdge to really trash the hell out of the audio in a characteristic way that’s not easily found anywhere else.In the video for YNotBandpass, the version without control smoothing, I demoed it on a bunch of huge reverb, alternating between a Bricasti Cathedral and my version of that same sound… and the more rapid switching between Freq settings turns out to sound pretty nice! Except when the ResEdge control is used to give a mean, electrical, circuit-bendy quality that still retains a lot of the depth of the underlying sound.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">xyz-filters</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="gain" get="1" set="1" type="float64" size="1">
+			<digest>Gain</digest>
+			<description>
+				Range 0.0-1.0. Default 0.1.
+			</description>
+		</attribute>
+		<attribute name="freq" get="1" set="1" type="float64" size="1">
+			<digest>Freq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="reson8" get="1" set="1" type="float64" size="1">
+			<digest>Reson8</digest>
+			<description>
+				Range 0.0-1.0. Default 0.1.
+			</description>
+		</attribute>
+		<attribute name="resedge" get="1" set="1" type="float64" size="1">
+			<digest>ResEdge</digest>
+			<description>
+				Range 0.0-1.0. Default 0.1.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

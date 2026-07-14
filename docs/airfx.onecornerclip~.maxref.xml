@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.onecornerclip~" module="MSP" category="clipping">
+
+	<digest>
+		OneCornerClip is an ultimate full-bandwidth clipper.
+	</digest>
+
+	<description>
+		OneCornerClip is an ultimate full-bandwidth clipper.
+	</description>
+
+	<discussion>
+		OneCornerClip works like this: it’s like ADClip, except it spreads out the onset to clipping over possibly many samples. They converge upon the maximum possible output, which means the front edge of a clip takes on a continuous curve, moving its energy down into lower frequencies where the clippage is less bright and gritty, and more brutal and ballsy.Then, on departing the clip, the waveform just snaps instantly to the next unclipped value, with no attempt to soften: so your waveshaping ends up getting one corner (on departing the clip) and one rounded onset (entering the clip).What this means is, you can smash this with bass and it’ll remain bassy. Smash it with midrange and it’ll be middy. It shapes itself to the needs of your track, the distortion taking on the character of what you’re putting in. And that means, you can slam stuff absurdly hard through this while retaining character… and you can retain size and scale and depth.I didn’t really design it for 2-buss mastering duties though I’m sure it’ll find some use there. It’s more a technical experiment that came to life and ate Tokyo. I think it’ll do great for nasty industrial noise, for obliterating drum room tracks, just a whole bunch of uses: because this isn’t a special purpose effect. It’s a big fat dirty distortion, and that makes it more flexible than bright gritty distortions, in that it can wear your frequency balance like a mask. It IS still distortion, so you won’t be using it for clean things. But it’s also very good at soaking up brief clips without revealing itself, so it’s not an insane choice for subtler use. I keep it at 0.618 for general use: that gets a good range of tones.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">clipping</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="input" get="1" set="1" type="float64" size="1">
+			<digest>Input</digest>
+			<description>
+				Range 0.0-1.0. Default 0.3333333333333333.
+			</description>
+		</attribute>
+		<attribute name="pos_thr" get="1" set="1" type="float64" size="1">
+			<digest>Pos Thr</digest>
+			<description>
+				Range 0.0-1.0. Default 0.966.
+			</description>
+		</attribute>
+		<attribute name="neg_thr" get="1" set="1" type="float64" size="1">
+			<digest>Neg Thr</digest>
+			<description>
+				Range 0.0-1.0. Default 0.966.
+			</description>
+		</attribute>
+		<attribute name="voicing" get="1" set="1" type="float64" size="1">
+			<digest>Voicing</digest>
+			<description>
+				Range 0.0-1.0. Default 0.618.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

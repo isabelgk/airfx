@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.channel7~" module="MSP" category="tone-color">
+
+	<digest>
+		Channel7 improves slew clipping and lets you blend Channel 6 and 5.
+	</digest>
+
+	<description>
+		Channel7 improves slew clipping and lets you blend Channel 6 and 5.
+	</description>
+
+	<discussion>
+		Short and sweet. You know how Interstage got an update because the slew clipping was too intense on high sample rates? This applied to Channel, too. So, Channel7 now handles high sample rates better than any previous Channel.There’s more: Channel5 was the last one with the ‘Density’ algorithm, that’s extra fat-sounding. Channel6 got the Spiral algorithm, much purer and clearer… but without that fatness effect Density gets. My attempts to make a special algorithm that does both gave me Mojo and Dyno… neither of which are Channel or a replacement for either Spiral or Density.So, Channel7 simply goes to 200%, not 100%. Up to 100% it’s the same as Channel6, but with the slew clipping fix. From 100% to 200% it does a crossfade into Channel5’s Density algorithm—so it ends up being best of all possible worlds. You can seamlessly go from perfectly clean, to the purest saturation there is, and beyond that to add any degree of fatness you like to the sound (and it fades between Spiral and Density, so there’s extra subtlety to the way it transitions).Channel7: yeah, you’re pretty much going to want this upgrade no matter which Channel you liked. It is all of the best, more effective than ever.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">tone-color</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="console_type" get="1" set="1" type="float64" size="1">
+			<digest>Console Type</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="drive" get="1" set="1" type="float64" size="1">
+			<digest>Drive</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

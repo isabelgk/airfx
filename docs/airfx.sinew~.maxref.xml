@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.sinew~" module="MSP" category="brightness">
+
+	<digest>
+		Sinew combines sines and slew clipping for a tape bias effect!
+	</digest>
+
+	<description>
+		Sinew combines sines and slew clipping for a tape bias effect!
+	</description>
+
+	<discussion>
+		Looks like I'm working on three major fronts at the moment, and here's a key advance on at least one of them :)Sinew is the answer to the question, 'what if slew clipping, but it was more restrictive the closer you got to what would be regular clipping?'I realize the answer is typically going to be 'slew what now?' but Airwindows fans are long aware of the strange pleasures of slew clipping. What you don't know is, the real answer to that question is 'then you get something that acts like analog tape's inability to capture super loud high frequencies'… but without the actual tape saturation!This might have all kinds of uses: I know it's going to find its way into a ToTape update. For now, you can have the raw version, the one where (like other Slew-oriented plugins) you can set it to extreme values and screw up the sound in interesting ways. Sinew might be just the thing for making heavy guitars louder, or adding guts to drums, but you can try it on whatever you like.It'll hang on to brightness for quite a long time, until suddenly it's really stepping on the sound. What's happening there is, you can't hear it doing more subtle work, so you only hear it when it's turned up too far. Listen to the character of things and you might hear it kicking in without apparently cutting back brightness at all! This is the farthest thing from a simple filter. Good luck experimenting with Sinew!
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">brightness</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="sinew" get="1" set="1" type="float64" size="1">
+			<digest>Sinew</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

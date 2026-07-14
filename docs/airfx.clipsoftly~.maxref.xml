@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.clipsoftly~" module="MSP" category="clipping">
+
+	<digest>
+		ClipSoftly is ClipOnly2 but as a softclipper: a very handy building block.
+	</digest>
+
+	<description>
+		ClipSoftly is ClipOnly2 but as a softclipper: a very handy building block.
+	</description>
+
+	<discussion>
+		What more needs be said? ClipSoftly is ultimate softclipping, using the techniques used on ClipOnly2 for softening the edge of the hard clipping, but on the softest possible clipping. Where ClipOnly2 manipulates the onsets of the brightest transients to give you pure hard-clipping without digital grit, ClipSoftly is doing that without even hardclipping.So what we have here, basically, is a control-less (like ClipOnly and ClipOnly2) safety clipper, but it's a saturation effect. It's also a building block I (or others) can use inside larger plugins or new versions of Console, much like the recent Pop2 uses ClipOnly2 on the output, to give you the ability for really aggressive attacks.You'd use something like ClipOnly2 in mastering specifically because it won't touch the values of any unclipped samples. ClipSoftly is different: it will touch the values of ALL samples, reshaping the whole sound to make it bigger, fatter, tubier.I hope you like it, and the way it'll affect my plugins going forward :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">clipping</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+	</attributelist>
+
+</c74object>

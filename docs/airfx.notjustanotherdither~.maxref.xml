@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.notjustanotherdither~" module="MSP" category="dithers">
+
+	<digest>
+		NotJustAnotherDither is a next-gen wordlength reducer at 24 bit, with DeRez.
+	</digest>
+
+	<description>
+		NotJustAnotherDither is a next-gen wordlength reducer at 24 bit, with DeRez.
+	</description>
+
+	<discussion>
+		The votes are in, and the Internet has spoken. We’ve got a name for the new noise shaping variant on Naturalize, after a January of wild suggestions. Seems most people simply wanted to emphasize that this was not your ordinary dither, not your daddy’s TPDF.This is the plugin (two, in fact) that beats all the other ones, including the original Naturalize. In normal use, this ‘dither’ (in fact it’s not a dither at all: it’s the Benford realness stuff from Naturalize, run with a noise shaper, and all the added random noise taken OUT) will make any fixed-point output sound like infinite resolution. It’s AU, Mac and PC VST. It has a switch for 16/24 bit operation (defaults to 24) and a ‘DeRez’ control where you can get low-bit NJAD audio if you like, or if you want to audition its noise floor behavior.The output levels are low, without a bunch of extra energy coming from the noise shaper: it’s pretty well behaved, though like any hyper-performance ‘dither’ this is really meant for output formats. I don’t think any harm can come from repeatedly using this in processing, but you can always use a normal TPDF if you want no change in tonal balance (plain TPDF dither only adds broadband noise: more opaque, but if it builds up it won’t accentuate anything: dithers with a lot of high frequency energy can end up exaggerating that.)(followup: I added a 16/24 bit switch, and DeRez. Also, the most current version of this is in Monitoring.)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">dithers</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="quant" get="1" set="1" type="float64" size="1">
+			<digest>Quant</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="derez" get="1" set="1" type="float64" size="1">
+			<digest>DeRez</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

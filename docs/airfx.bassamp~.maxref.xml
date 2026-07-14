@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.bassamp~" module="MSP" category="amp-sims">
+
+	<digest>
+		BassAmp is an old plugin with new tweaks, that gives some bass guitar tones.
+	</digest>
+
+	<description>
+		BassAmp is an old plugin with new tweaks, that gives some bass guitar tones.
+	</description>
+
+	<discussion>
+		This is BassAmp. (I’ve been asked to do amp sim type plugins, so it’s a start). Back in the day I experimented with some of these things, though I’ve always been more interested in wiring up physical hardware, especially for guitar distortions and things. I’ve brought this one up to date in some ways, debugging a problem with the ‘dub’ channel and using my modern techniques for dithering to the floating point bus, and so on.It’s got basically a bright channel, midrange (which is just dry, as a slider), a bass channel with a characteristic woolly tone that has a kind of noisy blur on the small amount of treble it does have, and a ‘sub’ channel that really doesn’t work, so use it as a crazy special effect. BassKit might get you a cleaner sub-octave, but this will give you a trashy sub-octave that’s mostly garbage, even on a single-note line. So you’ll be leaving it off, I think.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">amp-sims</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="high" get="1" set="1" type="float64" size="1">
+			<digest>High</digest>
+			<description>
+				Range 0.0-1.0. Default 0.75.
+			</description>
+		</attribute>
+		<attribute name="dry" get="1" set="1" type="float64" size="1">
+			<digest>Dry</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="dub" get="1" set="1" type="float64" size="1">
+			<digest>Dub</digest>
+			<description>
+				Range 0.0-1.0. Default 0.75.
+			</description>
+		</attribute>
+		<attribute name="sub" get="1" set="1" type="float64" size="1">
+			<digest>Sub</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

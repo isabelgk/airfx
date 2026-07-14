@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.lilamp~" module="MSP" category="amp-sims">
+
+	<digest>
+		LilAmp is a tiny amp sim, like a little bitty practice amp without that much gain.
+	</digest>
+
+	<description>
+		LilAmp is a tiny amp sim, like a little bitty practice amp without that much gain.
+	</description>
+
+	<discussion>
+		Here’s a cute little monster for you! LilAmp is an alternate take on my amp sims (resurrected from way back when, and brought up to speed to some extent). Unlike something like FireAmp or GrindAmp, this one’s much lower gain and acts like little practice amps, but the kind with a lot of loudness and sonority.You use this when you want more of a clean, articulate effect, or when you’re trying to highlight the treble and midrange (for instance, for leads, or to turn a snare into a loud, confined whack). You can make it be more mellow, too, but it will always be ‘LilAmp’ and speak up in a certain way. Something I found it useful for, is rhythm guitar that’s kind of Stonesy and not all that saturated: you can get the right kind of midrange bark out of it.All these amp sims (there are more coming, too!) incorporate the cab sim stuff I’d also done back in the day, and they all have a rather special dry/wet control where backing off the full-wet sound gives you two stages of dry/wet, one for the cab sim and one for the amp sim. So things clean up in a distinctive way that’s not like any other plugin, or anything you could get out of a real amp, for that matter. Treat LilAmp as a flexible way to get this type of sound, because it’s way more interested in doing that, than in trying to mimic any particular literal amp. Rather than taking a real amp and EQing and shaping it to your mix, you take LilAmp and morph it directly until it does what’s needed (this applies to the other Airwindows amp sim plugins, too).
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">amp-sims</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="gain" get="1" set="1" type="float64" size="1">
+			<digest>Gain</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="tone" get="1" set="1" type="float64" size="1">
+			<digest>Tone</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 0.8.
+			</description>
+		</attribute>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

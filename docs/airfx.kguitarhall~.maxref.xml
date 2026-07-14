@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.kguitarhall~" module="MSP" category="reverb">
+
+	<digest>
+		kGuitarHall accentuates loud midrange skronk!
+	</digest>
+
+	<description>
+		kGuitarHall accentuates loud midrange skronk!
+	</description>
+
+	<discussion>
+		What if reverb, but skronk?kGuitarHall exists to pursue a particular sound experience I had: when I was a kid, the first concert I ever saw was at a hockey rink, at which Night Ranger played. The whole story's a wild one but for the purposes of kGuitarHall, the important part is that they played so loud the air crackled. A lot of that had to do with how echoey the place was… and I've never found any reverb to convey that sensation.This is my attempt to do that sensation, but as a plugin.Skronk is a word that's barely made it into any dictionary: I think the music critic Lester Bangs made it up. Wiktionary describes it as "A raw, discordant sound produced with electric guitars." You've just seen me include it as a slider on the plugin, Mastering: it's sort of the upper midrange between the air band and the next band down on the Kalman filter. It corresponds to 'fire' in the Stonefire plugin, and that's another hint. But simple EQ, even of the most strident upper midranges, won't get you Skronk.So, kGuitarHall draws on my experience evolving kCathedral to essentially go the other direction. A ridiculous number of reverb algorithms got generated, measured and tested, to zero in on which ones would produce the most aggressive, saturated tone in the noisy midrange where guitars talk. It's a balancing act between maximum loudness (which also contributes to how sonorous the reverb tones can be) and just plain unpleasant metallic tonalities. This is independent of 'feedback', by the way: it's exploring how the actual reverb algorithm is constructed, and seeking a different 'color' than just 'clean and pure and free of overtones'.It'd be pretty useless without Discontinuity (the Top dB slider) which, importantly, is inside the reverb's regeneration, not simply on the output. And it'd be pretty ear-splitting… without DeRez, which is able to use Bezier curves to make an interesting-sounding undersampling of the system. That not only makes the reverb work at all sample rates with about the same cost in CPU… but also lets you drop it down to subterranean, vast spaces that barely have any treble or upper mids at all.And when you do that, the skronk is pitched down as well, and turns into strange cavernous sounds as the 'room size' and maximum sustain expands. So, if the ear-splittyness of kGuitarHall doesn't float your boat, you can drown in a sea of reverb with a selection of distinct tone characters by using Derez to darken everything up.kGuitarHall is an experiment, after some years spent trying not to allow metallic skronky reverbs to happen. I don't know if you'll like or hate it, but I feel certain it'll get a strong response either way. So, if there's one person who's like 'oh cool, just what I needed!', then, are you stuck with having that skronk option available?Trick question. I am that person. Enjoy or totally avoid kGuitarHall as you see fit :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">reverb</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="top_db" get="1" set="1" type="float64" size="1">
+			<digest>Top dB</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="regen" get="1" set="1" type="float64" size="1">
+			<digest>Regen</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="derez" get="1" set="1" type="float64" size="1">
+			<digest>DeRez</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="predlay" get="1" set="1" type="float64" size="1">
+			<digest>Predlay</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="wetness" get="1" set="1" type="float64" size="1">
+			<digest>Wetness</digest>
+			<description>
+				Range 0.0-1.0. Default 0.25.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

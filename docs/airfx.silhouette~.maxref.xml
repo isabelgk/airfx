@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.silhouette~" module="MSP" category="noise">
+
+	<digest>
+		Silhouette replaces the sound with raw noise sculpted to match its dynamics.
+	</digest>
+
+	<description>
+		Silhouette replaces the sound with raw noise sculpted to match its dynamics.
+	</description>
+
+	<discussion>
+		I thought I’d let people play with the precursor to Texturize, which so far has not made it into the Patreon era of Airwindows… meet Silhouette!Silhouette was created for playing finished music through and seeing if you could still make out a beat. It was an anti-loudness-war plugin, made long ago to illustrate that point. And it replaces the whole sound with a blast of noise which retains the dynamics of the underlying music… if there is any. Dynamics, that is.Texturize was this, tone-shaped to match the sound of the underlying music (mostly going a lot more bassy). And Texturize proved a lot of fun for people, some of whom asked, can we have that but brighter? So be careful what you wish for. Silhouette now comes with the same wet/dry control as Texturize, so you can use it as a subliminal noise generator. But it’s ALL bright, so you have to turn it down further in order for it to ‘hide’ behind the audio. And that means it can’t really do what Texturize does: it’ll stick out.But in sticking out, the subliminals it will generate are VERY different from what Texturize does. I’d describe it as hype and energy and tension. Be careful not to turn it up too high: it’ll be incredibly obvious anytime you do. Some sounds, some mixes, will just never work with it.But isn’t it fun sometimes to not care about that and just try out something wild to see what it does? Silhouette finds its use in that space. I hope you like it.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">noise</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+			<digest>Dry/Wet</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>
