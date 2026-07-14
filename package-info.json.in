@@ -4,12 +4,12 @@
     "homepatcher": "",
     "max_version_min": "8.0",
     "max_version_max": "none",
-    "name": "@C74_PACKAGE_NAME@",
+    "name": "airfx",
     "os": {
         "macintosh": {
             "platform": [
                 "x64",
-                "aarch64"
+                "arm64"
             ],
             "min_version": "none"
         },
@@ -27,6 +27,6 @@
         "effects",
         "audio"
     ],
-    "version": "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
+    "version": "@PACKAGE_VERSION@",
     "website": "http://www.github.com/isabelgk/airfx"
 }
