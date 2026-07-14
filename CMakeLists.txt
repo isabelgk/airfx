@@ -13,7 +13,7 @@ message(STATUS "Fetching max-sdk-base")
 FetchContent_Declare(
     max-sdk-base
     GIT_REPOSITORY https://github.com/Cycling74/max-sdk-base.git
-    GIT_TAG main
+    GIT_TAG c03a2922a2a8ff149165a1e2ea134e9321d6e202
 )
 FetchContent_MakeAvailable(max-sdk-base)
 
@@ -22,6 +22,20 @@ if (NOT DEFINED MAX_SDK_PACKAGE_OUT_OF_TREE)
 endif ()
 
 project(Airfx)
+
+# airwindohhs' own CMakeLists.txt calls project() itself. Fetching it must
+# happen after our project(Airfx) call above, or its nested project() call
+# becomes the first one in the whole configure run and fires max-sdk-base's
+# CMAKE_PROJECT_TOP_LEVEL_INCLUDES hook (Once.cmake) too early -- before the
+# MAX_SDK_PACKAGE_OUT_OF_TREE guard above has run, silently reverting to an
+# in-tree package layout.
+message(STATUS "Fetching airwindohhs")
+FetchContent_Declare(
+    airwindohhs
+    GIT_REPOSITORY https://github.com/isabelgk/airwindohhs.git
+    GIT_TAG 2a5fa95cb360cf20a2b976899761cca0e3ded3ca
+)
+FetchContent_MakeAvailable(airwindohhs)
 
 # max-sdk-base's Once.cmake (run as a CMAKE_PROJECT_TOP_LEVEL_INCLUDES hook
 # during the project() call above) already staged README.md into the
@@ -55,6 +69,4 @@ configure_file(
 
 set(AUTHOR_DOMAIN "com.isabelgk.max")
 
-# TODO: Fetch isabelgk/airwindohhs
-
-# add_subdirectory(source/...)
+include(objects.cmake)
