@@ -69,4 +69,8 @@ configure_file(
 
 set(AUTHOR_DOMAIN "com.isabelgk.max")
 
+if (WIN32)
+    add_compile_definitions(MAXAPI_USE_MSCRT WIN_VERSION _USE_MATH_DEFINES)
+endif ()
+
 include(objects.cmake)
