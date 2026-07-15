@@ -15,16 +15,31 @@ on:
           - windows
 
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      include: ${{ steps.set.outputs.include }}
+    steps:
+      - id: set
+        run: |
+          case "${{ github.event_name == 'workflow_dispatch' && inputs.target || 'all' }}" in
+            macos)
+              echo 'include=[{"os":"macos-14","name":"macos"}]' >> "$GITHUB_OUTPUT"
+              ;;
+            windows)
+              echo 'include=[{"os":"windows-2022","name":"windows"}]' >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo 'include=[{"os":"macos-14","name":"macos"},{"os":"windows-2022","name":"windows"}]' >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
   build:
+    needs: plan
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: macos-14
-            name: macos
-          - os: windows-2022
-            name: windows
-    if: github.event_name != 'workflow_dispatch' || inputs.target == 'all' || inputs.target == matrix.name
+        include: ${{ fromJSON(needs.plan.outputs.include) }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
