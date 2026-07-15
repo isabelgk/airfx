@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   detect:
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     outputs:
       plugins: ${{ steps.list.outputs.plugins }}
       latest_sha: ${{ steps.latest.outputs.sha }}
@@ -72,7 +72,7 @@ jobs:
   import:
     needs: detect
     if: needs.detect.outputs.plugins != '[]'
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     strategy:
       fail-fast: false
       max-parallel: 4
