@@ -20,7 +20,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Configure
-        run: cmake -S . -B build
+        shell: bash
+        run: |
+          if [ "${{ runner.os }}" = "macOS" ]; then
+            cmake -S . -B build -G Ninja
+          else
+            cmake -S . -B build
+          fi
 
       - name: Build
         run: cmake --build build --config Release --parallel
