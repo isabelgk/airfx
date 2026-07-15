@@ -1,11 +1,10 @@
 # airfx
 
-> Note: Hi! This hasn't been updated recently, but I am working on automation and a new version coming out soon!
-
 Max objects ported from the open source VST2 [airwindows](https://github.com/airwindows/airwindows/) plugins by Chris Johnson. 
 
-Releases and pre-release packages for all platforms are available from the GitHub releases page. Download and unzip into your Max Packages directory.
+# Installing
 
+Packages built for MacOS and Windows are available on the [GitHub Releases page](https://github.com/isabelgk/airfx/releases/). Download the `package.zip` and unzip into your Max Packages directory.
 
 # License
 
