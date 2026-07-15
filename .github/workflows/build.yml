@@ -2,8 +2,17 @@ name: Build
 
 on:
   push:
-    branches: [main, v2]
-  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Which OS(es) to build
+        type: choice
+        default: all
+        options:
+          - all
+          - macos
+          - windows
 
 jobs:
   build:
@@ -15,6 +24,7 @@ jobs:
             name: macos
           - os: windows-2022
             name: windows
+    if: github.event_name != 'workflow_dispatch' || inputs.target == 'all' || inputs.target == matrix.name
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -35,4 +45,42 @@ jobs:
         with:
           name: airfx-${{ matrix.name }}
           path: build/package
+          if-no-files-found: error
+
+  bundle:
+    name: Bundle combined package
+    needs: build
+    if: github.event_name != 'workflow_dispatch' || inputs.target == 'all'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download macOS package
+        uses: actions/download-artifact@v4
+        with:
+          name: airfx-macos
+          path: package
+
+      - name: Download Windows package
+        uses: actions/download-artifact@v4
+        with:
+          name: airfx-windows
+          path: package-windows
+
+      - name: Merge Windows externals into combined package
+        run: |
+          shopt -s nullglob
+          files=(package-windows/externals/*.mxe64)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "::error::No .mxe64 externals found in the Windows build output" >&2
+            exit 1
+          fi
+          cp -v "${files[@]}" package/externals/
+
+      - name: Zip combined package
+        run: (cd package && zip -qr ../package.zip .)
+
+      - name: Upload combined package
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: package.zip
           if-no-files-found: error
