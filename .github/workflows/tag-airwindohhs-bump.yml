@@ -1,0 +1,56 @@
+name: Tag Airwindohhs Bump
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: pin
+        run: |
+          extract() {
+            git show "$1:CMakeLists.txt" 2>/dev/null | python3 -c "
+          import re, sys
+          text = sys.stdin.read()
+          m = re.search(r'FetchContent_Declare\(\s*airwindohhs.*?GIT_TAG ([0-9a-f]{40})', text, re.DOTALL)
+          print(m.group(1) if m else '')
+          "
+          }
+          before=$(extract "${{ github.event.before }}")
+          after=$(extract "${{ github.sha }}")
+          echo "before=$before" >> "$GITHUB_OUTPUT"
+          echo "after=$after" >> "$GITHUB_OUTPUT"
+          if [ -n "$after" ] && [ "$before" != "$after" ]; then
+            echo "bumped=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "bumped=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.pin.outputs.bumped == 'true'
+        id: next
+        run: |
+          latest=$(git tag --list 'v*' --sort=-v:refname | head -n1)
+          latest="${latest:-v0.0.0}"
+          core="${latest#v}"
+          core="${core%%-*}"
+          # shellcheck disable=SC2034 # patch is intentionally unused -- always reset to 0 below
+          IFS='.' read -r major minor patch <<< "$core"
+          next="v${major}.$((minor + 1)).0"
+          echo "tag=$next" >> "$GITHUB_OUTPUT"
+
+      - if: steps.pin.outputs.bumped == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.next.outputs.tag }}" \
+            -m "Airwindohhs pin bump: ${{ steps.pin.outputs.before }} -> ${{ steps.pin.outputs.after }}"
+          git push origin "${{ steps.next.outputs.tag }}"
