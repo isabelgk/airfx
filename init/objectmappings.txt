@@ -344,6 +344,7 @@ max objectfile mc.airfx.kplatea~ mc.wrapper~ airfx.kplatea~ multichannel;
 max objectfile mc.airfx.kplateb~ mc.wrapper~ airfx.kplateb~ multichannel;
 max objectfile mc.airfx.kplatec~ mc.wrapper~ airfx.kplatec~ multichannel;
 max objectfile mc.airfx.kplated~ mc.wrapper~ airfx.kplated~ multichannel;
+max objectfile mc.airfx.krockstar~ mc.wrapper~ airfx.krockstar~ multichannel;
 max objectfile mc.airfx.kstation~ mc.wrapper~ airfx.kstation~ multichannel;
 max objectfile mc.airfx.kwoodroom~ mc.wrapper~ airfx.kwoodroom~ multichannel;
 max objectfile mc.airfx.matrixverb~ mc.wrapper~ airfx.matrixverb~ multichannel;
