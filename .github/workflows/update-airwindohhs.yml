@@ -127,7 +127,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "${{ steps.meta.outputs.branch }}"
           git add CMakeLists.txt objects.cmake init/objectmappings.txt \
-            "source/objects/*/airfx.${{ matrix.plugin }}_tilde" \
+            "source/objects/*/airfx.${{ matrix.plugin }}_tilde/*" \
             "docs/airfx.${{ matrix.plugin }}~.maxref.xml"
           git commit -m "Add airfx.${{ matrix.plugin }}~"
           git push -u origin "${{ steps.meta.outputs.branch }}"
