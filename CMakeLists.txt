@@ -38,6 +38,7 @@ FetchContent_Declare(
     airwindohhs
     GIT_REPOSITORY https://github.com/isabelgk/airwindohhs.git
     GIT_TAG fb48c998d7131da1351d66939e9830405c6ad75f
+    SYSTEM
 )
 FetchContent_MakeAvailable(airwindohhs)
 
