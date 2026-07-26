@@ -276,6 +276,7 @@ max objectfile mc.airfx.parametric~ mc.wrapper~ airfx.parametric~ multichannel;
 max objectfile mc.airfx.pear~ mc.wrapper~ airfx.pear~ multichannel;
 max objectfile mc.airfx.pear2~ mc.wrapper~ airfx.pear2~ multichannel;
 max objectfile mc.airfx.peareq~ mc.wrapper~ airfx.peareq~ multichannel;
+max objectfile mc.airfx.pearliteeq~ mc.wrapper~ airfx.pearliteeq~ multichannel;
 max objectfile mc.airfx.primefir~ mc.wrapper~ airfx.primefir~ multichannel;
 max objectfile mc.airfx.reseq~ mc.wrapper~ airfx.reseq~ multichannel;
 max objectfile mc.airfx.reseq2~ mc.wrapper~ airfx.reseq2~ multichannel;
