@@ -211,6 +211,7 @@ max objectfile mc.airfx.surgetide~ mc.wrapper~ airfx.surgetide~ multichannel;
 max objectfile mc.airfx.swell~ mc.wrapper~ airfx.swell~ multichannel;
 max objectfile mc.airfx.thunder~ mc.wrapper~ airfx.thunder~ multichannel;
 max objectfile mc.airfx.varimu~ mc.wrapper~ airfx.varimu~ multichannel;
+max objectfile mc.airfx.x2buss~ mc.wrapper~ airfx.x2buss~ multichannel;
 max objectfile mc.airfx.aura~ mc.wrapper~ airfx.aura~ multichannel;
 max objectfile mc.airfx.cloudcoat~ mc.wrapper~ airfx.cloudcoat~ multichannel;
 max objectfile mc.airfx.disintegrate~ mc.wrapper~ airfx.disintegrate~ multichannel;
