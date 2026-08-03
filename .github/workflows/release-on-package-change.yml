@@ -1,14 +1,13 @@
 name: Release on Package Change
 
-# Import PRs bump the airwindohhs pin only when upstream moved, so a new
-# external can land with the pin unchanged. Matching on shipped content instead
-# of the pin catches both, at the cost of releasing on unrelated CMakeLists.txt
-# edits -- put [no release] in the merge commit subject to skip those.
+# Import PRs bump the airwindohhs pin only when upstream moved, so matching on
+# the pin would miss a new external landing under an unchanged pin. Match on the
+# content that ships instead. CMakeLists.txt is deliberately excluded so build
+# changes -- including a pin-only bump -- need a manual Build dispatch.
 on:
   push:
     branches: [main]
     paths:
-      - CMakeLists.txt
       - objects.cmake
       - init/objectmappings.txt
       - source/**
