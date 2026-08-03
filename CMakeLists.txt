@@ -47,22 +47,28 @@ FetchContent_MakeAvailable(airwindohhs)
 # build-tree package. Overwrite it with the public-facing README instead.
 file(COPY_FILE "${CMAKE_SOURCE_DIR}/README-public.md" "${CMAKE_BINARY_DIR}/package/README.md")
 
-# Package version comes from the latest "v*" git tag (stripped of its "v"),
-# so a release build's package-info.json always matches the tag it ships as.
+# Release CI passes -DPACKAGE_VERSION because it mints the tag only after the
+# build succeeds, so the tag does not exist yet at configure time.
+set(PACKAGE_VERSION "" CACHE STRING "Version stamped into package-info.json")
+
+# Otherwise the version comes from the latest "v*" git tag (stripped of its
+# "v"), so a build from a tagged checkout matches the tag it ships as.
 # Falls back to 0.0.0 for untagged dev builds.
-set(PACKAGE_VERSION "0.0.0")
-find_package(Git QUIET)
-if (GIT_FOUND)
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} describe --tags --match "v*" --abbrev=0
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-        OUTPUT_VARIABLE _airfx_git_tag
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-        ERROR_QUIET
-        RESULT_VARIABLE _airfx_git_describe_result
-    )
-    if (_airfx_git_describe_result EQUAL 0 AND _airfx_git_tag)
-        string(REGEX REPLACE "^v" "" PACKAGE_VERSION "${_airfx_git_tag}")
+if (NOT PACKAGE_VERSION)
+    set(PACKAGE_VERSION "0.0.0")
+    find_package(Git QUIET)
+    if (GIT_FOUND)
+        execute_process(
+            COMMAND ${GIT_EXECUTABLE} describe --tags --match "v*" --abbrev=0
+            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+            OUTPUT_VARIABLE _airfx_git_tag
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+            ERROR_QUIET
+            RESULT_VARIABLE _airfx_git_describe_result
+        )
+        if (_airfx_git_describe_result EQUAL 0 AND _airfx_git_tag)
+            string(REGEX REPLACE "^v" "" PACKAGE_VERSION "${_airfx_git_tag}")
+        endif ()
     endif ()
 endif ()
 message(STATUS "Package version: ${PACKAGE_VERSION}")

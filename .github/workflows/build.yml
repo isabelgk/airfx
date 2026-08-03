@@ -3,6 +3,16 @@ name: Build
 on:
   push:
     tags: ["v*"]
+  workflow_call:
+    inputs:
+      target:
+        description: Which OS(es) to build
+        type: string
+        default: all
+      release:
+        description: Bump the minor version and publish a release
+        type: boolean
+        default: true
   workflow_dispatch:
     inputs:
       target:
@@ -13,16 +23,33 @@ on:
           - all
           - macos
           - windows
+      release:
+        description: Bump the minor version and publish a release
+        type: boolean
+        default: true
+
+# Two merges landing close together would otherwise read the same latest tag
+# and mint the same next version.
+concurrency:
+  group: airfx-release
+  cancel-in-progress: false
 
 jobs:
   plan:
     runs-on: ubuntu-latest
     outputs:
       include: ${{ steps.set.outputs.include }}
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+      release: ${{ steps.version.outputs.release }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - id: set
         run: |
-          case "${{ github.event_name == 'workflow_dispatch' && inputs.target || 'all' }}" in
+          case "${{ inputs.target || 'all' }}" in
             macos)
               echo 'include=[{"os":"macos-14","name":"macos"}]' >> "$GITHUB_OUTPUT"
               ;;
@@ -33,6 +60,32 @@ jobs:
               echo 'include=[{"os":"macos-14","name":"macos"},{"os":"windows-2022","name":"windows"}]' >> "$GITHUB_OUTPUT"
               ;;
           esac
+
+      - id: version
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            # Hand-pushed tag: ship exactly what it names, do not bump.
+            tag="${{ github.ref_name }}"
+          else
+            latest=$(git tag --list 'v*' --sort=-v:refname | head -n1)
+            latest="${latest:-v0.0.0}"
+            core="${latest#v}"
+            core="${core%%-*}"
+            IFS='.' read -r major minor _ <<< "$core"
+            tag="v${major}.$((minor + 1)).0"
+          fi
+
+          # A single-OS build cannot produce the combined package a release ships.
+          release=true
+          if [ "${{ inputs.release }}" = "false" ] || [ "${{ inputs.target || 'all' }}" != "all" ]; then
+            release=false
+          fi
+
+          {
+            echo "tag=$tag"
+            echo "version=${tag#v}"
+            echo "release=$release"
+          } >> "$GITHUB_OUTPUT"
 
   build:
     needs: plan
@@ -48,9 +101,9 @@ jobs:
         shell: bash
         run: |
           if [ "${{ runner.os }}" = "macOS" ]; then
-            cmake -S . -B build -G Ninja
+            cmake -S . -B build -G Ninja -DPACKAGE_VERSION="${{ needs.plan.outputs.version }}"
           else
-            cmake -S . -B build
+            cmake -S . -B build -DPACKAGE_VERSION="${{ needs.plan.outputs.version }}"
           fi
 
       - name: Build
@@ -64,8 +117,8 @@ jobs:
 
   bundle:
     name: Bundle combined package
-    needs: build
-    if: github.event_name != 'workflow_dispatch' || inputs.target == 'all'
+    needs: [plan, build]
+    if: ${{ (inputs.target || 'all') == 'all' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -102,9 +155,13 @@ jobs:
           path: package.zip
           if-no-files-found: error
 
-      - name: Create release
-        if: startsWith(github.ref, 'refs/tags/')
+      # Creates the tag as well, pointing at the commit that was actually
+      # built -- main may have moved on during the build.
+      - name: Tag and release
+        if: needs.plan.outputs.release == 'true'
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ needs.plan.outputs.tag }}
+          target_commitish: ${{ github.sha }}
           files: package.zip
           generate_release_notes: true

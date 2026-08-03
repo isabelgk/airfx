@@ -1,0 +1,30 @@
+name: Release on Package Change
+
+# Import PRs bump the airwindohhs pin only when upstream moved, so a new
+# external can land with the pin unchanged. Matching on shipped content instead
+# of the pin catches both, at the cost of releasing on unrelated CMakeLists.txt
+# edits -- put [no release] in the merge commit subject to skip those.
+on:
+  push:
+    branches: [main]
+    paths:
+      - CMakeLists.txt
+      - objects.cmake
+      - init/objectmappings.txt
+      - source/**
+      - docs/**
+
+permissions:
+  contents: write
+
+jobs:
+  # The version bump lives in build.yml so the tag is minted only once the
+  # package it ships has actually built.
+  release:
+    if: ${{ !contains(github.event.head_commit.message, '[no release]') }}
+    uses: ./.github/workflows/build.yml
+    with:
+      target: all
+      release: true
+    permissions:
+      contents: write
