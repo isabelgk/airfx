@@ -429,6 +429,7 @@ max objectfile mc.airfx.channel6~ mc.wrapper~ airfx.channel6~ multichannel;
 max objectfile mc.airfx.channel7~ mc.wrapper~ airfx.channel7~ multichannel;
 max objectfile mc.airfx.channel8~ mc.wrapper~ airfx.channel8~ multichannel;
 max objectfile mc.airfx.channel9~ mc.wrapper~ airfx.channel9~ multichannel;
+max objectfile mc.airfx.channelx~ mc.wrapper~ airfx.channelx~ multichannel;
 max objectfile mc.airfx.cider~ mc.wrapper~ airfx.cider~ multichannel;
 max objectfile mc.airfx.crystal~ mc.wrapper~ airfx.crystal~ multichannel;
 max objectfile mc.airfx.elation~ mc.wrapper~ airfx.elation~ multichannel;
