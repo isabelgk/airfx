@@ -402,6 +402,7 @@ max objectfile mc.airfx.mastering2~ mc.wrapper~ airfx.mastering2~ multichannel;
 max objectfile mc.airfx.phasenudge~ mc.wrapper~ airfx.phasenudge~ multichannel;
 max objectfile mc.airfx.purestwarm~ mc.wrapper~ airfx.purestwarm~ multichannel;
 max objectfile mc.airfx.purestwarm2~ mc.wrapper~ airfx.purestwarm2~ multichannel;
+max objectfile mc.airfx.purestwarm3~ mc.wrapper~ airfx.purestwarm3~ multichannel;
 max objectfile mc.airfx.remap~ mc.wrapper~ airfx.remap~ multichannel;
 max objectfile mc.airfx.shape~ mc.wrapper~ airfx.shape~ multichannel;
 max objectfile mc.airfx.singleendedtriode~ mc.wrapper~ airfx.singleendedtriode~ multichannel;
