@@ -259,6 +259,7 @@ max objectfile mc.airfx.distance2~ mc.wrapper~ airfx.distance2~ multichannel;
 max objectfile mc.airfx.distance3~ mc.wrapper~ airfx.distance3~ multichannel;
 max objectfile mc.airfx.donut~ mc.wrapper~ airfx.donut~ multichannel;
 max objectfile mc.airfx.eq~ mc.wrapper~ airfx.eq~ multichannel;
+max objectfile mc.airfx.fastdistance~ mc.wrapper~ airfx.fastdistance~ multichannel;
 max objectfile mc.airfx.fateq~ mc.wrapper~ airfx.fateq~ multichannel;
 max objectfile mc.airfx.highpass~ mc.wrapper~ airfx.highpass~ multichannel;
 max objectfile mc.airfx.highpass2~ mc.wrapper~ airfx.highpass2~ multichannel;
