@@ -355,6 +355,7 @@ max objectfile mc.airfx.matrixverb~ mc.wrapper~ airfx.matrixverb~ multichannel;
 max objectfile mc.airfx.nonlinearspace~ mc.wrapper~ airfx.nonlinearspace~ multichannel;
 max objectfile mc.airfx.pocketverbs~ mc.wrapper~ airfx.pocketverbs~ multichannel;
 max objectfile mc.airfx.reverb~ mc.wrapper~ airfx.reverb~ multichannel;
+max objectfile mc.airfx.ultralight~ mc.wrapper~ airfx.ultralight~ multichannel;
 max objectfile mc.airfx.verbity~ mc.wrapper~ airfx.verbity~ multichannel;
 max objectfile mc.airfx.verbity2~ mc.wrapper~ airfx.verbity2~ multichannel;
 max objectfile mc.airfx.verbsixes~ mc.wrapper~ airfx.verbsixes~ multichannel;
