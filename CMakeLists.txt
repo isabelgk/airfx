@@ -37,7 +37,7 @@ message(STATUS "Fetching airwindohhs")
 FetchContent_Declare(
     airwindohhs
     GIT_REPOSITORY https://github.com/isabelgk/airwindohhs.git
-    GIT_TAG b0cdd2153b15c682c29c3229395c7a14729cf4a7
+    GIT_TAG 14deba6ba3db48196c2f02c340cd442ded9e1315
     SYSTEM
 )
 FetchContent_MakeAvailable(airwindohhs)
