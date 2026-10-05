@@ -4,12 +4,12 @@ Max objects ported from the open source VST2 [airwindows](https://github.com/air
 
 # Installing
 
-Packages built for macOS and Windows are available on the [GitHub Releases page](https://github.com/isabelgk/airfx/releases/) as `airfx.maxpack`. 
+Packages built for macOS and Windows are available on the [GitHub Releases page](https://github.com/isabelgk/airfx/releases/) as `airfx.maxpack`. (Older versions are `package.zip`.)
 
 Download this file and choose one of the following options for install:
-1. Place the file in your Max packages directory (for example, `~/Documents/Max 9/Packages/`) and start Max.
-2. Drag and drop the file onto the Max **console** (not the patcher window).
-3. Rename the file to `airfx.zip` and unzip to your Max packages directory.
+1. Place the `maxpack` file in your Max packages directory (for example, `~/Documents/Max 9/Packages/`) and start Max.
+2. Drag and drop the `maxpack` file onto the Max **console** (not the patcher window).
+3. Rename the file to have a `zip` extension (e.g. `airfx.zip` or `package.zip`) and unzip to your Max packages directory.
 
 If you are not sure what to choose, try option 1 first.
 
