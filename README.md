@@ -4,7 +4,7 @@ Max objects ported from the open source VST2 [airwindows](https://github.com/air
 
 # Installing
 
-Packages built for MacOS and Windows are available on the [GitHub Releases page](https://github.com/isabelgk/airfx/releases/). Download the `package.zip` and unzip into your Max Packages directory.
+Packages built for MacOS and Windows are available on the [GitHub Releases page](https://github.com/isabelgk/airfx/releases/). Download `airfx.maxpack` (a zip archive) and unzip into your Max Packages directory.
 
 # License
 

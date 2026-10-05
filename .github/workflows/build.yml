@@ -145,14 +145,14 @@ jobs:
           fi
           cp -v "${files[@]}" package/externals/
 
-      - name: Zip combined package
-        run: (cd package && zip -qr ../package.zip .)
+      - name: Zip combined package as .maxpack
+        run: (cd package && zip -qr ../airfx.maxpack .)
 
       - name: Upload combined package
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: package.zip
+          path: airfx.maxpack
           if-no-files-found: error
 
       # Creates the tag as well, pointing at the commit that was actually
@@ -163,5 +163,5 @@ jobs:
         with:
           tag_name: ${{ needs.plan.outputs.tag }}
           target_commitish: ${{ github.sha }}
-          files: package.zip
+          files: airfx.maxpack
           generate_release_notes: true
