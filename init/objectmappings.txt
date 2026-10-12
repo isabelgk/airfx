@@ -304,6 +304,7 @@ max objectfile mc.airfx.derez~ mc.wrapper~ airfx.derez~ multichannel;
 max objectfile mc.airfx.derez2~ mc.wrapper~ airfx.derez2~ multichannel;
 max objectfile mc.airfx.derez3~ mc.wrapper~ airfx.derez3~ multichannel;
 max objectfile mc.airfx.derez4~ mc.wrapper~ airfx.derez4~ multichannel;
+max objectfile mc.airfx.derez5~ mc.wrapper~ airfx.derez5~ multichannel;
 max objectfile mc.airfx.dustbunny~ mc.wrapper~ airfx.dustbunny~ multichannel;
 max objectfile mc.airfx.flutter~ mc.wrapper~ airfx.flutter~ multichannel;
 max objectfile mc.airfx.flutter2~ mc.wrapper~ airfx.flutter2~ multichannel;
