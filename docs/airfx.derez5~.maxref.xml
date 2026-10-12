@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.derez5~" module="MSP" category="lo-fi">
+
+	<digest>
+		DeRez5 adds new forms of derezzing.
+	</digest>
+
+	<description>
+		DeRez5 adds new forms of derezzing.
+	</description>
+
+	<discussion>
+		Interestingly, the last time I worked on DeRez I was also putting a lot of time into Meter. Maybe I turn to imaginary digital noises when struggling to unearth the secrets of the great analog noises.DeRez5 builds on everything DeRez4 can do: in fact if you set Square to 0 and Trim to 1, you have DeRez4 again, complete with the frequency crush, linear point-to-point interpolation, and Bezier filters to turn any corners into neat little rounded places without altering the straight parts of the lines. That is of course weird and has nothing to do with musical or harmonic behavior, but we're doing something different so it doesn't matter :)Add the Square control, and now we can go from the original point-to-point undersampling behavior, to full zero-order-hold behavior: meaning, squarewaves! The control progressively untilts the angles of the point to point waves until they're fully square in all their cornery glory. You can still use the Bright control to add neat little round parts to where the corners are.The Trim control sounds innocent, but it's anything but. If you're heavily derezzed, and you increase Trim, it'll sound like you're raising the DeRez control back up again… kinda. Except it's grungier, weirder, less predictable, and it stops imposing a clashing note onto the sound, because the frequency's less regular. What it is doing is allowing angle-reversals in the underlying sound to determine the derez frequency… so if you crank it, you can definitely get more highs in there and save deeper crunchiness for when bass is happening, but it goes beyond that. You can sneak Trim up just enough to interfere with the steadiness of the underlying derez frequency, producing an altered sound with a little more 'mulch' to it but without dragging in as many highs. You can crank it and see at what point DeRez starts to step on the real highs. You can shape all that with Bright and Bassis, and heighten the edge with Square. And you should tune all this to the sounds you're working with, because more than any other DeRez, the whole sound of this plugin interacts with the sound that's, in theory, being destroyed.Hope you enjoy melding this weird thing with your tracks! :)
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">lo-fi</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="derez" get="1" set="1" type="float64" size="1">
+			<digest>Derez</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="trim" get="1" set="1" type="float64" size="1">
+			<digest>Trim</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="square" get="1" set="1" type="float64" size="1">
+			<digest>Square</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="bright" get="1" set="1" type="float64" size="1">
+			<digest>Bright</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="bassis" get="1" set="1" type="float64" size="1">
+			<digest>Bassis</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="output" get="1" set="1" type="float64" size="1">
+			<digest>Output</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>
