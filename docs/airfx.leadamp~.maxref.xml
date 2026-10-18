@@ -12,7 +12,7 @@
 	</description>
 
 	<discussion>
-		LeadAmp acts like one of the ‘normal’ ampsims, but leaning more towards the vocal, fluid, Vox-y side of things. It’s a distinctive voice and even though they’re all pretty simple and direct, it’s really obvious how LeadAmp isn’t the same flavor as FireAmp or GrindAmp: distinctly different vibe even though they are all cut from the Airwindows super-direct amp sim cloth.The Airwindows amp sims are all fairly simple designs: highpass, cascading gain stages with ultrasonic filtering between them (often tuneable so you can suppress aliasing even at low sample rates, but they're meant for 96k use) and a cab simulator on the end that's dynamically convolved but also a truncated, brief section of tone color.
+		LeadAmp acts like one of the ‘normal’ ampsims, but leaning more towards the vocal, fluid, Vox-y side of things. It’s a distinctive voice and even though they’re all pretty simple and direct, it’s really obvious how LeadAmp isn’t the same flavor as FireAmp or GrindAmp: distinctly different vibe even though they are all cut from the Airwindows super-direct amp sim cloth. The Airwindows amp sims are all fairly simple designs: highpass, cascading gain stages with ultrasonic filtering between them (often tuneable so you can suppress aliasing even at low sample rates, but they're meant for 96k use) and a cab simulator on the end that's dynamically convolved but also a truncated, brief section of tone color.
 	</discussion>
 
 	<metadatalist>
@@ -71,7 +71,7 @@
 				Range 0.0-1.0. Default 0.8.
 			</description>
 		</attribute>
-		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+		<attribute name="drywet" get="1" set="1" type="float64" size="1">
 			<digest>Dry/Wet</digest>
 			<description>
 				Range 0.0-1.0. Default 1.

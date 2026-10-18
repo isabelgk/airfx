@@ -59,7 +59,7 @@
 				Range 0.0-1.0. Default 0.3.
 			</description>
 		</attribute>
-		<attribute name="inv/wet" get="1" set="1" type="float64" size="1">
+		<attribute name="invwet" get="1" set="1" type="float64" size="1">
 			<digest>Inv/Wet</digest>
 			<description>
 				Range 0.0-1.0. Default 0.5.

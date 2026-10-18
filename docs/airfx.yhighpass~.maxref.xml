@@ -83,7 +83,7 @@
 				Range 0.0-1.0. Default 1.
 			</description>
 		</attribute>
-		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+		<attribute name="drywet" get="1" set="1" type="float64" size="1">
 			<digest>Dry/Wet</digest>
 			<description>
 				Range 0.0-1.0. Default 1.

@@ -12,7 +12,7 @@
 	</description>
 
 	<discussion>
-		In the event that you’d like a softer, tubier Edge… I’ve got you covered.If you liked Airwindows Edge, this is a variation. It doesn’t go nearly as high gain but it’s got a much softer clip to it, and the same controls set up the same way (so highpass/lowpass settings ought to match if you want them to). My intent with it was to have a companion plugin to Edge for use with ITB guitars: I’d be using it with Cabs, but folks who need full-on IRs might try that too, or sandwiching your IR between Dirt and Cabs as a final tone/presentation tweak.I hope you like it… and not just on guitars. In line with my current ultrasonic filtering approach, you’ll get more mileage out of this and Edge at high sample rates, but the lowpass will let you get some space between you and aliasing no matter what sample rate you’re at.
+		In the event that you’d like a softer, tubier Edge… I’ve got you covered. If you liked Airwindows Edge, this is a variation. It doesn’t go nearly as high gain but it’s got a much softer clip to it, and the same controls set up the same way (so highpass/lowpass settings ought to match if you want them to). My intent with it was to have a companion plugin to Edge for use with ITB guitars: I’d be using it with Cabs, but folks who need full-on IRs might try that too, or sandwiching your IR between Dirt and Cabs as a final tone/presentation tweak. I hope you like it… and not just on guitars. In line with my current ultrasonic filtering approach, you’ll get more mileage out of this and Edge at high sample rates, but the lowpass will let you get some space between you and aliasing no matter what sample rate you’re at.
 	</discussion>
 
 	<metadatalist>
@@ -77,7 +77,7 @@
 				Range 0.0-1.0. Default 1.
 			</description>
 		</attribute>
-		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+		<attribute name="drywet" get="1" set="1" type="float64" size="1">
 			<digest>Dry/Wet</digest>
 			<description>
 				Range 0.0-1.0. Default 1.

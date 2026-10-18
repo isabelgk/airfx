@@ -12,7 +12,7 @@
 	</description>
 
 	<discussion>
-		Continuing the weird filter pursuits while I work on the M1 compiled VSTs! This is another distorted filter, except that if you distort the insides of a biquad highpass it makes NASTY zapping noises.So… yay?Those who like that sort of thing might like this. It’s pretty good at making really mean aggressive highpasses, except that you can’t clean up the results by dropping the frequency down into the bass and subs: it will just clip easier, which will cause more horrible zap noises. So I guess, only try this if you like that sort of thing. They can’t all be zingers, though this one is quite literally a zapper :)
+		Continuing the weird filter pursuits while I work on the M1 compiled VSTs! This is another distorted filter, except that if you distort the insides of a biquad highpass it makes NASTY zapping noises. So… yay? Those who like that sort of thing might like this. It’s pretty good at making really mean aggressive highpasses, except that you can’t clean up the results by dropping the frequency down into the bass and subs: it will just clip easier, which will cause more horrible zap noises. So I guess, only try this if you like that sort of thing. They can’t all be zingers, though this one is quite literally a zapper :)
 	</discussion>
 
 	<metadatalist>
@@ -71,7 +71,7 @@
 				Range 0.0-1.0. Default 0.
 			</description>
 		</attribute>
-		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+		<attribute name="drywet" get="1" set="1" type="float64" size="1">
 			<digest>Dry/Wet</digest>
 			<description>
 				Range 0.0-1.0. Default 1.

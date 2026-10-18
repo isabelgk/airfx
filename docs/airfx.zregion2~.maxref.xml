@@ -4,15 +4,15 @@
 <c74object name="airfx.zregion2~" module="MSP" category="xyz-filters">
 
 	<digest>
-		
+		ZRegion2 is an Emu e6400 style Airwindows Region filter, with coefficient smoothing.
 	</digest>
 
 	<description>
-		
+		ZRegion2 is an Emu e6400 style Airwindows Region filter, with coefficient smoothing.
 	</description>
 
 	<discussion>
-		
+		ZRegion2 comes out at the same time as ZRegion, but note that I'm still putting out ZRegion. This is because ZRegion will always run at lower CPU than ZRegion2, because the first plugin doesn't do coefficient smoothing. It's for if you have a fixed tone setting to use, OR if you want to have a slight glitchy/zipper-noise quality on some audio and you're moving the controls. If you're going for automation, the Z2 filters are the ones that interpolate the coefficients across the sample buffer, meaning they'll make control changes smooth. No crackling! This eats more CPU, but a lot of the fun with these filters comes from actively manipulating them. The original sampler never had a Region filter type, but now you can make believe it did, and produce aggressive and textural bandpass-y effects across a broader range than the original sampler's ZBandpass. Hope you like it! This concludes the AirwindowsPedia. Expect this file to be expanded as new plugins come in. Might end up needing one of these for the Free Studio sample instruments, eventually… -chris
 	</discussion>
 
 	<metadatalist>
@@ -77,7 +77,7 @@
 				Range 0.0-1.0. Default 0.5.
 			</description>
 		</attribute>
-		<attribute name="dry/wet" get="1" set="1" type="float64" size="1">
+		<attribute name="drywet" get="1" set="1" type="float64" size="1">
 			<digest>Dry/Wet</digest>
 			<description>
 				Range 0.0-1.0. Default 1.
