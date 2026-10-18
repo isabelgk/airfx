@@ -166,6 +166,8 @@ void *new_fn(t_symbol *s, long argc, t_atom *argv)
     outlet_new(x, "signal");
     outlet_new(x, "signal");
 
+    attr_args_process(x, argc, argv);
+
     return x;
 }
 
