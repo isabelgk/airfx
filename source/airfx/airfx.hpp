@@ -5,27 +5,11 @@
 #include "ext_obex_util.h"
 #include "z_dsp.h"
 
+#include <array>
 #include <memory>
 #include <string>
-#include <string_view>
 
 namespace airfx {
-
-// Airwindows parameter names occasionally contain spaces (e.g. "low cut"),
-// which don't route correctly through Max's "attrname value" message syntax
-// (the space is a message-list delimiter). Attributes are registered under
-// the sanitized name; matching in attr_get/attr_set re-applies the same
-// sanitization to the wrapped plugin's raw parameter name for comparison.
-inline std::string sanitize_attr_name(std::string_view name)
-{
-    std::string s(name);
-    for (char &c : s) {
-        if (c == ' ') {
-            c = '_';
-        }
-    }
-    return s;
-}
 
 // Every generated per-plugin .cpp instantiates this template on its own wrapped
 // airwindohhs plugin class and calls init_class() once from ext_main(). No
@@ -58,6 +42,48 @@ t_symbol *&about_symbol()
     return s;
 }
 
+// Indexed by parameter. A few plugins reuse a parameter name (e.g.
+// StoneFireComp's two "attack"s), so a repeat gets its occurrence number
+// appended ("attack2") to keep every attribute reachable.
+template <typename TWrapped>
+std::array<t_symbol *, TWrapped::kNumParameters> &attr_names()
+{
+    static std::array<t_symbol *, TWrapped::kNumParameters> names{};
+    return names;
+}
+
+template <typename TWrapped>
+void init_attr_names(TWrapped &plugin)
+{
+    auto &names = attr_names<TWrapped>();
+    for (int i = 0; i < TWrapped::kNumParameters; i++) {
+        std::string name(plugin.get_parameter_name(i));
+        int occurrence = 1;
+        for (int j = 0; j < i; j++) {
+            if (plugin.get_parameter_name(j) == name) {
+                occurrence++;
+            }
+        }
+        if (occurrence > 1) {
+            name += std::to_string(occurrence);
+        }
+        names[i] = gensym(name.c_str());
+    }
+}
+
+template <typename TWrapped>
+int param_index(void *attr)
+{
+    const auto &names = attr_names<TWrapped>();
+    t_symbol *name = ((t_attr *)attr)->name;
+    for (int i = 0; i < TWrapped::kNumParameters; i++) {
+        if (names[i] == name) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 template <typename TWrapped>
 void perform64(t_obj<TWrapped> *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts,
                long sampleframes, long flags, void *userparam)
@@ -74,26 +100,23 @@ void dsp64_method(t_obj<TWrapped> *x, t_object *dsp64, short *count, double samp
 }
 
 // Shared, generic getter/setter -- one pair per class, not one per parameter.
-// Which parameter an attribute corresponds to is resolved at call time by
-// matching the attribute's own name (t_attr::name) against the wrapped
-// plugin's get_parameter_name(i); called only on attribute get/set, never in
-// the audio path.
+// Which parameter an attribute corresponds to is resolved at call time from
+// the attribute's own name (t_attr::name); called only on attribute get/set,
+// never in the audio path.
 
 template <typename TWrapped>
 t_max_err attr_get(t_obj<TWrapped> *x, void *attr, long *ac, t_atom **av)
 {
-    const char *name = ((t_attr *)attr)->name->s_name;
-    for (int i = 0; i < TWrapped::kNumParameters; i++) {
-        if (sanitize_attr_name(x->wrapped->get_parameter_name(i)) == name) {
-            if (!(*ac && *av)) {
-                *ac = 1;
-                *av = (t_atom *)getbytes(sizeof(t_atom));
-            }
-            atom_setfloat(*av, x->wrapped->get_parameter_value(i));
-            return MAX_ERR_NONE;
-        }
+    int i = param_index<TWrapped>(attr);
+    if (i < 0) {
+        return MAX_ERR_GENERIC;
     }
-    return MAX_ERR_GENERIC;
+    if (!(*ac && *av)) {
+        *ac = 1;
+        *av = (t_atom *)getbytes(sizeof(t_atom));
+    }
+    atom_setfloat(*av, x->wrapped->get_parameter_value(i));
+    return MAX_ERR_NONE;
 }
 
 template <typename TWrapped>
@@ -102,14 +125,12 @@ t_max_err attr_set(t_obj<TWrapped> *x, void *attr, long ac, t_atom *av)
     if (!ac || !av) {
         return MAX_ERR_NONE;
     }
-    const char *name = ((t_attr *)attr)->name->s_name;
-    for (int i = 0; i < TWrapped::kNumParameters; i++) {
-        if (sanitize_attr_name(x->wrapped->get_parameter_name(i)) == name) {
-            x->wrapped->set_parameter_value(i, (float)atom_getfloat(av));
-            return MAX_ERR_NONE;
-        }
+    int i = param_index<TWrapped>(attr);
+    if (i < 0) {
+        return MAX_ERR_GENERIC;
     }
-    return MAX_ERR_GENERIC;
+    x->wrapped->set_parameter_value(i, (float)atom_getfloat(av));
+    return MAX_ERR_NONE;
 }
 
 template <typename TWrapped>
@@ -145,13 +166,15 @@ void *new_fn(t_symbol *s, long argc, t_atom *argv)
     outlet_new(x, "signal");
     outlet_new(x, "signal");
 
+    attr_args_process(x, argc, argv);
+
     return x;
 }
 
 // Called once per class from the generated .cpp's ext_main(). Builds one
-// throwaway TWrapped instance purely to enumerate get_parameter_name/title(i)
-// at class-setup time (once per class, same cost model as constructing one
-// per object); real per-object instances are created in new_fn() above.
+// throwaway TWrapped instance purely to enumerate parameter names at
+// class-setup time (once per class, same cost model as constructing one per
+// object); real per-object instances are created in new_fn() above.
 template <typename TWrapped>
 void init_class(const char *classname, const char *long_description)
 {
@@ -162,8 +185,9 @@ void init_class(const char *classname, const char *long_description)
     class_addmethod(c, (method)about_method<TWrapped>, "about", 0);
 
     TWrapped tmp;
+    init_attr_names(tmp);
     for (int i = 0; i < TWrapped::kNumParameters; i++) {
-        t_object *attr = attribute_new(sanitize_attr_name(tmp.get_parameter_name(i)).c_str(), USESYM(float64), 0,
+        t_object *attr = attribute_new(attr_names<TWrapped>()[i]->s_name, USESYM(float64), 0,
                                         (method)attr_get<TWrapped>, (method)attr_set<TWrapped>);
         attr_addfilter_clip(attr, 0.0, 1.0, 1, 1);
         class_addattr(c, attr);

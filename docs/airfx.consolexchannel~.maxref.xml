@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.consolexchannel~" module="MSP" category="uncategorized">
+
+	<digest>
+		ConsoleXChannel is the fully featured, biggest Airwindows console.
+	</digest>
+
+	<description>
+		ConsoleXChannel is the fully featured, biggest Airwindows console.
+	</description>
+
+	<discussion>
+		
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">uncategorized</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="highpas" get="1" set="1" type="float64" size="1">
+			<digest>Highpas</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="lowpass" get="1" set="1" type="float64" size="1">
+			<digest>Lowpass</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="air" get="1" set="1" type="float64" size="1">
+			<digest>Air</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="fire" get="1" set="1" type="float64" size="1">
+			<digest>Fire</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="stone" get="1" set="1" type="float64" size="1">
+			<digest>Stone</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="range" get="1" set="1" type="float64" size="1">
+			<digest>Range</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="fcthrs" get="1" set="1" type="float64" size="1">
+			<digest>FC Thrs</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="scthrs" get="1" set="1" type="float64" size="1">
+			<digest>SC Thrs</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="fcrati" get="1" set="1" type="float64" size="1">
+			<digest>FC Rati</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="scrati" get="1" set="1" type="float64" size="1">
+			<digest>SC Rati</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="fcatk" get="1" set="1" type="float64" size="1">
+			<digest>FC Atk</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="scatk" get="1" set="1" type="float64" size="1">
+			<digest>SC Atk</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="fcrls" get="1" set="1" type="float64" size="1">
+			<digest>FC Rls</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="scrls" get="1" set="1" type="float64" size="1">
+			<digest>SC Rls</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="fgthrs" get="1" set="1" type="float64" size="1">
+			<digest>FG Thrs</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="sgthrs" get="1" set="1" type="float64" size="1">
+			<digest>SG Thrs</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="fgrati" get="1" set="1" type="float64" size="1">
+			<digest>FG Rati</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="sgrati" get="1" set="1" type="float64" size="1">
+			<digest>SG Rati</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="fgsust" get="1" set="1" type="float64" size="1">
+			<digest>FG Sust</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="sgsust" get="1" set="1" type="float64" size="1">
+			<digest>SG Sust</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="fgrls" get="1" set="1" type="float64" size="1">
+			<digest>FG Rls</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="sgrls" get="1" set="1" type="float64" size="1">
+			<digest>SG Rls</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="trfreq" get="1" set="1" type="float64" size="1">
+			<digest>Tr Freq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="treble" get="1" set="1" type="float64" size="1">
+			<digest>Treble</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="trreso" get="1" set="1" type="float64" size="1">
+			<digest>Tr Reso</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="hmfreq" get="1" set="1" type="float64" size="1">
+			<digest>HM Freq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="highmid" get="1" set="1" type="float64" size="1">
+			<digest>HighMid</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="hmreso" get="1" set="1" type="float64" size="1">
+			<digest>HM Reso</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lmfreq" get="1" set="1" type="float64" size="1">
+			<digest>LM Freq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lowmid" get="1" set="1" type="float64" size="1">
+			<digest>LowMid</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lmreso" get="1" set="1" type="float64" size="1">
+			<digest>LM Reso</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="bsfreq" get="1" set="1" type="float64" size="1">
+			<digest>Bs Freq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="bass" get="1" set="1" type="float64" size="1">
+			<digest>Bass</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="bsreso" get="1" set="1" type="float64" size="1">
+			<digest>Bs Reso</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="topdb" get="1" set="1" type="float64" size="1">
+			<digest>Top dB</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="pan" get="1" set="1" type="float64" size="1">
+			<digest>Pan</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="fader" get="1" set="1" type="float64" size="1">
+			<digest>Fader</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

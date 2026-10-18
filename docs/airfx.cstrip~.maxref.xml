@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
+
+<c74object name="airfx.cstrip~" module="MSP" category="uncategorized">
+
+	<digest>
+		CStrip is an Airwindows channel strip.
+	</digest>
+
+	<description>
+		CStrip is an Airwindows channel strip.
+	</description>
+
+	<discussion>
+		Sometimes, Airwindows dabbles with what you might call ‘the normal’ plugins: for instance, CStrip. I was asked to make a channel strip, and while I usually prefer to do things in a more modular sense, it seemed like a fine idea, and so now there’s an Airwindows channel strip, with sort of the usual things you might find there. Sort of. ;) It’s never quite that simple with Airwindows. So, you’ve got a three band EQ, but if you boost the top you get traces of the ‘Energy’ plugin just to add some aggressiveness to the extreme highs for heavy boosts. You’ve got crossover frequencies, you’ve got highpass and lowpass, but the highpass and lowpass aren’t normal algorithms either: they’re designed for ‘trapping in’ already bandlimited sounds to get the most out of them. There’s a gate, but it’s an Airwindows gate where the release is designed to pull the audio back in the sound picture, not just volume-ramp it. There’s a time delay control that exists only to give the track a micro-delay relative to other tracks for groove purposes. And there’s the compressor… CStrip uses the ButterComp algorithm plus a speed control that lets you do odd things like increase the speed hugely. ButterComp compresses interleaved samples in Class AB, so that’s four independent compressors per channel. If you crank the speed under heavy compression you can get artifacts (for normal behavior, keep the speed a lot lower). The whole idea with CStrip was to do the channel strip, but take it out into stranger realms where it can be used for various sonic destruction. It may not be the last of such plugins: some new stuff coming out is giving me ideas for other ‘combination’ plugins, especially ones where the algorithms can be interwoven to produce effects you literally couldn’t have out of discrete plugins. (one day, I’ll be open sourcing all of that and telling other plugin coders all about it) CStrip also uses a technique I came to rely on, where if a component of the plugin isn’t being used (for instance, the lowpass and highpass when set to their extremes switch off) then it gets completely bypassed, and not even the math of the component is used: this is sort of like how ‘unity gain’ in code isn’t the same as ‘bypass’. (if you’re in floating point and you’re multiplying by 1.0, you’re also doing a math operation at a given exponent and this can wipe out floating point values at very different levels of detail) But that’s getting too wonky: I hope you enjoy CStrip.
+	</discussion>
+
+	<metadatalist>
+		<metadata name="author">Isabel Kaspriskie</metadata>
+		<metadata name="tag">Airwindows</metadata>
+		<metadata name="tag">uncategorized</metadata>
+	</metadatalist>
+
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>(signal) Input L</digest>
+		</inlet>
+		<inlet id="1" type="signal">
+			<digest>(signal) Input R</digest>
+		</inlet>
+	</inletlist>
+
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>(signal) Output L</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>(signal) Output R</digest>
+		</outlet>
+		<outlet id="2" type="anything">
+			<digest>Dump outlet</digest>
+		</outlet>
+	</outletlist>
+
+	<methodlist>
+		<method name="about">
+			<digest>Get the original Airwindows "about" text for this object</digest>
+			<description>
+				Prints the original Airwindows description for this plugin out the
+				dump outlet.
+			</description>
+		</method>
+	</methodlist>
+
+	<attributelist>
+		<attribute name="treble" get="1" set="1" type="float64" size="1">
+			<digest>Treble</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="mid" get="1" set="1" type="float64" size="1">
+			<digest>Mid</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="bass" get="1" set="1" type="float64" size="1">
+			<digest>Bass</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+		<attribute name="lowpass" get="1" set="1" type="float64" size="1">
+			<digest>Lowpass</digest>
+			<description>
+				Range 0.0-1.0. Default 1.
+			</description>
+		</attribute>
+		<attribute name="trebfrq" get="1" set="1" type="float64" size="1">
+			<digest>TrebFrq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.4.
+			</description>
+		</attribute>
+		<attribute name="bassfrq" get="1" set="1" type="float64" size="1">
+			<digest>BassFrq</digest>
+			<description>
+				Range 0.0-1.0. Default 0.4.
+			</description>
+		</attribute>
+		<attribute name="hipass" get="1" set="1" type="float64" size="1">
+			<digest>Hipass</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="gate" get="1" set="1" type="float64" size="1">
+			<digest>Gate</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="compres" get="1" set="1" type="float64" size="1">
+			<digest>Compres</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="compspd" get="1" set="1" type="float64" size="1">
+			<digest>CompSpd</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="timelag" get="1" set="1" type="float64" size="1">
+			<digest>TimeLag</digest>
+			<description>
+				Range 0.0-1.0. Default 0.
+			</description>
+		</attribute>
+		<attribute name="outgain" get="1" set="1" type="float64" size="1">
+			<digest>OutGain</digest>
+			<description>
+				Range 0.0-1.0. Default 0.5.
+			</description>
+		</attribute>
+	</attributelist>
+
+</c74object>

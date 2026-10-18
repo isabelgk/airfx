@@ -100,11 +100,14 @@ def xml_escape(s):
     )
 
 
-def sanitize_attr_name(name):
-    """Matches source/airfx/airfx.hpp's sanitize_attr_name -- some airwindohhs
-    parameter names contain spaces (e.g. "low cut"), which Max's attribute
-    registration keeps but its "attrname value" message syntax can't route to."""
-    return name.replace(" ", "_")
+def attr_names(parameters):
+    """Matches source/airfx/airfx.hpp's init_attr_names: a repeated parameter
+    name gets its occurrence number appended ("attack", "attack2")."""
+    names = []
+    for i, p in enumerate(parameters):
+        occurrence = 1 + sum(q["name"] == p["name"] for q in parameters[:i])
+        names.append(p["name"] if occurrence == 1 else f"{p['name']}{occurrence}")
+    return names
 
 
 MAXREF_TEMPLATE = """<?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -179,11 +182,11 @@ ATTRIBUTE_TEMPLATE = """\t\t<attribute name="{name}" get="1" set="1" type="float
 def render_maxref(entry, params):
     attributes = "".join(
         ATTRIBUTE_TEMPLATE.format(
-            name=xml_escape(sanitize_attr_name(p["name"])),
+            name=xml_escape(name),
             title=xml_escape(p["title"]),
             default=p["default"],
         )
-        for p in params["parameters"]
+        for name, p in zip(attr_names(params["parameters"]), params["parameters"])
     )
     return MAXREF_TEMPLATE.format(
         slug=entry.slug,

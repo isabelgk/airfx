@@ -53,7 +53,7 @@
 	</methodlist>
 
 	<attributelist>
-		<attribute name="edis/dim" get="1" set="1" type="float64" size="1">
+		<attribute name="edisdim" get="1" set="1" type="float64" size="1">
 			<digest>ediS/diM</digest>
 			<description>
 				Range 0.0-1.0. Default 0.5.
