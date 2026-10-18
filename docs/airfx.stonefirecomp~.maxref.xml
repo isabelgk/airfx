@@ -83,13 +83,13 @@
 				Range 0.0-1.0. Default 1.
 			</description>
 		</attribute>
-		<attribute name="attack" get="1" set="1" type="float64" size="1">
+		<attribute name="attack2" get="1" set="1" type="float64" size="1">
 			<digest>Attack</digest>
 			<description>
 				Range 0.0-1.0. Default 0.5.
 			</description>
 		</attribute>
-		<attribute name="release" get="1" set="1" type="float64" size="1">
+		<attribute name="release2" get="1" set="1" type="float64" size="1">
 			<digest>Release</digest>
 			<description>
 				Range 0.0-1.0. Default 0.5.

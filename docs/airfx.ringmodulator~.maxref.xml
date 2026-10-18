@@ -59,7 +59,7 @@
 				Range 0.0-1.0. Default 0.5.
 			</description>
 		</attribute>
-		<attribute name="freq" get="1" set="1" type="float64" size="1">
+		<attribute name="freq2" get="1" set="1" type="float64" size="1">
 			<digest>Freq</digest>
 			<description>
 				Range 0.0-1.0. Default 0.5.

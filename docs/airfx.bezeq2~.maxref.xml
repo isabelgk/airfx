@@ -71,7 +71,7 @@
 				Range 0.0-1.0. Default 0.5.
 			</description>
 		</attribute>
-		<attribute name="x" get="1" set="1" type="float64" size="1">
+		<attribute name="x2" get="1" set="1" type="float64" size="1">
 			<digest>x</digest>
 			<description>
 				Range 0.0-1.0. Default 0.25.
