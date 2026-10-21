@@ -56,13 +56,13 @@
 		<attribute name="drive" get="1" set="1" type="float64" size="1">
 			<digest>Drive</digest>
 			<description>
-				Range 0.0-1.0. Default 0.7.
+				Range 0.0-1.0. Default 0.6.
 			</description>
 		</attribute>
 		<attribute name="presnce" get="1" set="1" type="float64" size="1">
 			<digest>Presnce</digest>
 			<description>
-				Range 0.0-1.0. Default 0.1.
+				Range 0.0-1.0. Default 0.5.
 			</description>
 		</attribute>
 		<attribute name="high" get="1" set="1" type="float64" size="1">
@@ -86,19 +86,19 @@
 		<attribute name="sub" get="1" set="1" type="float64" size="1">
 			<digest>Sub</digest>
 			<description>
-				Range 0.0-1.0. Default 0.1.
+				Range 0.0-1.0. Default 0.5.
 			</description>
 		</attribute>
 		<attribute name="hspeakr" get="1" set="1" type="float64" size="1">
 			<digest>HSpeakr</digest>
 			<description>
-				Range 0.0-1.0. Default 0.8.
+				Range 0.0-1.0. Default 0.7.
 			</description>
 		</attribute>
 		<attribute name="lspeakr" get="1" set="1" type="float64" size="1">
 			<digest>LSpeakr</digest>
 			<description>
-				Range 0.0-1.0. Default 0.5.
+				Range 0.0-1.0. Default 0.4.
 			</description>
 		</attribute>
 		<attribute name="gate" get="1" set="1" type="float64" size="1">
@@ -110,7 +110,7 @@
 		<attribute name="output" get="1" set="1" type="float64" size="1">
 			<digest>Output</digest>
 			<description>
-				Range 0.0-1.0. Default 0.3.
+				Range 0.0-1.0. Default 0.7.
 			</description>
 		</attribute>
 	</attributelist>
