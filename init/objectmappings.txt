@@ -458,6 +458,8 @@ max objectfile mc.airfx.consolexpre~ mc.wrapper~ airfx.consolexpre~ multichannel
 max objectfile mc.airfx.cstrip~ mc.wrapper~ airfx.cstrip~ multichannel;
 max objectfile mc.airfx.echojam~ mc.wrapper~ airfx.echojam~ multichannel;
 max objectfile mc.airfx.pafnuty~ mc.wrapper~ airfx.pafnuty~ multichannel;
+max objectfile mc.airfx.punchydeluxe~ mc.wrapper~ airfx.punchydeluxe~ multichannel;
+max objectfile mc.airfx.punchyguitar~ mc.wrapper~ airfx.punchyguitar~ multichannel;
 max objectfile mc.airfx.purestconsole4buss~ mc.wrapper~ airfx.purestconsole4buss~ multichannel;
 max objectfile mc.airfx.purestconsole4channel~ mc.wrapper~ airfx.purestconsole4channel~ multichannel;
 max objectfile mc.airfx.spiral3~ mc.wrapper~ airfx.spiral3~ multichannel;
