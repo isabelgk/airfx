@@ -164,8 +164,6 @@ jobs:
           open(path, "w").write(text)
           EOF
 
-      # Ninja, because a bare --parallel under Makefiles is an unbounded -j and
-      # exhausts the runner's process limit on a full build.
       - run: cmake -S . -B build -G Ninja
 
       - id: generate
@@ -179,7 +177,9 @@ jobs:
 
       - run: |
           cmake -S . -B build
-          cmake --build build --parallel
+          # An explicit count, because a bare --parallel under Makefiles is an
+          # unbounded -j and exhausts the runner's process limit.
+          cmake --build build --parallel "$(sysctl -n hw.ncpu)"
 
       - env:
           GH_TOKEN: ${{ github.token }}
