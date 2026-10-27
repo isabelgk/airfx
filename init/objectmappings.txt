@@ -6,6 +6,7 @@ max objectfile mc.airfx.chorus~ mc.wrapper~ airfx.chorus~ multichannel;
 max objectfile mc.airfx.chorusensemble~ mc.wrapper~ airfx.chorusensemble~ multichannel;
 max objectfile mc.airfx.clearcoat~ mc.wrapper~ airfx.clearcoat~ multichannel;
 max objectfile mc.airfx.doublelay~ mc.wrapper~ airfx.doublelay~ multichannel;
+max objectfile mc.airfx.echojam~ mc.wrapper~ airfx.echojam~ multichannel;
 max objectfile mc.airfx.ensemble~ mc.wrapper~ airfx.ensemble~ multichannel;
 max objectfile mc.airfx.hombre~ mc.wrapper~ airfx.hombre~ multichannel;
 max objectfile mc.airfx.kchamberar~ mc.wrapper~ airfx.kchamberar~ multichannel;
@@ -456,7 +457,6 @@ max objectfile mc.airfx.consolexbuss~ mc.wrapper~ airfx.consolexbuss~ multichann
 max objectfile mc.airfx.consolexchannel~ mc.wrapper~ airfx.consolexchannel~ multichannel;
 max objectfile mc.airfx.consolexpre~ mc.wrapper~ airfx.consolexpre~ multichannel;
 max objectfile mc.airfx.cstrip~ mc.wrapper~ airfx.cstrip~ multichannel;
-max objectfile mc.airfx.echojam~ mc.wrapper~ airfx.echojam~ multichannel;
 max objectfile mc.airfx.pafnuty~ mc.wrapper~ airfx.pafnuty~ multichannel;
 max objectfile mc.airfx.punchydeluxe~ mc.wrapper~ airfx.punchydeluxe~ multichannel;
 max objectfile mc.airfx.punchyguitar~ mc.wrapper~ airfx.punchyguitar~ multichannel;

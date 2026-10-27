@@ -1,7 +1,7 @@
 #include "ext.h"
 
 #include "airfx.hpp"
-#include "uncategorized/echojam.hpp"
+#include "ambience/echojam.hpp"
 
 using TWrapped = airwindohhs::echojam::Echojam<double>;
 

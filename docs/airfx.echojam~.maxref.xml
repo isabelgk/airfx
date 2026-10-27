@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <?xml-stylesheet href="./c74ref.xsl" type="text/xsl"?>
 
-<c74object name="airfx.echojam~" module="MSP" category="uncategorized">
+<c74object name="airfx.echojam~" module="MSP" category="ambience">
 
 	<digest>
 		
@@ -18,7 +18,7 @@
 	<metadatalist>
 		<metadata name="author">Isabel Kaspriskie</metadata>
 		<metadata name="tag">Airwindows</metadata>
-		<metadata name="tag">uncategorized</metadata>
+		<metadata name="tag">ambience</metadata>
 	</metadatalist>
 
 	<inletlist>
